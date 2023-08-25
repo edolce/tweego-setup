@@ -1,0 +1,45 @@
+::default_mc_room
+<<nobr>>
+<<wrapper "ROOM">>
+
+    <<photo "mc_room_photo">>
+
+    <<say "Player" "$playername">>LessGO!.<</say>>
+
+    <<choices "Where to GO?">>
+        <<choice-item "mc_room_bathroom" "bathroom" "Bathroom">>
+        <<choice-item "floor_1_def" "floor-1" "Floor 1">>
+    <</choices>>
+
+
+    <<choices "What to DO?">>
+        <<choice-item "mc_room_pc" "pc" "Use PC">>
+        <<choice-item "mc_room_bed" "bed" "Sleep">>
+    <</choices>>
+
+
+<</wrapper>>
+<</nobr>>
+
+::mc_room_bathroom
+<<wrapper "ROOM | BATHROOM">>
+<<nobr>>
+    WORK IN PROGRESS
+    <button data-passage="default_mc_room">Go Back</button>
+<</nobr>>
+<</wrapper>>
+
+::mc_room_pc
+<<wrapper "ROOM | PC">>\
+<<nobr>>
+    <<photo "pc_room_photo">>
+    <<choices "What to DO?">>
+        <<choice-item "mc_room_check_mail" "mail" "Check Mail">>
+        <<choice-item "mc_room_hacking" "hack" "Hacking">>
+        <<choice-item "mc_room_porn" "porn" "Watch Porn">>
+        <<choice-item "mc_room_blog" "blog" "Your Blog">>
+        <<choice-item "mc_room_collection" "collection" "collection">>
+    <</choices>>
+    <button data-passage="default_mc_room">Go Back</button>
+<</nobr>>\
+<</wrapper>>

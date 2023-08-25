@@ -1,0 +1,246 @@
+body{
+    background-image: url("https://wallpapers.com/images/hd/64k-ultra-hd-hacker-guy-fawkes-mask-1ifx8cdl7hqyelaj.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.choice-div {
+    color: white;
+    background-color: #550A35;
+    border: 2px solid white;
+    border-radius: 5px;
+    box-shadow: 5px 5px 3px black;
+    width:98%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 8px;
+}
+
+.choice-item-container{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+
+.choice-items{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+
+.choice-selection-title{
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    border-bottom: white 2px solid;
+    background: #2a051b;
+}
+
+.choice-item{
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 8px 8px 8px 8px;
+    box-shadow: 5px 5px 3px black;
+    width:100px;
+    height:100px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.choice-item-ghost{
+    z-index: 2;
+    position: absolute;
+    padding: 8px 8px 8px 8px;
+    width:100px;
+    height:100px;
+    border: 2px solid white;
+}
+
+.choice-item-container:hover .choice-item-ghost{
+    background-color: rgba(83, 10, 85, 0.23);
+    cursor: pointer;
+}
+
+.choice-item-container:hover .choice-item-did{
+    cursor: pointer;
+}
+
+.choice-item-did{
+    position: relative;
+    z-index: 3;
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    background-color: #530a55;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid white;
+}
+
+.photo_default{
+    display: block;
+    margin: auto;
+    padding: 1px;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-size: cover;
+    background-position: center;
+}
+
+.test {
+    background-image: url("https://i.redd.it/gxqmijen6yhb1.jpg");
+    display: block;
+    margin: auto;
+    max-width: 600px;
+    height: 600px;
+    padding: 1px;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-size: cover;
+}
+
+.closeLook{
+    background-image: url("https://i.redd.it/sfzbidbgrrhb1.jpg");
+    display: block;
+    margin: auto;
+    max-width: 600px;
+    height: 600px;
+    padding: 1px;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-size: cover;
+}
+
+.tease{
+    background-image: url("https://i.redd.it/o3f4us8el2va1.jpg");
+    display: block;
+    margin: auto;
+    max-width: 600px;
+    height: 600px;
+    padding: 1px;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-size: cover;
+}
+.landlordBIG{
+    background-image: url("https://i.redd.it/o3f4us8el2va1.jpg");
+    display: block;
+    margin: auto;
+    max-width: 600px;
+    height: 800px;
+    padding: 1px;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-size: cover;
+}
+
+.wrapper {
+    width: 100%;
+    margin: 0 auto;
+    padding: 5px;
+
+}
+
+.title {
+    color: white;
+    background-color: #550A35;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 8px 8px 8px 8px;
+    box-shadow: 5px 5px 3px black;
+    display: block;
+    text-align: center;
+    width: 98%;
+
+}
+
+.npctextbox {
+    color: white;
+    background-color: #550A35;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 8px 8px 8px 8px;
+    box-shadow: 5px 5px 3px black;
+    display: block;
+    width:98%;
+}
+
+
+.landlord {
+    background-image: url("https://i.redd.it/z22jvnrgypgb1.jpg");
+    background-size: cover;
+    display: block;
+    margin: auto;
+    padding: 1px;
+    height: 84px;
+    width: 84px;
+    float: left;
+    margin: 0px 10px 0px 0px;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 1em 0;
+    padding: 0;
+    unicode-bidi: isolate;
+    overflow: hidden;
+}
+
+.lisachatgym {
+    background-image: url("https://i.redd.it/rie3b1virn4b1.jpg");
+    background-size: cover;
+    display: block;
+    margin: auto;
+    padding: 1px;
+    height: 84px;
+    width: 84px;
+    float: left;
+    margin: 0px 10px 0px 0px;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+button {
+    cursor: pointer;
+    color: 	white;
+    height: 50px;
+    width: 100px;
+    background: gray;
+    background-size: 100% 100%;
+    border: 1px solid darkgray;
+    line-height: normal;
+    transition-duration: 200ms;
+    user-select: none;
+    border-width: 2px;
+    border-radius: 8px;
+    border-color: darkgray;
+}
+
+button:hover {
+      background: lightgray;
+      background-size: 100% 100%;
+      border-color: white;
+      border-width: 2px;
+      border-radius: 3px;
+  }

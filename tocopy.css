@@ -1709,6 +1709,7 @@
     padding: 1px;
     border: 2px solid white;
     border-radius: 5px;
+    border-radius: 5px;
     background-image: url("gifs/pooldive.gif");
     background-size: cover;
 }

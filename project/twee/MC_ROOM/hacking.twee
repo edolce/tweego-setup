@@ -1,0 +1,29 @@
+:: mc_room_hacking
+<<wrapper "ROOM | PC | HACKING">>
+<<nobr>>
+    <<photo "pc_room_photo">>
+    <<say "Player" "$playername">>Hacking...<</say>>
+    <<choices "What to DO?">>
+        <<choice-item "mc_room_hacking_hack_device" "hack" "Hack Device">>
+        <<choice-item "mc_room_hacking" "hack" "Hacked Devices">>
+    <</choices>>
+    <</nobr>>
+<</wrapper>>
+
+
+:: mc_room_hacking_hack_device
+<<wrapper "ROOM | PC | HACKING | HACK DEVICE">>
+<<nobr>>
+    <<photo "pc_room_photo">>
+    <<say "Player" "$playername">>Hacking...<</say>>
+    <<choices "What to DO?">>
+        <<for _key, _value range $hack_list>>
+            <<if !_value["hacked"]>>
+                <<choice-item _value['passage'] _value['icon'] _value['text']>>
+        <</if>>
+        <</for>>
+
+    <</choices>>
+    <</nobr>>
+<</wrapper>>
+

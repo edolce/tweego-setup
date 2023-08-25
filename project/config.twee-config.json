@@ -1,0 +1,22 @@
+{
+    "sugarcube-2": {
+        "macros": {
+            
+            "say":{
+                "container": true
+            },
+            "photo":{
+                "container": false
+            },
+            "wrapper":{
+                "container": true
+            },
+            "choices":{
+                "container": true
+            },
+            "choice-item":{
+                "container": false
+            }
+        }
+    }
+}

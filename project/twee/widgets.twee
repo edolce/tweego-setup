@@ -1,0 +1,62 @@
+::conta
+
+:: textBox [widget]
+<<widget "say" container>>\
+    <<nobr>>
+        <div class="npctextbox">
+            <div @class="_args[0].toLowerCase() + '-chat'"></div> <<print _args[1]>>
+            <hr>_contents
+        </div>
+        <br>
+    <</nobr>>\
+<</widget>>
+
+:: photo [widget]
+<<widget "photo">>\
+    <<nobr>>
+        <div @class="'photo_default ' + _args[0].toLowerCase()"></div>
+        <br>
+    <</nobr>>\
+<</widget>>
+
+
+:: wrapper [widget]
+<<widget "wrapper" container>>\
+    <<nobr>>
+        <div class="wrapper">
+            <div class="title">Hacker's Delight | <<print _args[0]>></div>
+            <br>
+            _contents
+        </div>
+        <br>
+    <</nobr>>\
+<</widget>>
+
+
+:: choices-container [widget]
+<<widget "choices" container>>\
+    <<nobr>>
+        <div class="choice-div">
+            <div class="choice-selection-title">
+                <<print _args[0]>>
+            </div>
+            <div class="choice-items">
+                _contents
+            </div>
+        </div>
+        <br>
+    <</nobr>>\
+<</widget>>
+
+
+:: choice-item [widget]
+<<widget "choice-item">>\
+    <<nobr>>
+        <div class="choice-item-container" @data-passage="'_args[0]'">
+            <div class="choice-item-ghost"></div>
+            <div @class="'choice-item choice-' + _args[1]">
+                <div class="choice-item-did"><<print _args[2]>></div>
+            </div>
+        </div>
+    <</nobr>>\
+<</widget>>

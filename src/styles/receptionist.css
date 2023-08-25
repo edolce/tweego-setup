@@ -1,0 +1,65 @@
+.receptionist_chat{
+    background-image: url("https://i.pinimg.com/564x/3c/b8/88/3cb8884e226c3d3917a97918d5768846.jpg");
+    background-size: cover;
+    display: block;
+    margin: auto;
+    padding: 1px;
+    height: 84px;
+    width: 84px;
+    float: left;
+    margin: 0px 10px 0px 0px;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.receptionist_photo_hall{
+    background-image: url("https://pbs.twimg.com/media/EMqko_6WkAEPNTc?format=jpg&name=large");
+    display: block;
+    margin: auto;
+    height: 600px;
+    padding: 1px;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-size: cover;
+}
+
+.receptionist_photo_hall_close{
+    background-image: url("https://i.postimg.cc/5yyz4QLZ/233262501-1514748212204404-3007978603216593069-n.jpg");
+    display: block;
+    margin: auto;
+    height: 600px;
+    width: 300px;
+    background-position: center;
+    padding: 1px;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-size: cover;
+
+}
+
+.receptionist_photo_hall_wondering{
+    background-image: url("https://pbs.twimg.com/media/FBjLzqBXEAIoNFz.jpg:large");
+    display: block;
+    margin: auto;
+    height: 600px;
+    width: 300px;
+    background-position: center;
+    padding: 1px;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-size: cover;
+
+}
+
+
+.give_key_card{
+    background-image: url("https://t4.ftcdn.net/jpg/03/28/49/01/360_F_328490118_J82oCJ3YQjv5ABEdZgLf40kSBgZuDlNN.jpg");
+    display: block;
+    margin: auto;
+    height: 300px;
+    width: 400px;
+    padding: 1px;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-size: cover;
+}

@@ -1,5 +1,12 @@
 :: Start
-<div class="wrapper">
+<<set $hack_list to {
+    "receptionist":
+        {"hacked":false,'passage':"hack_receptionist","icon":"hack-receptionist","text":"Hack Reception"},
+    "roxy":
+        {"hacked":false,'passage':"hack_roxy","icon":"hack-roxy","text":"Hack Roxy"}
+    }>>
+<<set $playername = "Edo">><div class="wrapper">
+
     <div class="title">Hacker's Delight | INTRO</div>
 
     <div class="npctextbox">Ladies and gentlemen, welcome to the tantalizing world of "Hacker's Delight"! Brace yourselves for an immersive

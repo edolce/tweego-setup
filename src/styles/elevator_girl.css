@@ -1,0 +1,38 @@
+.roxy_photo_elevator{
+    background-image: url("https://i.postimg.cc/63411q1f/duchamprivate-1.png");
+    display: block;
+    margin: auto;
+    height: 600px;
+    width: 300px;
+    background-position: center;
+    padding: 1px;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-size: cover;
+}
+
+.roxy_chat{
+    background-image: url("https://www.masterfap.net/profile/duchamprivate/photos/ixzSKfT9Km/duchamprivate.webp");
+    background-size: cover;
+    display: block;
+    margin: auto;
+    padding: 1px;
+    height: 84px;
+    width: 84px;
+    float: left;
+    margin: 0px 10px 0px 0px;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.roxy_gif_elevator_walk_away{
+    background-image: url("https://25.media.tumblr.com/tumblr_meciezB0ux1rklhzro1_500.gif");
+    display: block;
+    margin: auto;
+    height: 500px;
+    background-position: center;
+    padding: 1px;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-size: cover;
+}
