@@ -1,0 +1,42 @@
+:: FirstScene
+<div class="wrapper"><div class="title">Amore Gym | UK | Earth</div>
+
+    <div class="npctextbox"><div class="playerchat"></div>$playername
+        <hr>Hey there, landlord. It's been a while since I've been back. How have you been?
+    </div>
+    <div class="landlordBIG"></div>
+    <div class="npctextbox"><div class="landlord"></div>Landlord (thoughts)
+        <hr>Oh my, look at him. He's grown into such a handsome man. I've always had a soft spot for him. It's going to be hard to hide my attraction.
+    </div>
+    <div class="npctextbox"><div class="landlord"></div>Landlord
+        <hr>Well, well, well. Look who's finally returned home. I must say, I've missed having you around. Welcome back!
+    </div>
+    <div class="npctextbox"><div class="playerchat"></div>$playername
+        <hr>Thanks, it's good to be back. Life took an unexpected turn, and I found myself needing a place to stay again.
+    </div>
+    <div class="npctextbox"><div class="landlord"></div>Landlord (thoughts)
+        <hr>It's the perfect opportunity. He's vulnerable, and I can't help but feel a surge of desire. I must be careful not to let it show.
+    </div>
+    <div class="npctextbox"><div class="landlord"></div>Landlord
+        <hr>Oh, I'm sorry to hear that. But don't worry, I'm here to take care of you. You're like family to me.
+    </div>
+    <div class="npctextbox"><div class="playerchat"></div>$playername
+        <hr>I appreciate that, landlord. It's nice to know I have someone looking out for me.
+    </div>
+    <div class="npctextbox"><div class="landlord"></div>Landlord (thoughts)
+        <hr>Looking out for him? More like longing for him. I can't deny these feelings any longer. But I must control myself and keep this professional.
+    </div>
+    <div class="npctextbox"><div class="landlord"></div>Landlord
+        <hr>Of course, dear. You've always had a special place in my heart. I'm here to support you in any way I can.
+    </div>
+    <div class="npctextbox"><div class="playerchat"></div>$playername
+        <hr>That means a lot to me. It's been a tough journey, and I'm grateful to have you by my side.
+    </div>
+    <div class="npctextbox"><div class="landlord"></div>Landlord (thoughts)
+        <hr>By his side, in more ways than one. But I must resist these urges. It's not appropriate, and I need to maintain professionalism.
+    </div>
+    <div class="npctextbox"><div class="landlord"></div>Landlord
+        <hr>We'll get through this together, just like we always have. Now, let's focus on making your transition back home as smooth as possible.
+    </div>
+
+</div>

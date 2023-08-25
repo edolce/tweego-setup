@@ -1,0 +1,54 @@
+:: StoryTitle
+Bimbo Paradise
+
+
+:: Start0
+<<set $playername = "Edo">><div class="wrapper"><div class="title">Amore Gym | UK | Earth</div>
+    @@.test;@@
+    @@.npctextbox;You see a gorgeous milf on a couch@@
+    <div class="npctextbox"><div class="playerchat"></div>$playername
+        <hr>Hey there, gorgeous. Mind if I join you on the couch?
+    </div>
+    <div class="npctextbox"><div class="lisachatgym"></div>Lisa
+        <hr>Not at all. Make yourself comfortable.
+    </div>
+    <div class="npctextbox"><div class="playerchat"></div>$playername
+        <hr>Mmm, I can't help but notice how stunning you look tonight. Those curves are driving me wild.
+    </div>
+    <div class="closeLook"></div>
+    <div class="npctextbox"><div class="lisachatgym"></div>Lisa
+        <hr>Thank you, darling. I do love it when someone appreciates my figure.
+    </div>
+    <div class="npctextbox"><div class="playerchat"></div>$playername
+        <hr>I can't help but imagine what it'd be like to run my hands all over your silky smooth skin.
+    </div>
+    <div class="npctextbox"><div class="lisachatgym"></div>Lisa
+        <hr>Oh, the thought of your touch sends shivers down my spine. Why don't you show me what you've got?
+    </div>
+    <div class="npctextbox"><div class="playerchat"></div>$playername
+        <hr>Trust me, you won't be disappointed. But first, let me admire those magnificent breasts of yours.
+    </div>
+    <div class="npctextbox"><div class="lisachatgym"></div>Lisa
+        <hr>giggles Well, if you insist. Feast your eyes on these beauties.
+    </div>
+    <div class="tease"></div>
+    <div class="npctextbox"><div class="playerchat"></div>$playername
+        <hr>Wow, those are some incredible assets. I can't believe how lucky I am to have this moment with you.
+    </div>
+    <div class="npctextbox"><div class="lisachatgym"></div>Lisa
+        <hr>I'm glad you're enjoying the view. But I'm afraid I have to run, my dear. Duty calls.
+    </div>
+    <div class="npctextbox"><div class="playerchat"></div>$playername
+        <hr>No, don't go just yet! Can I at least have your phone number? I want to keep this connection alive.
+    </div>
+    <div class="npctextbox"><div class="lisachatgym"></div>Lisa
+        <hr>Well, I suppose I can make an exception for someone as charming as you. Here's my number: 555-1234. Don't keep me waiting too long.
+    </div>
+    <div class="npctextbox"><div class="playerchat"></div>$playername
+        <hr>Thank you, Lisa! I promise I won't let you down. I'll be sure to give you a call soon.
+    </div>
+    <div class="npctextbox"><div class="lisachatgym"></div>Lisa
+        <hr>I'll be eagerly waiting for that call. Until then, take care, and remember, I'm just a phone call away.
+    </div>
+    <button data-passage="FirstScene" class="button" type="button" tabindex="0">TEST</button>
+</div>

@@ -1,0 +1,32 @@
+::elevator_first
+<div class="wrapper"><div class="title">Hacker's Delight | INTRO</div>
+    <div class="npctextbox">As the elevator doors slide open, you step inside and find yourself face to face with a captivating guest of the hotel. Her tall stature, luscious black hair, ample breasts, and a perfectly sculpted rear leave you momentarily breathless.
+    </div>
+    @@.roxy_photo_elevator;@@
+    <div class="npctextbox"><div class="playerchat"></div> ${player_name}
+        <hr>Oh, uh, hi there. Are you enjoying your stay at the hotel?
+    </div>
+    <div class="npctextbox"><div class="roxy_chat"></div> Girl
+        <hr>Well, let's just say I'm finding it quite... intriguing. And you, handsome, are you here for business or pleasure?
+    </div>
+    <div class="npctextbox">Her seductive tone hints at a deeper connection, a shared secret that thrills you to the core and ignites a spark of desire within.
+    </div>
+    <div class="npctextbox"><div class="playerchat"></div> ${player_name}
+        <hr>Um, a bit of both, I guess. I'm here for work, but who says work can't be pleasurable, right? What about you? What brings you to this enchanting place?
+    </div>
+    <div class="npctextbox"><div class="roxy_chat"></div> Girl
+        <hr>Let's just say I have a taste for adventure, for the thrill of the unknown. And this hotel seems to hold many secrets waiting to be uncovered.
+    </div>
+    <div class="npctextbox">As the elevator ascends, the air becomes charged with an intoxicating tension. The game of desire begins, and you find yourself entangled in a web of mystery and fascination.
+    </div>
+    <div class="npctextbox"><div class="playerchat"></div> ${player_name}
+        <hr>Well, I must admit, there's something alluring about secrets, about delving into the unknown. Perhaps we could explore this hotel's mysteries together?
+    </div>
+    <div class="npctextbox"><div class="roxy_chat"></div> Girl
+        <hr>Oh, I think that could be quite... stimulating. But remember, not all secrets should be unveiled too quickly. Some things are meant to be savored.
+    </div>
+    <div class="npctextbox">As the elevator reaches your floor, you exchange knowing glances, the promise of hidden escapades hanging in the air. The game has just begun, and you can't wait to see where it leads.
+    </div>
+    @@.roxy_gif_elevator_walk_away;@@
+    <button data-passage="enter_room_first_time" class="button" type="button" tabindex="0">Continue</button>
+</div>

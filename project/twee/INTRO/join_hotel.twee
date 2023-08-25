@@ -1,0 +1,55 @@
+::join_hotel
+<div class="wrapper"><div class="title">Hacker's Delight | INTRO</div>
+    <div class="npctextbox">As you step through the grand entrance of the hotel, your heart races with a mix of excitement and nerves. This is your first time here, and you're about to embark on a clandestine operation that will test your hacking skills and push the boundaries of your desires.
+    </div>
+    <div class="npctextbox">You approach the reception desk, where a stunning woman with enchanting eyes and a mischievous smile greets you.
+    </div>
+    @@.receptionist_photo_hall;@@
+    <div class="npctextbox"><div class="receptionist_chat"></div> Receptionist
+        <hr>Welcome to the Grandiose Hotel. How may I assist you today?
+    </div>
+    <div class="npctextbox"><div class="playerchat"></div> ${playername}
+        <hr>Uh, hi there. I, uh, just checked in. Room 304, please.
+    </div>
+    <div class="npctextbox"><div class="receptionist_chat"></div> Receptionist
+        <hr>Of course, sir. Here's your keycard for Room 304. Enjoy your stay.
+    </div>
+    @@.give_key_card;@@
+    <div class="npctextbox"><div class="playerchat"></div> ${playername}
+        <hr>Thanks. I, um, have some work to do on my laptop, so I was wondering about the Wi-Fi... Is it fast and secure?
+    </div>
+    <div class="npctextbox"><div class="receptionist_chat"></div> Receptionist
+        <hr>Yes, sir. We have the fastest and most secure Wi-Fi in the city. You'll have no trouble connecting to our network.
+    </div>
+    <div class="npctextbox"><div class="playerchat"></div> ${playername} THINKing
+        <hr>Damn, hacking into this network is going to be a challenge. I'll need to be careful not to get caught.
+    </div>
+    <div class="npctextbox"><div class="playerchat"></div> ${playername}
+        <hr>Great, I'm a bit of a tech geek, you know? Always on my laptop, working on projects and stuff.
+    </div>
+    @@.receptionist_photo_hall_close;@@
+    <div class="npctextbox">As you engage in small talk with the receptionist, you can't help but notice her alluring curves and the way her uniform hugs her figure. Thoughts of your secret mission begin to intertwine with the growing desire that bubbles within you.
+    </div>
+    <div class="npctextbox"><div class="playerchat"></div> ${playername}
+        <hr>So, uh, what's there to do around here? Any cool places to explore?
+    </div>
+    <div class="npctextbox"><div class="receptionist_chat"></div> Receptionist
+        <hr>Oh, definitely! Our hotel is located in the heart of the city, surrounded by trendy cafes, vibrant nightlife, and stunning parks. You won't run out of things to do.
+    </div>
+    @@.receptionist_photo_hall_wondering;@@
+    <div class="npctextbox">As the conversation continues, you can't help but wonder what it would be like to capture a glimpse of the receptionist's hidden desires, to add her to your collection of enticing photos. The thrill of the forbidden dances through your mind, making your palms moist with anticipation.
+    </div>
+    <div class="npctextbox"><div class="playerchat"></div> ${playername}
+        <hr>Well, thanks for the information. I'll keep that in mind.
+    </div>
+    @@.protagonist_photo_happy;@@
+    <div class="npctextbox">As the receptionist hands you the keycard and you bid her farewell, your mind races with possibilities. The hotel becomes your playground, a haven for both your hacking endeavors and your hidden desires.
+    </div>
+    <div class="npctextbox"><div class="playerchat"></div> ${playername}
+        <hr>Great, thank you. I'm sure I'll have a wonderful stay here. See you around!
+    </div>
+    <div class="npctextbox">With a mix of excitement and nervousness, you head towards the elevator, ready to embark on this thrilling adventure where technology and temptation intertwine in the most provocative of ways.
+    </div>
+    <button data-passage="elevator_first" class="button" type="button" tabindex="0">Take the elevator to your room</button>
+
+</div>
