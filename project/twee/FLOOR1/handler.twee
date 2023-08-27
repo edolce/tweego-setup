@@ -1,0 +1,26 @@
+:: hanlder_floor1
+<<wrapper "FLOOR 1">>
+<<nobr>>
+   <<if Object.keys($events.floor1).length === 0>>
+        <<include "default_floor1">>
+    <</if>>
+   <<for _key, _value range $events.floor1>>
+        <<include _value.event_name>>
+        <<set $_ = delete $events.floor1[_key]>>
+   <</for>>
+<</nobr>>
+<</wrapper>>
+
+:: default_floor1
+<<nobr>>
+    <<photo "floor1_photo_default">>
+    
+    <<choices "Where to GO?">>
+        <<choice-item "handler_hall" "mail" "Check Mail">>
+        <<choice-item "mc_room_hacking" "hack" "Hacking">>
+        <<choice-item "mc_room_porn" "porn" "Watch Porn">>
+        <<choice-item "mc_room_blog" "blog" "Your Blog">>
+        <<choice-item "mc_room_collection" "collection" "collection">>
+    <</choices>>
+
+<</nobr>>

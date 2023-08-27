@@ -7,6 +7,7 @@
         <<choice-item "mc_room_hacking_hack_device" "hack" "Hack Device">>
         <<choice-item "mc_room_hacking" "hack" "Hacked Devices">>
     <</choices>>
+    <<button "Go Back" "default_mc_room">><</button>>
     <</nobr>>
 <</wrapper>>
 
@@ -24,6 +25,42 @@
         <</for>>
 
     <</choices>>
+    <<button "Go Back" "mc_room_hacking">><</button>>
     <</nobr>>
 <</wrapper>>
 
+:: hack_receptionist
+<<wrapper "ROOM | PC | HACKING | HACK DEVICE | RECEPTIONIST">>\
+<<nobr>>
+    <<photo "pc_room_photo">>
+
+    <<choices "What to HACK?">>
+        <<choice-item "hack_receptionist_whatsapp" "whatsapp" "Whatsapp">>
+        <<choice-item "hack_receptionist_gallery" "gallery" "Gallery">>
+        <<choice-item "hack_receptionist_secret" "secret" "Secret Gallery">>
+    <</choices>>
+    <<button "Go Back" "mc_room_hacking_hack_device">><</button>>
+    <</nobr>>
+<</wrapper>>
+
+:: hack_receptionist_whatsapp
+<<wrapper "ROOM | PC | HACKING | HACK DEVICE | RECEPTIONIST | WHATSAPP">>\
+<<nobr>>
+    <<photo "pc_room_photo">>
+    <<say "Player" "$playername">>
+       This wifi is connected to the receptionist's phone. If I can hack it, I can see her whatsapp messages.
+    <</say>>
+    <<narrator>>
+        In order to hack her you have to know her better first.
+        You need more info about her in order to put the info in the hacking software.
+        <br>
+        Affection: <<print $hack_list.receptionist.affection>>/10
+    <</narrator>>
+    <<if $hack_list.receptionist.affection >= 10>>
+        <<button "HACK WHATSAPP" "hack_receptionist_whatsapp_success">>test<</button>>
+    <</if>>
+    <<button "Go Back" "hack_receptionist">><</button>>
+    <</nobr>>
+<</wrapper>>
+
+::  hack_receptionist_whatsapp_success

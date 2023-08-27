@@ -16,6 +16,9 @@
             },
             "choice-item":{
                 "container": false
+            },
+            "narrator":{
+                "container": true
             }
         }
     }

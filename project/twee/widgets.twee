@@ -1,11 +1,19 @@
-::conta
-
 :: textBox [widget]
 <<widget "say" container>>\
     <<nobr>>
         <div class="npctextbox">
             <div @class="_args[0].toLowerCase() + '-chat'"></div> <<print _args[1]>>
             <hr>_contents
+        </div>
+        <br>
+    <</nobr>>\
+<</widget>>
+
+:: narrator [widget]
+<<widget "narrator" container>>\
+    <<nobr>>
+        <div class="npctextbox">
+            _contents
         </div>
         <br>
     <</nobr>>\

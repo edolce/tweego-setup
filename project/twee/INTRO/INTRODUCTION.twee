@@ -1,11 +1,21 @@
 :: Start
 <<set $hack_list to {
     "receptionist":
-        {"hacked":false,'passage':"hack_receptionist","icon":"hack-receptionist","text":"Hack Reception"},
+        {"hacked":false,'passage':"hack_receptionist","icon":"hack-receptionist","text":"Hack Reception",affection:0},
     "roxy":
         {"hacked":false,'passage':"hack_roxy","icon":"hack-roxy","text":"Hack Roxy"}
     }>>
+
+<<set $events to {
+    floor1:{
+        claudetthe:{
+            event_name: "clodetthe_first_econunter",
+        }
+    }
+}>>
 <<set $playername = "Edo">><div class="wrapper">
+
+
 
     <div class="title">Hacker's Delight | INTRO</div>
 

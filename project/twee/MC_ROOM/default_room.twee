@@ -1,4 +1,4 @@
-::default_mc_room
+:: default_mc_room
 <<nobr>>
 <<wrapper "ROOM">>
 
@@ -8,7 +8,7 @@
 
     <<choices "Where to GO?">>
         <<choice-item "mc_room_bathroom" "bathroom" "Bathroom">>
-        <<choice-item "floor_1_def" "floor-1" "Floor 1">>
+        <<choice-item "hanlder_floor1" "floor-1" "Floor 1">>
     <</choices>>
 
 
@@ -21,7 +21,7 @@
 <</wrapper>>
 <</nobr>>
 
-::mc_room_bathroom
+:: mc_room_bathroom
 <<wrapper "ROOM | BATHROOM">>
 <<nobr>>
     WORK IN PROGRESS
@@ -29,7 +29,7 @@
 <</nobr>>
 <</wrapper>>
 
-::mc_room_pc
+:: mc_room_pc
 <<wrapper "ROOM | PC">>\
 <<nobr>>
     <<photo "pc_room_photo">>
