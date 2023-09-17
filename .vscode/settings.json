@@ -1,3 +1,8 @@
 {
-    "twee3LanguageTools.storyformat.current": "sugarcube-2"
+    "twee3LanguageTools.storyformat.current": "sugarcube-2",
+    "scm.diffDecorations": "none",
+    "scm.diffDecorationsGutterPattern": {
+        "modified": false
+    },
+    "scm.showActionButton": true
 }

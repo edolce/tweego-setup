@@ -7,7 +7,7 @@
         <<choice-item "mc_room_hacking_hack_device" "hack" "Hack Device">>
         <<choice-item "mc_room_hacking" "hack" "Hacked Devices">>
     <</choices>>
-    <<button "Go Back" "default_mc_room">><</button>>
+    <<button "Go Back" "mc_room_default">><</button>>
     <</nobr>>
 <</wrapper>>
 

@@ -1,0 +1,12 @@
+:: init_rotuine_claudetthe
+<<nobr>>
+    <<set $routine_claudetthe to {
+        "lunedi": ["room", "work", "room"],
+        "martedi": ["room", "work", "room"],
+        "mercoledi": ["room", "work", "room"],
+        "giovedi": ["room", "work", "room"],
+        "venerdi": ["room", "work", "room"],
+        "sabato": ["room", "park", "room"],
+        "domenica": ["room", "pool", "room"]
+    }>>
+<</nobr>>

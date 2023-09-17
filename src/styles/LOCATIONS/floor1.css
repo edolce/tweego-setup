@@ -1,0 +1,20 @@
+.floor1_photo_default{
+    background-image: url("https://images.unsplash.com/photo-1495365200479-c4ed1d35e1aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWwlMjBoYWxsd2F5fGVufDB8fDB8fHww&w=1000&q=80");
+    height: 400px;
+}
+
+.choice-hall{
+    background-image: url("https://www.stampaprint.net/it/blog/wp-content/uploads/2016/01/esempio-hilton-hotel-hall.jpg");
+}
+
+.choice-floor2{
+    background-image: url("https://images.unsplash.com/photo-1495365200479-c4ed1d35e1aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWwlMjBoYWxsd2F5fGVufDB8fDB8fHww&w=1000&q=80");
+}
+
+.choice-claudetthe-room{
+    background-image: url("https://img1.10bestmedia.com/Images/Photos/378649/Park-Hyatt-New-York-Manhattan-Sky-Suite-Master-Bedroom-low-res_55_660x440.jpg")
+}
+
+.choice-your-room{
+    background-image: url("https://www.ikea.com/gb/en/images/products/malm-bed-frame-high-black-brown__1101577_pe866751_s5.jpg");
+}

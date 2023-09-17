@@ -1,0 +1,44 @@
+:: StoryCaption
+<div id="story-caption">
+   <p class="desc center noMarginTop">v. 0.0.1</p>
+   <span class="desc">
+      <a class="link-internal macro-link" role="button" tabindex="0">
+         <div class="med purple btn"><span class="btnText">Get Early Access content</span></div>
+      </a>
+   </span>
+   <a class="link-internal macro-link" role="button" tabindex="0">
+      <div class="btn"><span class="btnText">Harry Panuchkin</span></div>
+   </a>
+   <a class="link-internal macro-link" role="button" tabindex="0">
+      <div class="image noMarginBottom smlMarginTop avatarBig">         <img src="media/characters/player/beta0/portrait_sex.jpg" class="">       </div>
+   </a>
+   <a class="link-internal macro-link" role="button" tabindex="0">
+      <div class="btn"><span class="btnText">Characters</span></div>
+   </a>
+   <a class="link-internal macro-link" role="button" tabindex="0">
+      <div class="btn"><span class="btnText">Quests</span></div>
+   </a>
+   <h3 class="white">Tits of Fortune</h3>
+   <p class="info center">Daphne told you to unpack, so what are you waiting for, bozo!? While in your room click the "Unpack" button.</p>
+   <a class="link-internal macro-link" role="button" tabindex="0">
+      <div class="btn"><span class="btnText">Hints</span></div>
+   </a>
+   <hr>
+   <a class="link-internal macro-link" role="button" tabindex="0">
+      <div class="med btn"><span class="btnText">Settings</span></div>
+   </a>
+   <a class="link-internal macro-link" role="button" tabindex="0">
+      <div class="med btn"><span class="btnText">Bug Report</span></div>
+   </a>
+   <a class="link-internal macro-link" role="button" tabindex="0">
+      <div class="med btn"><span class="btnText">Changelog</span></div>
+   </a>
+   <hr>
+   <a class="link-internal macro-link" role="button" tabindex="0">
+      <div class="med btn"><span class="btnText">Support the author</span></div>
+   </a>
+   <a class="link-internal macro-link" role="button" tabindex="0">
+      <div class="med btn"><span class="btnText">About the game</span></div>
+   </a>
+   <a href="https://www.youtube.com/watch?v=DIsMWG3UuyY&amp;list=PLyHolgprbu8LUT77_2qL-UDoLHKhdNJop" target="_blank" class="btn med">♫ Playlist ♬</a> 
+</div>

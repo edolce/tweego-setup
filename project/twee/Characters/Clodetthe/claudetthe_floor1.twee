@@ -30,5 +30,5 @@
     <<say "Player" "$playername *thoughts*">>
     As she agrees to the coffee date, a mischievous thought crosses my mind. I can't help but imagine her teasing me, allowing me a glimpse of her luscious breasts before she leaves.
     <</say>>
-    <<button "Return to Floor1" "hanlder_floor1">><</button>>
+    <<button "Return to Floor1" "handler_floor1">><</button>>
 <</nobr>>

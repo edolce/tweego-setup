@@ -6,5 +6,5 @@
     </div>
     <div class="npctextbox">As the game's free-roam feature activates, you have the power to explore the hotel, the city, and the lives of its inhabitants. It's a playground of desire, where encounters and secrets await at every turn.
     </div>
-    <button data-passage="default_mc_room" class="button" type="button" tabindex="0">Continue</button>
+    <button data-passage="mc_room_default" class="button" type="button" tabindex="0">Continue</button>
 </div>

@@ -1,0 +1,16 @@
+:: handler_receptionist_hall
+<<wrapper "Claudhette Room">>
+    <<include "default_receptionist_hall">>
+<</wrapper>>
+
+:: default_receptionist_hall
+<<nobr>>
+<<photo "receptionist_photo_hall">>>
+<<say "Player" "$playername">>
+Hey there, beautiful. How's your day going?
+<</say>>
+<<say "receptionist" "Receptionist">>
+Oh, just another day at the office. How about you?
+<</say>>
+<<button "End Conversation" "handler_hall">><</button>>
+<</nobr>>

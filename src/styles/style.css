@@ -1,5 +1,5 @@
 body{
-    background-image: url("https://wallpapers.com/images/hd/64k-ultra-hd-hacker-guy-fawkes-mask-1ifx8cdl7hqyelaj.jpg");
+    background-image: url("https://i.ibb.co/GtrpGVw/spliced-2000x1186.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -238,9 +238,15 @@ button {
 }
 
 button:hover {
-      background: lightgray;
-      background-size: 100% 100%;
-      border-color: white;
-      border-width: 2px;
-      border-radius: 3px;
-  }
+    background-color: #001c61;
+    border: solid 1px Turquoise;
+    transition: border-color 0.6s linear;
+}
+
+
+
+a .btn:not(.quest):hover, a.btn:not(.quest):hover {
+    background-color: #001c61;
+    border: solid 1px Turquoise;
+    transition: border-color 0.6s linear;
+}

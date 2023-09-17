@@ -1,0 +1,78 @@
+#ui-bar {
+    background-color: #021120;
+    box-shadow: 0 0 20px black;
+    border: 0;
+}
+
+#ui-bar * {
+    font-family: 'Open Sans';
+}
+
+#ui-bar-toggle {
+    margin: 20px 0 0 10px !important;
+}
+
+#ui-bar-toggle, #history-backward, #history-forward {
+    background-color: #0b0e17 !important;
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+    font-weight: 900 !important;
+    border: 1px solid transparent !important;
+    color: #839fbb !important;
+}
+
+#ui-bar-body {
+    padding-bottom: 10px;
+}
+
+#title {
+    display: none;
+}
+
+#ui-bar-body>:not(:first-child) {
+    margin: 0;
+}
+
+#ui-bar ul, #ui-bar li, #ui-bar li:not(:first-child) {
+    border: 0;
+}
+
+.btn, button, #ui-bar li a, .item {
+    display: inline-block;
+    margin: 5px auto 5px auto;
+    padding: 10px 20px 13px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px black;
+    text-align: center;
+    font-size: 120%;
+    line-height: 165%;
+    background-color: #151b3e;
+    background-repeat: no-repeat;
+    border: 1px solid black;
+}
+
+
+
+
+#ui-bar-body>:not(:first-child) {
+    margin: 0;
+}
+
+#ui-bar-body::-webkit-scrollbar-track, #ui-dialog-body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #000000;
+}
+
+#ui-bar-body::-webkit-scrollbar-thumb, #ui-dialog-body::-webkit-scrollbar-thumb {
+    background-color: #004171;
+}
+
+#ui-bar-body::-webkit-scrollbar, #ui-dialog-body::-webkit-scrollbar {
+    width: 10px;
+    background-color: #eee;
+    cursor: pointer;
+}

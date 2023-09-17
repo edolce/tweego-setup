@@ -1,0 +1,28 @@
+:: floor1_handler
+<<wrapper "FLOOR 1">>
+<<nobr>>
+   <<if Object.keys($events.floor1).length === 0>>
+        <<include "floor1_default">>
+    <</if>>
+   <<for _key, _value range $events.floor1>>
+        <<include _value.event_name>>
+        <<set $_ = delete $events.floor1[_key]>>
+   <</for>>
+<</nobr>>
+<</wrapper>>
+
+:: floor1_default
+<<nobr>>
+    <<photo "floor1_photo_default">>
+    
+    <<choices "Enter a Room">>
+        <<choice-item "mc_room_default" "your-room" "Your Room">>
+        <<choice-item "claudetthe_room_handler" "claudetthe-room" "Claudetthe Room">>
+    <</choices>>
+
+    <<choices "Where to GO?">>
+        <<choice-item "hall_handler" "hall" "Hall">>
+        <<choice-item "floor2_handler" "floor2" "Floor 2">>
+    <</choices>>
+
+<</nobr>>

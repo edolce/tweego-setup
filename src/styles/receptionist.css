@@ -12,6 +12,20 @@
     border-radius: 5px;
 }
 
+.receptionist-chat{
+    background-image: url("https://i.pinimg.com/564x/3c/b8/88/3cb8884e226c3d3917a97918d5768846.jpg");
+    background-size: cover;
+    display: block;
+    margin: auto;
+    padding: 1px;
+    height: 84px;
+    width: 84px;
+    float: left;
+    margin: 0px 10px 0px 0px;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
 .receptionist_photo_hall{
     background-image: url("https://pbs.twimg.com/media/EMqko_6WkAEPNTc?format=jpg&name=large");
     display: block;

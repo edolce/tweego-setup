@@ -1,0 +1,104 @@
+:: handler_claudetthe_room
+<<wrapper "Claudhette Room">>
+<<nobr>>
+    <<set $routine = {
+        "claudetthe_room": {
+            "morning": {
+                is_in_room: false,
+                can_enter: true,
+                event: "claudetthe_room"
+            }
+        }
+    }>>
+
+    <<set $time = "morning">>
+
+   <<if $routine.claudetthe_room[$time].is_in_room === false>>
+        <<if $routine.claudetthe_room[$time].can_enter === true>>
+            <<include "default_claudetthe_room">>
+        <<else>>
+            <<include "CANT_ENTER_claudetthe_room">>
+        <</if>>
+    <<else>>
+        <<if $routine.claudetthe_room[$time].can_enter === true>>
+            <<include "complex_claudetthe_room">>
+        <<else>>
+            <<include "CANT_ENTER_claudetthe_room">>
+        <</if>>
+    <</if>>
+   <<for _key, _value range $events.floor1>>
+        <<include _value.event_name>>
+        <<set $_ = delete $events.floor1[_key]>>
+   <</for>>
+<</nobr>>
+<</wrapper>>
+
+
+
+
+:: default_claudetthe_room
+<<nobr>>
+    <<photo "claudetthe-room">>
+    
+    <<choices "What To DO?">>
+        <<choice-item "search_claudetthe_room" "search-claudetthe-room" "Search">>
+    <</choices>>
+
+<</nobr>>
+
+
+:: search_claudetthe_room
+<<nobr>>
+
+    <<if random(1,4) == 1>>
+        <<include "find_lingerie_claudetthe_room">>
+        <<else>>
+        <<narrator>>
+        You search the room, but find nothing of interest.
+        <</narrator>>
+    <</if>>
+
+    <<button "Back" "handler_floor1">><</button>>
+    
+    
+<</nobr>>
+
+
+:: find_lingerie_claudetthe_room
+<<nobr>>
+    <<say "Player" "$playername">>
+    You find a selection of provocative lingerie, each piece more enticing than the last. Corsets, stockings, and garters, all designed to ignite passion and leave hearts racing. It's clear that this room is a sanctuary for pleasure-seekers and adventurous souls.
+    <</say>>
+    <<photo "black-lingerie-image">>
+<</nobr>>
+
+
+
+:: CANT_ENTER_claudetthe_room
+<<nobr>>
+    <<photo "floor1_photo_default">>
+    
+    <<choices "Enter a Room">>
+        <<choice-item "handler_claudetthe_room" "claudetthe-room" "Claudetthe Room">>
+    <</choices>>
+
+    <<choices "Where to GO?">>
+        <<choice-item "handler_hall" "hall" "Hall">>
+        <<choice-item "handler_floor2" "floor2" "Floor 2">>
+    <</choices>>
+
+<</nobr>>
+
+:: complex_claudetthe_room
+<<nobr>>
+    <<photo "floor1_photo_default">>
+    
+    <<choices "Enter a Room">>
+        <<choice-item "handler_claudetthe_room" "claudetthe-room" "Claudetthe Room">>
+    <</choices>>
+
+    <<choices "Where to GO?">>
+        <<choice-item "handler_hall" "hall" "Hall">>
+        <<choice-item "handler_floor2" "floor2" "Floor 2">>
+    <</choices>>
+<</nobr>>
