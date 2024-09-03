@@ -1,0 +1,48 @@
+:: init_database_hack_6
+<<set $database_haking["6"] to {
+            "display_name": "Emily Lee",
+            "id_name": "emily_lee",
+            "main_image":"https://i.ibb.co/rGhMBBm/GJNij-J3bs-AAktr-J.jpg",
+            "page": "testing_page",
+            "price": 100,
+            "info":{
+                "age": 23,
+                "job": "Student",
+                "hobbies": ["Reading", "Coding", "Gaming"],
+                "location": "New York",
+                "status": "Single",
+                "description": "Brittany is a student at NYU, she is studying computer science and she is very passionate about it.",
+                "image_bucket": {
+                    "level1": {
+                        "rare":[
+                            "https://s10.gifyu.com/images/SYq9e.gif"
+                        ],
+                        "uncommon": [
+                            "https://i.ibb.co/LQJJrxC/GKXS2d-Fa0-AACSva.jpg",
+                            "https://i.ibb.co/3chT4vr/GL1x-Lm9a-QAA0d-BR.jpg",
+                            "https://i.ibb.co/thmKwpj/GL9a-OC3as-AAYq-N4.jpg",
+
+                        ],
+                        "common":[
+                            "https://i.ibb.co/yRsdjLZ/GMM1-RNGbw-AAOKPj.jpg",
+                            "https://i.ibb.co/FwZ0DGX/GMW8gmrak-AAM3-O5.jpg",
+                            "https://i.ibb.co/KWX1vS1/GMgr-Sdb-MAA7e6w.jpg",
+                            "https://i.ibb.co/cT92vWR/GMr-JNFOas-AMkfv-Z.jpg",
+                            "https://i.ibb.co/tJTXq8d/GM7g-Cx-Bac-AEpnxo.jpg",
+
+
+                        ]
+                    },
+                    "level2": {
+                        "rare":[],
+                        "uncommon": [],
+                        "common":[]
+                    },
+                    "level3": {
+                        "rare":[],
+                        "uncommon": [],
+                        "common":[]
+                    }
+                },
+            }
+        }>>

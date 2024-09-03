@@ -1,0 +1,216 @@
+:: init_nikita [Nikita Character_Init]
+<<nobr>>
+    <<include init_routine_Nikita>>
+    <<include init_stats_Nikita>>
+
+    <<set $firs_nikita_bar to true>>
+
+
+    /*<<set $characters.jennifer to {
+        name: "Jennifer",
+        desc: "Blackjack Dealer",
+        img: "https://i.ebayimg.com/images/g/048AAOSw3V1hO2~a/s-l1200.webp",
+        events: $forced_events.jennifer,
+        routine: $routine_events.jennifer,
+        stats: $statistics.jennifer
+    }>> */
+
+    <<set $characters.nikita to {
+        name: "Nikita",
+        desc: "Casino Boss",
+        category: "Casino",
+        img: "https://www.shutterstock.com/editorial/image-editorial/M3T1Ae1eMfz9k61aODk5MzM=/nikki-benz-440nw-10454972am.jpg",
+        events: $forced_events.nikita,
+        routine: $routine_events.nikita,
+        stats: $statistics.nikita
+    }>>
+<</nobr>>
+
+:: init_stats_Nikita [Nikita Stats_Init]
+<<nobr>>
+    <<set $stats_nikita to {
+        "affection": 0,
+        "love": 0,
+        "lust": 0
+    }>>
+    <<set $statistics["nikita"] to $stats_nikita>>
+<</nobr>>
+
+:: init_routine_Nikita [Nikita Routine_Init]
+<<nobr>>
+    <<set $routine_nikita to {
+        
+        /* MONDAY */
+        "Monday": {
+            "morning":{
+                "trigger_passage": "casino_boss_room_handler",
+                "display_trigger_event": "nikita_working_boss_room_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "casino_boss_room_handler",
+                "display_trigger_event": "nikita_working_boss_room_handler",
+                "icon": "work_icon_choice"
+            },
+            "evening":{
+                "trigger_passage": "casino_boss_room_handler",
+                "display_trigger_event": "nikita_working_boss_room_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "casino_boss_room_handler",
+                "display_trigger_event": "nikita_working_boss_room_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* TUESDAY */
+        "Tuesday": {
+            "morning":{
+                "trigger_passage": "casino_boss_room_handler",
+                "display_trigger_event": "nikita_working_boss_room_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "casino_boss_room_handler",
+                "display_trigger_event": "nikita_working_boss_room_handler",
+                "icon": "work_icon_choice"
+            },
+            "evening":{
+                "trigger_passage": "casino_boss_room_handler",
+                "display_trigger_event": "nikita_working_boss_room_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "casino_boss_room_handler",
+                "display_trigger_event": "nikita_working_boss_room_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* WEDNESDAY */
+        "Wednesday": {
+            "morning":{
+                "trigger_passage": "casino_boss_room_handler",
+                "display_trigger_event": "nikita_working_boss_room_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "casino_boss_room_handler",
+                "display_trigger_event": "nikita_working_boss_room_handler",
+                "icon": "work_icon_choice"
+            },
+            "evening":{
+                "trigger_passage": "casino_boss_room_handler",
+                "display_trigger_event": "nikita_working_boss_room_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "casino_boss_room_handler",
+                "display_trigger_event": "nikita_working_boss_room_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* THURSDAY */
+        "Thursday": {
+            "morning":{
+                "trigger_passage": "casino_boss_room_handler",
+                "display_trigger_event": "nikita_working_boss_room_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "casino_boss_room_handler",
+                "display_trigger_event": "nikita_working_boss_room_handler",
+                "icon": "work_icon_choice"
+            },
+            "evening":{
+                "trigger_passage": "casino_boss_room_handler",
+                "display_trigger_event": "nikita_working_boss_room_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "casino_boss_room_handler",
+                "display_trigger_event": "nikita_working_boss_room_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* FRIDAY */
+        "Friday": {
+            "morning":{
+                "trigger_passage": "casino_boss_room_handler",
+                "display_trigger_event": "nikita_working_boss_room_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "casino_boss_room_handler",
+                "display_trigger_event": "nikita_working_boss_room_handler",
+                "icon": "work_icon_choice"
+            },
+            "evening":{
+                "trigger_passage": "casino_boss_room_handler",
+                "display_trigger_event": "nikita_working_boss_room_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "casino_boss_room_handler",
+                "display_trigger_event": "nikita_working_boss_room_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* SATURDAY */
+        "Saturday": {
+            "morning":{
+                "trigger_passage": "casino_boss_room_handler",
+                "display_trigger_event": "nikita_working_boss_room_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "casino_boss_room_handler",
+                "display_trigger_event": "nikita_working_boss_room_handler",
+                "icon": "work_icon_choice"
+            },
+            "evening":{
+                "trigger_passage": "casino_boss_room_handler",
+                "display_trigger_event": "nikita_working_boss_room_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "casino_boss_room_handler",
+                "display_trigger_event": "nikita_working_boss_room_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* SUNDAY */
+        "Sunday": {
+            "morning":{
+                "trigger_passage": "casino_boss_room_handler",
+                "display_trigger_event": "nikita_working_boss_room_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "casino_boss_room_handler",
+                "display_trigger_event": "nikita_working_boss_room_handler",
+                "icon": "work_icon_choice"
+            },
+            "evening":{
+                "trigger_passage": "casino_boss_room_handler",
+                "display_trigger_event": "nikita_working_boss_room_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "casino_boss_room_handler",
+                "display_trigger_event": "nikita_working_boss_room_handler",
+                "icon": "work_icon_choice"
+            }
+        }
+    }
+    >>
+
+    <<set $routine_events.nikita to $routine_nikita>>
+<</nobr>>
+
+    

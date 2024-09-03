@@ -80,6 +80,7 @@ function compileJS () {
     });
 }
 
-// run
-compileCSS();
-compileJS();
+// Run tasks in parallel
+(async function run() {
+    await Promise.all([compileCSS(), compileJS()]);
+})();

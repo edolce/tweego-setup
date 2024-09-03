@@ -1,0 +1,19 @@
+:: veronica-events-init [Veronica Events_Init]
+<<nobr>>
+    <<set $veronica_scenes to []>>
+    <<set $veronica_scenes.push(
+        {
+            "event_name": "First meeting with Veronica",
+            "description": "Vernoica introduce herself to the protagonist and she talks about her being hacked",
+            "display_trigger_event": "veronica_scene_1",
+            "trigger_passage": "hall_handler ",
+            "trigger_time": "afternoon",
+            "triggered": false,
+            "is_force_trigger": false,
+            "icon": "main_mission_icon",
+            "passage_required": undefined,
+            "cooldown": 1
+        }
+        )>>
+    <<set $forced_events.veronica to $veronica_scenes>>
+<</nobr>>

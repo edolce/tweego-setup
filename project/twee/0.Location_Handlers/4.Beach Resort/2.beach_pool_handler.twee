@@ -1,0 +1,22 @@
+:: beach_pool_handler
+<<wrapper "Beach Bar">>
+    <<nobr>>
+
+        <<include "beach_pool_default">>
+    <</nobr>>
+<</wrapper>>
+
+:: beach_pool_default
+    <<nobr>>
+
+    <<photo "beach_pool_default">>
+
+    <<choices "Where to GO?">>
+        <<choice-item "beach_handler" "beach" "Beach">>
+        <<choice-item "beach_bar_handler" "beach-bar" "Bar">>
+        <<choice-item-chosen "beach_pool_handler" "pool" "Pool">>
+        <<choice-item "beach_manager_office_handler" "manager-office" "Office">>
+        <<choice-item "map_handler" "map" "Map">>
+    <</choices>>
+
+    <</nobr>>

@@ -1,0 +1,248 @@
+:: start_init
+<<nobr>>
+    <<set $is_forced_event_going to false>>
+    <<set $routine_events to {}>>
+    <<include "init_forced_events">>
+
+    <<set $cooldowns to {}>>
+
+    /* INIT STATISTICS */
+    <<set $statistics to {
+        "isabella":{
+            "affection":0,
+            "love": 0,
+            "lust": 0
+        },
+        "claudetthe":{
+            "affection":0,
+            "love": 0,
+            "lust": 0
+        },
+        "veronica":{
+            "affection":0,
+            "love": 0,
+            "lust": 0
+        },
+        "lucy":{
+            "affection":0,
+            "love": 0,
+            "lust": 0
+        },
+    }>>
+
+
+    <<set $characters to {}>>
+    <<set $inventory to {}>>
+
+    <<set $instagram_info to {}>>
+
+    /* FULL INIT */
+    /* Hotel Owner */
+    <<include init_isabella>>
+    /* Casino Owner */
+    <<include init_nikita>>
+    /* Night Club Owner */
+    <<include init_veronica>>
+
+    /* bartender */
+    <<include init_olive>>
+
+    /* Guard */
+    <<include init_ivy>>
+    
+    /* Model */
+    <<include init_amy>>
+    <<include init_kim>>
+
+    /* Black Jack */
+    <<include init_jennifer>>
+
+
+    /* INIT ROUTINES */
+    <<include init_rotuine_claudetthe>>
+    
+    
+    /* INIT EVENTS */
+
+
+
+
+
+
+    /* init general hacking */
+    
+
+    /* <<set $database_haking to {
+        "1":{
+            "display_name": "Brittany Cox",
+            "id_name": "brittany_cox",
+            "main_image":"https://i.pinimg.com/originals/56/70/13/567013e65340de3b9214a0199fd10a41.jpg",
+            "page": "testing_page",
+            "info":{
+                "age": 23,
+                "job": "Student",
+                "hobbies": ["Reading", "Coding", "Gaming"],
+                "location": "New York",
+                "status": "Single",
+                "description": "Brittany is a student at NYU, she is studying computer science and she is very passionate about it.",
+                "image_bucket": {
+                    "level1": {
+                        "rare":[
+                            "https://i.ibb.co/27zSp5Q/427968555-1040384813688955-4816134582216814153-n.jpg",
+                        ],
+                        "uncommon": [
+                            "https://i.ibb.co/gyXdymw/310554084-635831584937080-2483315243049527486-n.jpg",
+                            "https://femto.scrolller.com/caitlin-arnett-x3ga9lizlq-1080x1305.jpg"
+                            ],
+                        "common":[
+                            "https://i.ibb.co/zVxqZCr/343996081-623098656353649-3749355984141410116-n.jpg",
+                            "https://i.ibb.co/yXBQpZD/337873412-1695184960898231-8238950677744061519-n.jpg",
+                            "https://i.ibb.co/h11WRXs/336484885-873107973793744-8622982025885501046-n.jpg",
+                            "https://i.ibb.co/jhbK27p/332372996-906376943941616-884149075179255562-n.jpg",
+                            "https://i.ibb.co/6YL23pY/330132878-1706919203064989-3507416914684071671-n.jpg",
+                            "https://i.ibb.co/tPxkHWt/327104210-171751342228074-8728163768431757646-n.jpg",
+                            "https://i.ibb.co/qjpfbLr/310172060-434795711971901-1928253604522652568-n.jpg",
+                            "https://i.ibb.co/dLFcBwf/301026930-158726076814403-5598824203924076955-n.jpg",
+                            "https://i.ibb.co/jMs2xHr/299790904-124574960147537-5895390078687671996-n.jpg",
+                            "https://i.ibb.co/bWrh81d/297827651-544397694143464-2056221776829213830-n.jpg",
+                            "https://i.ibb.co/djmXdHL/54277449-323290108322757-1017899850211068293-n.jpg"
+                        ]
+                    },
+                    "level2": {
+                        "rare":[],
+                        "uncommon": [],
+                        "common":[]
+                    },
+                    "level3": {
+                        "rare":[],
+                        "uncommon": [],
+                        "common":[]
+                    }
+                }
+            }
+        },
+        "2":{
+            "display_name": "Bethany Davenport",
+            "id_name": "bethany_davenport",
+            "main_image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHIFBCDQRVJI7CWFGilX3DJLnFZ7Ysw617Nl2D_FfF219h2GHRkVDyWl1-Uv4VxTcYeuM&usqp=CAU",
+            "page": "testing_page",
+            "info":{
+                "age": 23,
+                "job": "Student",
+                "hobbies": ["Reading", "Coding", "Gaming"],
+                "location": "New York",
+                "status": "Single",
+                "description": "Brittany is a student at NYU, she is studying computer science and she is very passionate about it.",
+                "image_bucket": {
+                    "level1": {
+                        "rare":[
+                            "https://s10.gifyu.com/images/SYmGh.gif",
+                        ],
+                        "uncommon": [
+                            "https://i.ibb.co/sR62JWK/pt2-6812565632334864483671-1-8e65a88da1cb430a2988d3fc1fe3f2b4.jpg",
+                            "https://i.ibb.co/h1p4XpG/images.jpg",
+                        ],
+                        "common":[
+                            "https://i.ibb.co/xLWYnn5/122.jpg",
+                            "https://i.ibb.co/dLrmMLY/pt2-6844515864375764504062-3-9968ddba4151cd2377546da024173a34.jpg",
+                            "https://i.ibb.co/KFS4WsT/www-instagram-com-realskybri-hl-749677781.webp",
+                            "https://i.ibb.co/y5VhftB/Fopjs-Era-MAA9-VYm.jpg",
+                        ]
+                    },
+                    "level2": {
+                        "rare":[],
+                        "uncommon": [],
+                        "common":[]
+                    },
+                    "level3": {
+                        "rare":[],
+                        "uncommon": [],
+                        "common":[]
+                    }
+                },
+            }
+        },
+        "3":{
+            "display_name": "Caitlin Carter",	
+            "main_image":"https://i.pinimg.com/originals/56/70/13/567013e65340de3b9214a0199fd10a41.jpg"
+        },
+        "4":{
+            "display_name": "Caitlin Carter",	
+            "main_image":"https://i.pinimg.com/originals/56/70/13/567013e65340de3b9214a0199fd10a41.jpg"
+        }
+
+    }>> */
+
+    <<include "init_database-hacking">>
+
+    <<set $database_hack_stats to {
+        "1":{
+            "char_lvl": 1,
+            "char_exp": 0,
+            "char_exp_next": 100,
+            "process_percentage": 0
+        },
+        "2":{
+            "char_lvl": 1,
+            "char_exp": 0,
+            "char_exp_next": 100,
+            "process_percentage": 0
+        }
+    }>>
+
+
+    <<set $hack_list to {}>>
+
+    <<set $events to {}>>
+
+
+
+    /* <<set $events to {
+        floor1:{
+            claudetthe:{
+                event_name: "clodetthe_first_econunter",
+            }
+        },
+        hall:{
+            isabella:{
+                event_name: "isabella_scene_1",
+            }
+        }
+    }>> */
+
+
+    /*
+    
+    INIT TIME
+        - morning
+        - afternoon
+        - evening
+
+    */
+    <<set $watch to "08:00">>
+    <<set $completed_events to []>>
+
+    <<set $day_of_weeks to [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+    
+    ]>>
+    <<set $minuteTime to 13*60>>
+    <<set $time to "afternoon">>
+    <<set $day to 1>>
+    <<set $day_of_week to "Monday">>
+    <<set $week to 1>>
+
+    <<set $character_stats to {
+        "strength": 0,
+        "endurance": 0,
+        "stealth": 0
+    }>>
+    <<set $money to 1000>>
+    <<set $energy to 100>>
+<</nobr>>

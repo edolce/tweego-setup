@@ -1,0 +1,444 @@
+:: testing_page
+<<nobr>>
+    <<button "Back" "mc_room_hacking_database">>
+        <</button>>
+    <br>
+    <div class="title">
+        <strong><<print $database_haking[$selected_girl]["display_name"]>></strong>
+    </div>
+    <br>
+    /* Display a profile of the character */
+    <div class="profile-container">
+        <div class="profile-image-character">
+            <img id='image-to-set' src="https://i.pinimg.com/originals/56/70/13/567013e65340de3b9214a0199fd10a41.jpg">
+            <<script>>
+            $(document).ready(function(){
+                $("#image-to-set").attr("src", State.variables.database_haking[State.variables.selected_girl]["main_image"]);
+                });
+            <</script>>
+        </div>
+        <div class="profile-info">
+            <div class="real-info">
+                <div class="info">
+                    <strong>Age:</strong> <<print $database_haking[$selected_girl]["info"]["age"]>>
+                </div>
+                <div class="info">
+                    <strong>Job:</strong> <<print $database_haking[$selected_girl]["info"]["job"]>>
+                </div>
+                <div class="info">
+                    <strong>Hobbies:</strong> Reading, Coding, Gaming
+                </div>
+                <div class="info">
+                    <strong>Location:</strong> <<print $database_haking[$selected_girl]["info"]["location"]>>
+                </div>
+                <div class="info">
+                    <strong>Status:</strong> <<print $database_haking[$selected_girl]["info"]["status"]>>
+                </div>
+                <div class="info">
+                    <strong>Description:</strong> <<print $database_haking[$selected_girl]["info"]["description"]>>
+                </div>
+            </div>
+            <div class="char-hack-button">
+                <button>Start Hacking</button>
+            </div>
+            /* HACK BAR STATUS */
+            <div style ="width: 100%;">
+                <div style="font-size: 16px; font-weight: bold; color: #fff; text-align: center;">
+                    Hacking Progress
+                </div>
+                <div class="hack-bar">
+                    <div class="hack-bar-fill">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <style>
+        .not-visible {
+            display: none;
+        }
+    </style>
+    <div class="rewards-container not-visible">
+    </div>
+
+    <<script>>
+        /* if click start hacking button advance bar */
+        $(document).ready(function(){
+
+            /* iter all -click-card add event handler to open big pop up image full screen */
+            $(".click-card").click(function(){
+                console.log("clicked");
+                var img_src = $(this).css("background-image");
+                var img_src = img_src.replace('url(','').replace(')','').replace(/\"/gi, "");
+                console.log(img_src);
+                /* open image in full screen */
+                var popUp = new Image();
+                popUp.src = img_src;
+                popUp.style.height = "100%";
+                popUp.style.top = "0";
+                popUp.style.left = "0";
+                popUp.style.zIndex = "9999";
+                popUp.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
+                /* dont fit just cover */
+                popUp.style.objectFit = "cover";
+
+
+                /* Create container */
+                var container = document.createElement("div");
+                container.style.width = "100%";
+                container.style.height = "100%";
+                container.style.display = "flex";
+                container.style.alignItems = "center";
+                container.style.justifyContent = "center";
+                container.style.position = "fixed";
+                container.style.top = "0";
+                container.style.left = "0";
+                container.style.zIndex = "9998";
+                container.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
+                container.style.cursor = "pointer";
+                
+
+                container.onclick = function(){
+                    $(this).remove();
+                };
+
+                container.appendChild(popUp);
+
+
+        
+                var title = '<div class="title">Hacking Rewards</div>';
+                $(document.body).append(title);
+                $(document.body).append(container);
+
+            });
+
+
+
+
+
+
+
+            /* load actual perctentage on bar */
+            var max_completition = 100;
+            var current_completition = State.variables.database_hack_stats[State.variables.selected_girl]["process_percentage"];
+                console.log("Current width: " + current_completition);
+
+            if(current_completition === 100){
+                 startHack ()
+            }
+
+            $(".hack-bar-fill").css("width", current_completition + "%");
+
+            $(".char-hack-button button").click(function(){
+
+                /* check if enough energy */
+                if(State.variables.energy < 25){
+                    return;
+                }
+                /* remove energy */
+                State.variables.energy -= 25;
+                /* update energy */
+                /* <<if $energy >= 50>>🔋<<elseif $energy >= 25 and $energy < 50>>🔌<<else>>💤<</if>> */
+                if(State.variables.energy > 50){
+                        $("#energy-icon").html("🔋")
+                    }else if(State.variables.energy > 25 && State.variables.energy <= 50){
+                        $("#energy-icon").html("🔌")
+                    }else{
+                        $("#energy-icon").html("💤");
+                    }
+                $("#energy-value").html("<strong>"+State.variables.energy+"</strong>");
+                    
+
+                var current_width = $(".hack-bar-fill").width();
+                var max_width = $(".hack-bar").width();
+                var new_width = current_width/ max_width * 100 + 10;
+                /* round to int */
+                new_width = Math.round(new_width);
+                if (new_width > 100){
+                    new_width = 100;
+                }
+                /* save */
+                State.variables.database_hack_stats[State.variables.selected_girl]["process_percentage"] = new_width;
+                $(".hack-bar-fill").css("width", new_width + "%");
+
+                console.log("Current width: " + new_width);
+
+                /* if 100% write at the center of the bar: "click to get hacked content" */
+                if(new_width === 100){
+                    startHack ()
+                }
+                /*  Engine.play(passage());*/
+            });
+        });
+
+        function startHack () {
+            /* check if already active */
+                    if($(".hack-bar-fill").html() === "CLICK TO GET HACKED CONTENT"){
+                        return;
+                    }
+                    $(".hack-bar-fill").html("CLICK TO GET HACKED CONTENT");
+                    /* clickable hover cursor */
+                    $(".hack-bar-fill").css("cursor", "pointer");
+                    $(".hack-bar-fill").click(function(){
+
+
+
+                        var girl_id = State.variables.database_haking[State.variables.selected_girl]["id_name"];
+                        State.variables.database_hack_stats[State.variables.selected_girl]["process_percentage"] = 0;
+                        $(".hack-bar-fill").css("width", "0%");
+                        $(".hack-bar-fill").html("");
+                        /* show rewards */
+                        var cards = State.variables.database_haking[State.variables.selected_girl]["info"]["image_bucket"]["level1"];
+
+                        var random_cards = [];
+                        /* id: _card_id+"$"+_rarity+"$"+_girl_info["id_name"]+"$"+_level_index */
+                        var random_cards_ids = [];
+                        var html_cards = [];
+
+                        /* check if rare probability hit */
+                        var rare_probability = Math.floor(Math.random() * 100);
+                        if(rare_probability < 8){
+                            /* get random */
+                            var _card_id = Math.floor(Math.random() * cards["rare"].length);
+                            random_cards.push(cards["rare"][_card_id]);
+                            random_cards_ids.push(_card_id+"$rare$"+girl_id+"$level1");
+                            
+                                var html_card = document.createElement("div");
+                                html_card.classList.add("click-card");
+                                html_card.classList.add("card");
+                                html_card.style.width = "200px";
+                                html_card.style.height = "300px";
+                                html_card.style.backgroundImage = 'url("' + random_cards[random_cards.length - 1] + '")';
+                                html_cards.push(html_card);
+                        }
+
+                        var remaning_to_pick = 3 - random_cards.length;
+
+                        console.log("Remaning to pick: " + remaning_to_pick);
+                        while (remaning_to_pick > 0){
+                            /* check if common probability hit */
+                            var common_probability = Math.floor(Math.random() * 100);
+                            if(common_probability < 20){
+                                /* get random */
+                                var _card_id = Math.floor(Math.random() * cards["uncommon"].length);
+                                random_cards.push(cards["uncommon"][_card_id]);
+                                random_cards_ids.push(_card_id+"$uncommon$"+girl_id+"$level1");
+
+                                random_cards[random_cards.length - 1] = random_cards[random_cards.length - 1].replace("//",/\/\//g);
+                                var html_card = document.createElement("div");
+                                html_card.classList.add("click-card");
+                                html_card.classList.add("card2");
+                                html_card.style.width = "200px";
+                                html_card.style.height = "300px";
+                                html_card.style.backgroundImage = 'url("' + random_cards[random_cards.length - 1].replace("//g","//") + '")';
+                                html_cards.push(html_card);
+                            }else{
+                                /* get random */
+                                var _card_id = Math.floor(Math.random() * cards["common"].length);
+                                random_cards.push(cards["common"][_card_id]);
+                                random_cards_ids.push(_card_id+"$common$"+girl_id+"$level1");
+                                random_cards[random_cards.length - 1] = random_cards[random_cards.length - 1].replace("//", "\\");
+
+                                var html_card = document.createElement("div");
+                                html_card.classList.add("click-card");
+                                html_card.classList.add("card3");
+                                html_card.style.width = "200px";
+                                html_card.style.height = "300px";
+                                html_card.style.backgroundImage = 'url("' + random_cards[random_cards.length - 1] + '")';
+                                html_cards.push(html_card);
+                            }
+                            
+                            if (random_cards.length > 1){
+                                if(random_cards[0] === random_cards[1]){
+                                    random_cards.pop();
+                                    random_cards_ids.pop();
+                                    html_cards.pop();
+                                    remaning_to_pick++;
+                                }
+                            }
+                            remaning_to_pick--;
+                        }
+                        
+                        var title = '<div class="title">Hacking Rewards</div>';
+                        
+                            $(".rewards-container").append(title);
+                        /* append to the rewards container */
+                        $(".rewards-container").html("");
+                        html_cards.forEach(function(card){
+                            $(".rewards-container").append(card);
+                        });
+
+                        /* applay click handler on container */
+                        $(".click-card").click(function(){
+                            console.log("clicked");
+                            var img_src = $(this).css("background-image");
+                            var img_src = img_src.replace('url(','').replace(')','').replace(/\"/gi, "");
+                            console.log(img_src);
+                            /* open image in full screen */
+                            var popUp = new Image();
+                            popUp.src = img_src;
+                            popUp.style.height = "100%";
+                            popUp.style.top = "0";
+                            popUp.style.left = "0";
+                            popUp.style.zIndex = "9999";
+                            popUp.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
+                            /* dont fit just cover */
+                            popUp.style.objectFit = "cover";
+
+
+                            /* Create container */
+                            var container = document.createElement("div");
+                            container.style.width = "100%";
+                            container.style.height = "100%";
+                            container.style.display = "flex";
+                            container.style.alignItems = "center";
+                            container.style.justifyContent = "center";
+                            container.style.position = "fixed";
+                            container.style.top = "0";
+                            container.style.left = "0";
+                            container.style.zIndex = "9998";
+                            container.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
+                            container.style.cursor = "pointer";
+                            
+
+                            container.onclick = function(){
+                                $(this).remove();
+                            };
+
+                            container.appendChild(popUp);
+
+
+                    
+                            $(document.body).append(container);
+                        });
+
+
+                        $(".rewards-container").removeClass("not-visible");
+
+                        /* add to inventory */
+                        if(!State.variables.inventory){
+                            State.variables.inventory = {};
+                        }
+
+                        if(!State.variables.inventory){
+                            State.variables.inventory = {};
+                        }
+                        for (var i = 0; i < random_cards_ids.length; i++){
+                            if(!State.variables.inventory[random_cards_ids[i]]){
+                                State.variables.inventory[random_cards_ids[i]] = 0;
+                            }
+                            State.variables.inventory[random_cards_ids[i]] =+1;
+                        }
+                        console.log(State.variables.inventory);
+
+                        /* remove */
+                        $(".hack-bar-fill").off("click");
+                    });
+        }
+    <</script>>
+<</nobr>>
+
+
+:: mc_room_hacking_database
+<<nobr>>
+    <<button "Back" "mc_room_default">>
+        <</button>>
+    <br>
+
+    <br>
+    <div class="hack-database-container">
+        <div class="title">
+            <strong>Database Hacking</strong>
+        </div>
+        <br>
+        <div class="title">
+            Level 1
+        </div>
+        <div class="characters-containers">
+            <<for _index,_girl range $database_haking>>
+                <<if $database_hack_stats[_index] === undefined>>
+                    <<set $database_hack_stats[_index] = {
+                        "char_lvl": 0,
+                        "char_exp": 0,
+                        "char_exp_next": 100,
+                        "process_percentage": 0
+                    }>>
+                <</if>>
+                <<if $database_hack_stats[_index]["char_lvl"] === 0>>
+                    <div @id='_index' class="char-container">
+                        <img class="main-image" src='https://irs.www.warnerbros.com/gallery-v2-jpeg/unknown_posterlarge_1-796659102.jpg'/>
+                        <div class="char-quick-info">
+                            <div class="char-name">
+                                UNKNWON
+                            </div>
+                            <div class="description">
+                                Click to start hacking
+                                Requires <strong>100$</strong>
+                            </div>
+                        </div>
+                    </div>
+                <<else>>
+                    <div @id='_index' class="char-container">
+                        <img class="main-image" @src='_girl["main_image"]'/>
+                        <div class="char-quick-info">
+                            <div class="char-name">
+                                <<print _girl["display_name"]>>
+                            </div>
+                            /* display level in a cool way with a xp bar */
+                            <div class="char-level">
+                                Level: <<print $database_hack_stats[_index]["char_lvl"]>>
+                                <div @id='_index' class="char-xp-bar">
+                                    <div class="char-xp-bar-fill">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <</if>>
+            <</for>>
+            <<script>>
+                $(document).ready(function(){
+                    /* click listener set $selected_girl to #id */
+                    $(".char-container").click(function(){
+                        var id = $(this).attr("id");
+                        State.variables.selected_girl = id;
+                        console.log(State.variables);
+
+
+                        /* Check if is level 0, if it is check if can buy */
+                        if(State.variables.database_hack_stats[id]["char_lvl"] === 0){
+                            /* check if have money */
+                            if(State.variables.money < 100){
+                                return;
+                            }
+                            /* remove money */
+                            State.variables.money -= 100;
+                            /* set level to 1 */
+                            State.variables.database_hack_stats[id]["char_lvl"] = 1;
+                            Engine.play(passage());
+                        }else{
+                        /* go to the page */
+                        Engine.play(State.variables.database_haking[id]["page"]);
+
+                        }
+
+                    });
+
+
+
+                    /* loop through the database and update the xp bar */
+                    $.each(State.variables.database_hack_stats, function(index, value){
+                        var xp_percentage = (value["char_exp"] / value["char_exp_next"]) * 100;
+                        /* check if exist */
+                        if($("#" + index).length === 0){
+                            return;
+                        }
+                        $("#" + index + " .char-xp-bar-fill").css("width", xp_percentage + "%");
+                    });
+                });
+            <</script>>
+        </div>
+
+    </div>
+<</nobr>>

@@ -1,0 +1,86 @@
+:: veronica_routine_boss_room_handler [Veronica Veronica_Routine Veronica_Handler Veronica_Routine_Handler]
+<<wrapper "Boss Room">>\
+    <<nobr>>
+        
+        <<photo "veronica-boos-room-default">>
+        <<say "Veronica" "Veronica">>
+            So... what are you doing here?
+        <</say>>
+
+
+        
+        <<decision_maker "0000">>
+            
+            <<decision "0000" "Conversation" "veronica_routine_boss_room_conversation_decision">>
+            <<decision "0000" "Give a gift" "veronica_routine_boss_room_give_gift">>
+            <<decision "0000" "Flirt" "veronica_routine_boss_room_flirting">>
+            <<decision "0000" "Date" "veronica_routine_boss_room_dates">>
+            <<decision_hard "0000" "Back" "nc_boss_room">>
+        <</decision_maker>>
+
+    <</nobr>>\
+<</wrapper>>
+
+:: veronica_routine_boss_room_conversation_decision [Veronica Veronica_Routine]
+<<nobr>>
+    <<say "Veronica" "Veronica">>
+        I don't have much time, so make it quick.
+    <</say>>
+    
+    <<decision_maker "0001">>
+        <<decision "0001" "Work" "veronica_routine_boss_conversation_work">>
+        <<decision "0001" "Personal" "veronica_routine_boss_conversation_personal">>
+    <</decision_maker>>
+    <br>
+<</nobr>>\
+
+:: veronica_routine_boss_conversation_work [Veronica Veronica_Routine]
+<<nobr>>
+    <<say "Veronica" "Veronica">>
+        We are doing great, but we could do better. I think we need to focus on our marketing strategy.
+    <</say>>
+
+    
+    <<button "Back" "veronica_routine_boss_room_handler">>
+    <</button>>
+<</nobr>>
+
+:: veronica_routine_boss_conversation_personal [Veronica Veronica_Routine]
+<<nobr>>
+    <<say "Veronica" "Veronica">>
+        As long as you don't ask me about my personal life, we are good.
+    <</say>>
+
+    <<button "Back" "veronica_routine_boss_room_handler">>
+    <</button>>
+<</nobr>>
+
+:: veronica_routine_boss_room_give_gift [Veronica Veronica_Routine]
+<<nobr>>
+    <<say "Veronica" "Veronica">>
+        Oh, I don't think I will like it, but thank you.
+    <</say>>
+
+    <<button "Back" "veronica_routine_boss_room_handler">>
+    <</button>>
+<</nobr>>
+
+:: veronica_routine_boss_room_flirting [Veronica Veronica_Routine]
+<<nobr>>
+    <<say "Veronica" "Veronica">>
+        I am not interested in you, so stop it.
+    <</say>>
+
+    <<button "WIP v0.0.2" "veronica_routine_boss_room_handler">>
+    <</button>>
+<</nobr>>
+
+:: veronica_routine_boss_room_dates [Veronica Veronica_Routine]
+<<nobr>>
+    <<say "Veronica" "Veronica">>
+        I am not interested in you, so stop it.
+    <</say>>
+
+    <<button "WIP v0.0.2" "veronica_routine_boss_room_handler">>
+    <</button>>
+<</nobr>>

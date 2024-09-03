@@ -1,0 +1,49 @@
+:: init_database_hack_1
+<<set $database_haking["1"] to {
+            "display_name": "Brittany Cox",
+            "id_name": "brittany_cox",
+            "main_image":"https://i.pinimg.com/originals/56/70/13/567013e65340de3b9214a0199fd10a41.jpg",
+            "page": "testing_page",
+            "info":{
+                "age": 23,
+                "job": "Student",
+                "hobbies": ["Reading", "Coding", "Gaming"],
+                "location": "New York",
+                "status": "Single",
+                "description": "Brittany is a student at NYU, she is studying computer science and she is very passionate about it.",
+                "image_bucket": {
+                    "level1": {
+                        "rare":[
+                            "https://i.ibb.co/27zSp5Q/427968555-1040384813688955-4816134582216814153-n.jpg",
+                        ],
+                        "uncommon": [
+                            "https://i.ibb.co/gyXdymw/310554084-635831584937080-2483315243049527486-n.jpg",
+                            "https://femto.scrolller.com/caitlin-arnett-x3ga9lizlq-1080x1305.jpg"
+                            ],
+                        "common":[
+                            "https://i.ibb.co/zVxqZCr/343996081-623098656353649-3749355984141410116-n.jpg",
+                            "https://i.ibb.co/yXBQpZD/337873412-1695184960898231-8238950677744061519-n.jpg",
+                            "https://i.ibb.co/h11WRXs/336484885-873107973793744-8622982025885501046-n.jpg",
+                            "https://i.ibb.co/jhbK27p/332372996-906376943941616-884149075179255562-n.jpg",
+                            "https://i.ibb.co/6YL23pY/330132878-1706919203064989-3507416914684071671-n.jpg",
+                            "https://i.ibb.co/tPxkHWt/327104210-171751342228074-8728163768431757646-n.jpg",
+                            "https://i.ibb.co/qjpfbLr/310172060-434795711971901-1928253604522652568-n.jpg",
+                            "https://i.ibb.co/dLFcBwf/301026930-158726076814403-5598824203924076955-n.jpg",
+                            "https://i.ibb.co/jMs2xHr/299790904-124574960147537-5895390078687671996-n.jpg",
+                            "https://i.ibb.co/bWrh81d/297827651-544397694143464-2056221776829213830-n.jpg",
+                            "https://i.ibb.co/djmXdHL/54277449-323290108322757-1017899850211068293-n.jpg"
+                        ]
+                    },
+                    "level2": {
+                        "rare":[],
+                        "uncommon": [],
+                        "common":[]
+                    },
+                    "level3": {
+                        "rare":[],
+                        "uncommon": [],
+                        "common":[]
+                    }
+                }
+            }
+        }>>

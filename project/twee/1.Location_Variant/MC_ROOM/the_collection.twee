@@ -1,0 +1,340 @@
+:: mc_room_collection
+<<nobr>>
+    <<button "Back" "mc_room_default">><</button>>
+    <style>
+
+        .main_album_container{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .girl_album_container{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            padding: 10px;
+            border: 2px solid white;
+            border-radius: 10px;
+            background: #550a35;
+            width: 200px;
+            height: 200px;
+        }
+        .girl_album_photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            /* cover and display upper part */
+            object-fit: cover;
+            object-position: 0 0;
+
+        }
+
+
+        .card, .card2, .card3{
+            width: 100px;
+            height: 150px;
+            position: relative;
+            overflow: visible;
+
+            cursor: pointer;
+
+        }
+
+        .rarity-container{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .rarity-title{
+            width: 100%;
+            text-align: center;
+            font-size: 1.5em;
+            color: white;
+            background: #550a35;
+            border: 2px solid white;
+            border-radius: 10px;
+            margin: 5px;
+        }
+
+        .level-title{
+            width: 100%;
+            text-align: center;
+            font-size: 2em;
+            color: white;
+            /* bold */
+            font-weight: bold;
+        }
+
+        
+        .album_title{
+            text-align: center;
+            font-size: 25px;
+            color: white;
+            /* bold */
+            font-weight: bold;
+        }
+
+        .card-quantity{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            transform: translate(50%, 50%);
+            font-size: 15px;
+            color: white;
+            background: #550a35;
+            border: 2px solid white;
+            border-radius: 50%;
+            padding: 5px;
+            width: 15px;
+            height: 15px;
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .album-container{
+            display: none;
+        }
+        .album_header{
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            transition: all 0.5s;
+        }
+        .album_header:hover{
+            background: #875271;
+        }
+        .open-album{
+            width: 100%;
+            height: 100%;
+        }
+        .sell-button{
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translate(50%, -50%);
+            font-size: 15px;
+            color: white;
+            background: green;
+            border: 2px solid white;
+            border-radius: 50%;
+            padding: 5px;
+            width: 15px;
+            height: 15px;
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .reduced-hitbox{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            z-index: 10000;
+        }
+    </style>
+
+
+    <<script>>
+    $(document).ready(function(){
+        $(".album_header").click(function(){
+            /* first or second click */
+            
+            if ($(this).parent().hasClass("open-album")){
+                $(this).parent().removeClass("open-album");
+                $(this).parent().css("flex-direction", "row");
+                $(this).parent().find(".album-container").css("display", "none");
+            }else{
+                $(this).parent().css("flex-direction", "column");
+                $(this).parent().addClass("open-album");
+                $(this).parent().find(".album-container").css("display", "block");
+            }
+        });
+    });
+    <</script>>
+    <div class="main_album_container">
+    /* iterate all girl to create albums of each one disaplying number of cards and not found image if you dont have in inventory */
+        <<for _index,_girl_info range $database_haking>>
+            <div class="girl_album_container album_container-orig">
+                <div class="album_header">
+                    <div class="album_title"> <strong><<print _girl_info.display_name>></strong> </div>
+                    <img class="girl_album_photo" @src='_girl_info.main_image'/>
+                </div>
+                    <div class="album-container">
+                        <<set _girl_image_bucket to _girl_info.info.image_bucket>>
+                        <<set _index to 0>>
+                        <<set _rarity_class to {
+                            "common": "card3",
+                            "uncommon": "card2",
+                            "rare": "card",
+                        }>>
+                        <<for _level_index,_level_info range _girl_image_bucket>>
+                            <<set _index += 1>>
+                            <hr>
+                            <div class="level-title"> Level <<print _index>> </div>
+                            <div class="card-container">
+                                <<for _rarity,_cards range _level_info>>
+                                    <div class="rarity-container">
+                                        <div class="rarity-title"> <<print _rarity>> </div>
+                                        <<for _card_id,_card range _cards>>
+                                            <div @id='_card_id+"$"+_rarity+"$"+_girl_info["id_name"]+"$"+_level_index' @class='_rarity_class[_rarity] + " generic_card"'>
+                                                <div class="reduced-hitbox"></div>
+                                                <div class="card-quantity">  </div>
+                                                <div class="sell-button">$</div>
+                                            </div>
+                                            
+                                        <</for>>
+                                    </div>
+                                <</for>>
+                            </div>
+                        <</for>>
+                        
+                    </div>
+            </div>
+            
+           
+
+            
+            
+            /* <<set _girl_image_bucket to _girl_info.info.image_bucket>>
+            <<set _index to 0>>
+            <<for _level_index,_level_info range _girl_image_bucket>>
+                <<set _index += 1>>
+                <div class="level"> Level <<print _index>> </div>
+            <</for>>
+             */
+
+        <</for>>
+        <<script>>
+        
+                        $(document).ready(function(){
+                            console.log("ready");
+                            console.log(State.variables);
+                            console.log(State.variables.inventory);
+                            $(".generic_card").each(function(){
+                            
+                                var card_ids = $(this).attr("id");
+                                var card_id= card_ids.split("$")[0];
+                                var card_rarity= card_ids.split("$")[1];
+                                var girl_name= card_ids.split("$")[2];
+                                var level= card_ids.split("$")[3];
+                                
+
+                                /* get girl from database_haking DICT*/
+                                var _girl;
+                                for (const [_key, _value] of Object.entries(State.variables.database_haking)) {
+
+                                        if (_value.id_name === girl_name){
+                                            _girl = _value;
+                                        }
+                                };
+                                
+                                var image_card_url = _girl.info.image_bucket[level][card_rarity][card_id];
+                                
+                                /* if image exist */
+                                if (image_card_url){
+                                    /* check if player has at least one */
+
+                                    if (State.variables.inventory[card_ids]){
+                                        console.log(card_ids);
+                                        console.log("found card in inventory");
+                                        console.log(State.variables.inventory[card_ids]);
+
+                                        $(this).find(".card-quantity").text(State.variables.inventory[card_ids]);
+                                        $(this).css("background-image", "url("+image_card_url+")");
+
+                                        /* if click full image */
+
+                                        $(this).find('.reduced-hitbox').click(function(){
+                                            var _image = new Image();
+                                            _image.src = image_card_url;
+                                            _image.style.height = "100%";
+                                            var _container = document.createElement("div");
+                                            _container.style.position = "fixed";
+                                            _container.style.top = "0";
+                                            _container.style.left = "0";
+                                            _container.style.width = "100%";
+                                            _container.style.height = "100%";
+                                            _container.style.background = "rgba(0,0,0,0.5)";
+                                            _container.style.display = "flex";
+                                            _container.style.justifyContent = "center";
+                                            _container.style.alignItems = "center";
+                                            _container.style.zIndex = "10000";
+                                            _container.style.cursor = "pointer";
+                                            _container.appendChild(_image);
+                                            document.body.appendChild(_container);
+                                            
+                                            _container.onclick = function(){
+                                                document.body.removeChild(_container);
+                                            }
+                                        });
+
+
+                                        /* set sell-button event click */
+                                        $(this).find(".sell-button").click(function(){
+                                            /* remove one card from inventory */
+                                            State.variables.inventory[card_ids] -= 1;
+                                            /* update quantity */
+                                            $(this).parent().find(".card-quantity").text(State.variables.inventory[card_ids]);
+
+                                            /* give money based on rarity */
+                                            var money_rarity = {
+                                                "common": 10,
+                                                "uncommon": 50,
+                                                "rare": 500,
+                                            };
+
+                                            State.variables.money += money_rarity[card_rarity];
+                                            $("#money-value").text(State.variables.money);
+
+                                            /* if quantity is 0 */
+                                            if (State.variables.inventory[card_ids] === 0){
+                                                /* set sell-button invisible */
+                                                $(this).css("display", "none");
+                                                $(this).parent().css("background-image", "url('https://irs.www.warnerbros.com/gallery-v2-jpeg/unknown_posterlarge_1-796659102.jpg')");
+                                                /* remove click  */
+                                                $(this).parent().find('.reduced-hitbox').off("click");
+                                                /* remove quanity */
+                                                $(this).parent().find(".card-quantity").text("");
+                                            }
+                                        });
+
+                                    }else{
+                                        /* set sell-button invisible */
+                                        $(this).find(".sell-button").css("display", "none");
+                                        $(this).css("background-image", "url('https://irs.www.warnerbros.com/gallery-v2-jpeg/unknown_posterlarge_1-796659102.jpg')");
+                                    }
+                                }else{
+                                    /* set sell-button invisible */
+                                    $(this).find(".sell-button").css("display", "none");
+                                    $(this).css("background-image", "url('https://irs.www.warnerbros.com/gallery-v2-jpeg/unknown_posterlarge_1-796659102.jpg')");
+                                }
+
+                            });
+                        });
+
+                        <</script>>
+    </div>
+<</nobr>>

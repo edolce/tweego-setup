@@ -1,1 +1,18 @@
 :: map_handler
+<<wrapper "MAP">>
+    <<nobr>>
+        <<choices "City Center">>
+            <<choice-item "hall_handler" "hotel" "Hotel">>
+        <</choices>>
+        <<choices "Entertainment District">>
+            <<choice-item "casino_hall_handler" "casino" "Casino">>
+            <<choice-item "dance_floor_handler" "nightclub" "Nightclub">>
+        <</choices>>
+        <<choices "Wellness Area">>
+            <<choice-item "massage_lobby_handler" "asiatic-massage" "Asiatic Massage">>
+        <</choices>>
+        <<choices "Nature Retreat">>
+            <<choice-item "beach_handler" "beach-resort" "Beach Resort">>
+        <</choices>>
+    <</nobr>>
+<</wrapper>>

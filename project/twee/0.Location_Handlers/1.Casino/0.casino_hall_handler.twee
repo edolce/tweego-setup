@@ -1,0 +1,22 @@
+:: casino_hall_handler
+<<map-place-handler "Casino Hall" "casino_hall_default" true "casino_hall_handler">>
+
+:: casino_hall_default
+<<nobr>>
+
+    <<photo "casino_hall_default">>
+
+    <<choices "People in the room">>
+        <<for _i, _key range Object.keys($characters_in_scene)>>
+            <<choice-item $characters_in_scene[_key] _key _key>>
+        <</for>>
+    <</choices>>
+    
+    <<choices "Where to GO?">>
+        <<choice-item-chosen "casino_hall_handler" "casino-hall" "Hall">>
+        <<choice-item "blackjack_handler" "blackjack" "BlackJack">>
+        <<choice-item "casino_boss_room_handler" "casino-boss-room" "Boss Room">>
+        <<choice-item "map_handler" "map" "Map">>
+    <</choices>>
+
+<</nobr>>

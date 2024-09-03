@@ -1,0 +1,8 @@
+:: beach_claudetthe_routine_handler [Claudette Claudette_Routine Routine_Handler]
+<button data-passage="beach_claudetthe_routine" class="button" type="button" tabindex="0">Claudetthe is here talk to her!</button>
+
+
+:: beach_claudetthe_routine [Claudette Claudette_Routine]
+TEST Claudetthe routine
+<button data-passage="beach_handler" class="button" type="button" tabindex="0">Go back to beach</button>
+

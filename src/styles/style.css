@@ -1,3 +1,7 @@
+html{
+    font: 16px/1 Helmet,Freesans,sans-serif;
+}
+
 body{
     background-image: url("https://i.ibb.co/GtrpGVw/spliced-2000x1186.png");
     background-size: cover;
@@ -19,6 +23,7 @@ body{
 }
 
 .choice-item-container{
+    position: relative;
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 8px;
@@ -79,6 +84,11 @@ body{
 
 .choice-item-container:hover .choice-item-did{
     cursor: pointer;
+}
+
+.chosen .choice-item-ghost{
+    background-color: #ffffffa1 !important;
+    cursor: not-allowed !important;
 }
 
 .choice-item-did{
@@ -153,8 +163,15 @@ body{
 .wrapper {
     width: 100%;
     margin: 0 auto;
-    padding: 5px;
+    padding-top: 5px;
+}
 
+.titel-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 5px;
+    display: flex;
+    justify-content: center;
 }
 
 .title {
@@ -162,7 +179,8 @@ body{
     background-color: #550A35;
     border: 2px solid white;
     border-radius: 5px;
-    padding: 8px 8px 8px 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     box-shadow: 5px 5px 3px black;
     display: block;
     text-align: center;
@@ -223,7 +241,7 @@ hr {
 
 button {
     cursor: pointer;
-    color: 	white;
+    color: 	black;
     height: 50px;
     width: 100px;
     background: gray;
@@ -238,15 +256,131 @@ button {
 }
 
 button:hover {
-    background-color: #001c61;
-    border: solid 1px Turquoise;
-    transition: border-color 0.6s linear;
+    background-color: #550a35;
+    border: solid 1px white;
+    color: white;
+    transition: border-color 0.6s linear color 0.6s linear;
 }
 
 
 
 a .btn:not(.quest):hover, a.btn:not(.quest):hover {
-    background-color: #001c61;
-    border: solid 1px Turquoise;
-    transition: border-color 0.6s linear;
+    background-color: #550a35;
+    border: solid 1px white;
+    color: white;
+    transition: border-color 0.6s linear color 0.6s linear;
+}
+
+.photo_default_fast{
+    display: flex;
+    justify-content: center;
+}
+.photo_default_fast img{
+    border: 2px solid #fff;
+    border-radius: 5px;
+}
+
+.decision-maker-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    row-gap: 25px;
+}
+
+.SUCABLIE{
+    width: 100%;
+}
+
+.decision-item{
+    color: black;
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 8px 8px 8px 8px;
+    box-shadow: 5px 5px 3px black;
+    width: 120px;
+    text-align: center;
+    align-items: center;
+}
+
+.hoverable:hover{
+    cursor: pointer;
+    background-color: #550a35;
+    color: white;
+    border-color: white;
+}
+
+.invisible{
+    display: none;
+}
+
+
+
+.icon-choice{
+    position: absolute;
+    width: 50px;
+    top: -10%;
+    right: -25%;
+    height: 50px;
+    z-index: 10;
+}
+
+.gym-icon-choice{
+    stroke: black;
+    stroke-width: 10px;
+}
+
+
+.work-icon-choice{
+    stroke: black;
+}
+
+
+
+.status_icon_container{
+    position: absolute;
+    bottom: 0;
+    right: -21px;
+    z-index: 10;
+    line-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 0 5px white);
+    
+    
+}
+
+
+.target-icon{
+    
+    stroke: black;
+    stroke-width: 15px;
+}
+
+.status_icon_container svg{
+    height: 30px;
+    width: 30px;
+    stroke: black;
+}
+
+.status_icon_container span{
+    position: absolute;
+    font-size: 12px;
+}
+
+
+
+.affection_icon_container{
+    bottom: 0;
+}
+
+.lust_icon_container{
+    bottom: 20%;
+}
+
+.love_icon_container{
+    bottom: 40%;
 }

@@ -1,0 +1,213 @@
+:: init_kim [Kim Character_Init]
+<<nobr>>
+    <<include init_routine_Kim>>
+    <<include init_stats_kim>>
+    /*
+    <<set $characters.ivy to {
+        name: "Ivy",
+        desc: "Guard",
+        img: "https://pbs.twimg.com/media/CnbaOa7VIAAUDty.jpg:large",
+        events: $forced_events.ivy,
+        routine: $routine_events.ivy,
+        stats: $statistics.ivy
+    }>> */
+
+    <<set $characters.kim to {
+        name: "Kim",
+        desc: "Model",
+        category: "Nightclub",
+        img: "https://img-9gag-fun.9cache.com/photo/awzAAzr_460s.jpg",
+        events: $forced_events.kim,
+        routine: $routine_events.kim,
+        stats: $statistics.kim
+    }>>
+<</nobr>>
+
+:: init_stats_kim [Kim Stats_Init]
+<<nobr>>
+    <<set $stats_kim to {
+        "affection": 0,
+        "love": 0,
+        "lust": 0
+    }>>
+    <<set $statistics["kim"] to $stats_kim>>
+<</nobr>>
+
+:: init_routine_Kim [Kim Routine_Init]
+<<nobr>>
+    <<set $routine_kim to {
+        
+        /* MONDAY */
+        "Monday": {
+            "morning":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "kim_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "kim_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "evening":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "kim_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "kim_working_model_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* TUESDAY */
+        "Tuesday": {
+            "morning":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "kim_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "kim_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "evening":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "kim_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "kim_working_model_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* WEDNESDAY */
+        "Wednesday": {
+            "morning":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "kim_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "kim_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "evening":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "kim_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "kim_working_model_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* THURSDAY */
+        "Thursday": {
+            "morning":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "kim_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "kim_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "evening":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "kim_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "kim_working_model_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* FRIDAY */
+        "Friday": {
+            "morning":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "kim_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "kim_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "evening":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "kim_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "kim_working_model_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* SATURDAY */
+        "Saturday": {
+            "morning":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "kim_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "kim_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "evening":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "kim_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "kim_working_model_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* SUNDAY */
+        "Sunday": {
+            "morning":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "kim_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "kim_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "evening":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "kim_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "kim_working_model_handler",
+                "icon": "work_icon_choice"
+            }
+        }
+    }
+    >>
+
+    <<set $routine_events.kim to $routine_kim>>
+<</nobr>>
+
+    

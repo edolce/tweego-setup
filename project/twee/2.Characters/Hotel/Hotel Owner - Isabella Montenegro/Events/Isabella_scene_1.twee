@@ -1,0 +1,69 @@
+:: isabella_scene_1 [Isabella Isabella_Scene]
+<<nobr>>
+    <<flag-forced-event "isabella_scene_1">>
+
+    <<fast_image "https://i.ibb.co/fNgdpMm/immagine-2024-05-27-101802153.png">>
+
+    <<say "isabella" "Isabella">>
+    Welcome, my dear $playername. It's a pleasure to have you here. I'm Isabella, the manager of this exquisite hotel.
+    Allow me to personally show you around and make sure your stay is nothing short of extraordinary. Shall we begin our tour?
+    <</say>>
+
+    <<say "Player" "$playername">>
+        *wow this manager has a stunning beauty, I can't wait to see the hotel*
+    <</say>>
+
+    <<say "Player" "$playername">>
+    Yes, I'd love to see what your luxurious hotel has to offer.    
+    <</say>>
+
+    <<say "isabella" "Isabella">>
+    Wonderful! Let's start with the grand atrium, where you'll be awed by the opulent architecture and the refined ambiance that permeates the entire building. From there, we'll make our way to the lavish suites, exquisitely furnished to provide you with the utmost comfort and relaxation.
+    <</say>>
+
+    <<say "Player" "$playername">>
+    Everything looks so elegant and inviting. I can already tell that this will be an unforgettable experience.
+    <</say>>
+
+    <<say "isabella" "Isabella">>
+    I'm delighted to hear that. Next, we'll explore the wellness area, a tranquil oasis where you can indulge in rejuvenating treatments and massages. Our spa offers a wide range of exclusive services to pamper you and leave you feeling completely refreshed.    
+    <</say>>
+
+    <<say "Player" "$playername">>
+    That sounds absolutely divine. I can't wait to unwind and let go of all my stress.
+    <</say>>
+
+    <<say "isabella" "Isabella">>
+    You're in for a treat, my dear. But let's not forget about our gourmet restaurant, where our talented chefs create culinary delights that will satisfy even the most discerning palates. I can promise you an extraordinary gastronomic experience.
+    <</say>>
+
+    <<say "Player" "$playername">>
+    I'm a food lover, so I'm really looking forward to indulging in some exquisite dishes.
+    <</say>>
+
+    <<say "isabella" "Isabella">>
+        Lastly, if you're in the mood for some fun, we have an exclusive nightclub within the hotel. You can dance the night away and create unforgettable moments.
+    <</say>>
+
+    <<say "Player" "$playername">>
+        That sounds exciting! I'll definitely make sure to check out the nightclub during my stay.
+    <</say>>
+
+    <<say "isabella" "Isabella">>
+        I'm thrilled that you're enjoying the tour so far. If you have any questions or specific requests, please don't hesitate to ask. I'm here to ensure that your stay is truly fantastic.
+    <</say>>
+
+    <<say "Player" "$playername">>
+        Thank you, Isabella. I'm already amazed by the beauty and luxury of your hotel. I can't wait to explore everything it has to offer.
+    <</say>>
+
+    <<say "isabella" "Isabella">>
+         It's my pleasure, darling. I'm confident that your experience here will be beyond your wildest expectations. Enjoy your stay, and if there's anything you need, remember that I'm just a call away.
+    <</say>>
+
+    <<set $temp3 to {"affection": 0.5}>>
+    <<status_change "isabella" $temp3>>
+
+    <<button "Continue" "hall_handler">>
+    <</button>>
+<</nobr>>

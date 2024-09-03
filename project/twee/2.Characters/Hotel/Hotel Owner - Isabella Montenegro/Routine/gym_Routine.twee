@@ -1,0 +1,145 @@
+:: isabella_routine_gym_handler [Isabella Isabella_Routine Routine_Handler Isabella_Routine_Handler]
+<<wrapper "Hotel Gym">>\
+    <<nobr>>
+        
+        <<photo "isabella-gym-default">>
+        <<say "Isabella" "Isabella">>
+           Ehy Darling! I'm in the middle of my workout, but I can take a break. What's up?
+        <</say>>
+        
+        <<decision_maker "0000">>
+            <<decision "0000" "Conversation" "isabella_routine_gym_conversation_decision">>
+            <<decision "0000" "Compliment" "isabella_routine_gym_compliment_decision">>
+            <<decision "0000" "Workout with her" "isabella_routine_gym_workout_decision">>
+            <<decision_hard "0000" "Back" "hotel_gym_handler">>
+        <</decision_maker>>
+
+    <</nobr>>\
+<</wrapper>>
+
+:: isabella_routine_gym_conversation_decision [Isabella Isabella_Routine]
+<<nobr>>
+    <<say "Player" "Player">>
+        I just wanted to chat a bit. How's your day going?
+    <</say>>
+    <<say "Isabella" "Isabella">>
+        It's going great! I'm feeling really good today. I'm glad you came to talk to me.
+    <</say>>
+
+    /* check if instagram is under attack, if yes add button to ask for his favorite sport */
+    <<if $instagram_info.isabella !== undefined>>
+        <<if $instagram_info.isabella.sport === undefined>>
+            <<button "Ask about her favorite sport" "isabella_routine_gym_favorite_sport_decision">>
+            <</button>>
+        <<else>>
+                            
+
+                <<set $temp3 to {
+                    "affection": 0.1,
+                    "cooldown": {
+                        "id": "isabella_gym_conversation",
+                        "days": 1
+                    }
+                    }>>
+                <<status_change_fake "isabella" $temp3>>
+
+                <<button "Continue" "isabella_routine_gym_handler">>
+                        <<set $temp3 to {
+                        "affection": 0.1,
+                        "cooldown": {
+                            "id": "isabella_gym_conversation",
+                            "days": 1
+                        }
+                        }>>
+                        <<status_change "isabella" $temp3>>
+                <</button>>
+        <</if>>
+    <<else>>
+        
+
+    <<set $temp3 to {
+        "affection": 0.1,
+        "cooldown": {
+            "id": "isabella_gym_conversation",
+            "days": 1
+        }
+        }>>
+    <<status_change_fake "isabella" $temp3>>
+
+    <<button "Continue" "isabella_routine_gym_handler">>
+            <<set $temp3 to {
+            "affection": 0.1,
+            "cooldown": {
+                "id": "isabella_gym_conversation",
+                "days": 1
+            }
+            }>>
+            <<status_change "isabella" $temp3>>
+    <</button>>
+
+    <</if>>
+
+<</nobr>>
+
+:: isabella_routine_gym_favorite_sport_decision
+<<nobr>>
+    <<say "Player" "Player">>
+        What's your favorite sport?
+    <</say>>
+    <<say "Isabella" "Isabella">>
+        I love cheerleading! I used to be a cheerleader in high school, and I still love to practice my moves. It's a great way to stay in shape and have fun at the same time.
+    <</say>>
+
+    <<set $instagram_info.isabella.sport to "Cheerleading">>
+
+    
+    <<set $temp3 to {
+        "affection": 0.1,
+        "cooldown": {
+            "id": "isabella_gym_conversation",
+            "days": 1
+        }
+        }>>
+
+    <<status_change_fake "isabella" $temp3>>
+
+    <<button "Continue" "isabella_routine_gym_handler">>
+            <<set $temp3 to {
+            "affection": 0.1,
+            "cooldown": {
+                "id": "isabella_gym_conversation",
+                "days": 1
+            }
+            }>>
+            <<status_change "isabella" $temp3>>
+    <</button>>
+<</nobr>>
+
+:: isabella_routine_gym_compliment_decision [Isabella Isabella_Routine]
+<<nobr>>
+    <<say "Player" "Player">>
+        You're looking great today, Isabella.
+    <</say>>
+    <<say "Isabella" "Isabella">>
+        Aww, thank you! You're so sweet. I'm really trying to stay in shape, so I appreciate the compliment.
+    <</say>>
+
+    <<button "Continue" "isabella_routine_gym_handler">>
+    <</button>>
+<</nobr>>
+
+
+:: isabella_routine_gym_workout_decision [Isabella Isabella_Routine]
+<<nobr>>
+    <<say "Player" "Player">>
+        Mind if I join you for a workout?
+    <</say>>
+    <<say "Isabella" "Isabella">>
+        Not at all! I'd love the company. Let's get started.
+    <</say>>
+
+    <<button "WIP V0.0.2" "isabella_routine_gym_handler">>
+    <</button>>
+<</nobr>>
+
+

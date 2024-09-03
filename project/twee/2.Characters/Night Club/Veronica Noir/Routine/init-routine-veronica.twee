@@ -1,0 +1,141 @@
+:: init_rotuine_veronica_noir [Veronica Routine_Init]
+<<nobr>>
+    <<set $routine_veronica to {
+        
+        /* MONDAY */
+        "Monday": {
+            "morning":{
+                "trigger_passage": "nc_boss_room",
+                "display_trigger_event": "veronica_routine_boss_room_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "nc_boss_room",
+                "display_trigger_event": "veronica_routine_boss_room_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "nc_boss_room",
+                "display_trigger_event": "veronica_routine_boss_room_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* TUESDAY */
+        "Tuesday": {
+            "morning":{
+                "trigger_passage": "nc_boss_room",
+                "display_trigger_event": "veronica_routine_boss_room_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "nc_boss_room",
+                "display_trigger_event": "veronica_routine_boss_room_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "nc_boss_room",
+                "display_trigger_event": "veronica_routine_boss_room_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* WEDNESDAY */
+        "Wednesday": {
+            "morning":{
+                "trigger_passage": "nc_boss_room",
+                "display_trigger_event": "veronica_routine_boss_room_handler",
+                "icon": "work_icon_choice" 
+            },
+            "afternoon":{
+                "trigger_passage": "nc_boss_room",
+                "display_trigger_event": "veronica_routine_boss_room_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "nc_boss_room",
+                "display_trigger_event": "veronica_routine_boss_room_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* THURSDAY */
+        "Thursday": {
+            "morning":{
+                "trigger_passage": "nc_boss_room",
+                "display_trigger_event": "veronica_routine_boss_room_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "nc_boss_room",
+                "display_trigger_event": "veronica_routine_boss_room_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "nc_boss_room",
+                "display_trigger_event": "veronica_routine_boss_room_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* FRIDAY */
+        "Friday": {
+            "morning":{
+                "trigger_passage": "nc_boss_room",
+                "display_trigger_event": "veronica_routine_boss_room_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "nc_boss_room",
+                "display_trigger_event": "veronica_routine_boss_room_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "nc_boss_room",
+                "display_trigger_event": "veronica_routine_boss_room_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* SATURDAY */
+        "Saturday": {
+            "morning":{
+                "trigger_passage": "nc_boss_room",
+                "display_trigger_event": "veronica_routine_boss_room_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "nc_boss_room",
+                "display_trigger_event": "veronica_routine_boss_room_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "nc_boss_room",
+                "display_trigger_event": "veronica_routine_boss_room_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* SUNDAY */
+        "Sunday": {
+            "morning":{
+                "trigger_passage": "nc_boss_room",
+                "display_trigger_event": "veronica_routine_boss_room_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "nc_boss_room",
+                "display_trigger_event": "veronica_routine_boss_room_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "nc_boss_room",
+                "display_trigger_event": "veronica_routine_boss_room_handler",
+                "icon": "work_icon_choice"
+            }
+        }
+    }
+    >>
+
+    <<set $routine_events.veronica to $routine_veronica>>
+<</nobr>>

@@ -13,21 +13,72 @@
 
 
 :: mc_room_hacking_hack_device
-<<wrapper "ROOM | PC | HACKING | HACK DEVICE">>
+<<wrapper "ROOM | PC | HACKING | HACK PERSON">>
 <<nobr>>
     <<photo "pc_room_photo">>
     <<say "Player" "$playername">>Hacking...<</say>>
     <<choices "What to DO?">>
+        <<choice-item "mc_room_hacking_database" "hack" "Database">>
+
         <<for _key, _value range $hack_list>>
             <<if !_value["hacked"]>>
                 <<choice-item _value['passage'] _value['icon'] _value['text']>>
-        <</if>>
+            <</if>>
         <</for>>
 
     <</choices>>
-    <<button "Go Back" "mc_room_hacking">><</button>>
+    <<button "Go Back" "mc_room_pc">><</button>>
     <</nobr>>
 <</wrapper>>
+
+:: hack_isabella
+<<wrapper "ROOM | PC | HACKING | HACK DEVICE | ISABELLA">>\
+<<nobr>>
+    <<photo "pc_room_photo">>
+
+    <<choices "What to HACK?">>
+        <<if $instagram_info.isabella !== undefined>>
+            <<choice-item "hack_isabella_instagram" "instagram" "Instagram">>
+        <</if>>
+    <</choices>>
+    <<button "Go Back" "mc_room_hacking_hack_device">><</button>>
+    <</nobr>>
+<</wrapper>>
+
+:: hack_isabella_instagram
+<<wrapper "ROOM | PC | HACKING | HACK DEVICE | ISABELLA | INSTAGRAM">>\
+<<nobr>>
+
+    <<if $instagram_info.isabella.hacked>>
+        <<narrator>>
+        You have already hacked her Instagram account.
+        <</narrator>>
+    <<else>>
+        <<photo "pc_room_photo">>
+        <<say "Player" "$playername">>
+        I remember that I have some info about Isabella's Instagram account. Let's see if I can hack it.
+        <</say>>
+        <<narrator>>
+            In order to hack ''Isabella's instagram'' you have to know:
+            <br>
+            Dog's name: <<if $instagram_info.isabella.dog_name === undefined>> ''???'' ❌ (Find this in a main event)<<else>> ''$instagram_info.isabella.dog_name'' ✅<</if>> 
+            <br>
+            Favourite Sport: <<if $instagram_info.isabella.sport === undefined>> ''???'' ❌ (Find this in a routine event)<<else>> ''$instagram_info.isabella.sport'' ✅<</if>>
+            <br>
+            Affection: ''<<print $statistics.isabella.affection>>''/10 <<if $statistics.isabella.affection >= 10>>✅<<else>>❌<</if>>
+        <</narrator>>
+        
+        <<if $hack_list.isabella.affection >= 10 and $instagram_info.isabella.sport !== undefined and $instagram_info.isabella.dog_name !== undefined>>
+            <<button "HACK INSTAGRAM" "hack_isabella_instagram">>
+            <<set $instagram_info.isabella.hacked = true>>
+            <</button>>
+        <</if>>
+    
+    <</if>>
+    <<button "Go Back" "hack_isabella">><</button>>
+    <</nobr>>
+<</wrapper>>
+
 
 :: hack_receptionist
 <<wrapper "ROOM | PC | HACKING | HACK DEVICE | RECEPTIONIST">>\

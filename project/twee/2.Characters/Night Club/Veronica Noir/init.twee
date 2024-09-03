@@ -1,0 +1,29 @@
+:: init_veronica
+<<nobr>>
+    <<include "init_rotuine_veronica_noir">>
+    <<include "veronica-events-init">>
+    
+    <<set $characters.veronica to {
+        name: "Veronica",
+        desc: "Night Club Owner",
+        category: "Nightclub",
+        img: "https://pbs.twimg.com/media/GJmHBPRWIAAbc-T.jpg:large",
+        events: $forced_events.veronica,
+        routine: $routine_events.veronica,
+        stats: $statistics.veronica,
+        main_events_info: "veronica_main_events_info",
+        routine_info: "veronica_routine_info",
+    }>>
+<</nobr>>
+
+
+:: veronica_main_events_info
+<<nobr>>
+    <<main_events_info "veronica">>
+<</nobr>>
+
+
+:: veronica_routine_info
+<<nobr>>
+    <<routine_info "veronica">>
+<</nobr>>

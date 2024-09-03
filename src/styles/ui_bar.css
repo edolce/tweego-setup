@@ -1,11 +1,42 @@
 #ui-bar {
-    background-color: #021120;
+    background-color: #111;
     box-shadow: 0 0 20px black;
     border: 0;
 }
+.btn.med {
+    padding: 4px 20px 7px 20px;
+    height: auto !important;
+    font-size: 100%;
+    background-position: 12px 9px !important;
+    color: #111;
+}
 
-#ui-bar * {
-    font-family: 'Open Sans';
+#menu li a{
+    color: #111;
+}
+
+#menu li a:hover{
+    color: #fff;
+}
+
+.avatarBig{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.avatarBig img{
+    width: 80%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 5px 5px 3px black;
+}
+
+.ui-title{
+    font-size: 20px;
+    font-weight: 900;
+    margin-top: 30px;
 }
 
 #ui-bar-toggle {
@@ -13,12 +44,12 @@
 }
 
 #ui-bar-toggle, #history-backward, #history-forward {
-    background-color: #0b0e17 !important;
+    background-color: #2d2d2d !important;
     width: -moz-fit-content !important;
     width: fit-content !important;
     font-weight: 900 !important;
     border: 1px solid transparent !important;
-    color: #839fbb !important;
+    color: #fff !important;
 }
 
 #ui-bar-body {
@@ -50,7 +81,7 @@
     text-align: center;
     font-size: 120%;
     line-height: 165%;
-    background-color: #151b3e;
+    background-color: #fff;
     background-repeat: no-repeat;
     border: 1px solid black;
 }
@@ -68,11 +99,49 @@
 }
 
 #ui-bar-body::-webkit-scrollbar-thumb, #ui-dialog-body::-webkit-scrollbar-thumb {
-    background-color: #004171;
+    background-color: #a5a5a5;
 }
 
 #ui-bar-body::-webkit-scrollbar, #ui-dialog-body::-webkit-scrollbar {
     width: 10px;
     background-color: #eee;
     cursor: pointer;
+}
+
+
+/*PASSAGE HEADER*/
+#passage-header{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#passage-header .container{
+    background-color: #550a35;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 20px black;
+    color: #fff;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    margin-bottom: 5px;
+}
+
+#passage-header .day{
+    font-size: 15px;
+    font-weight: 900;
+}
+
+#passage-header .weekday{
+    font-size: 15px;
+    font-weight: 900;
+}
+
+#passage-header .time{
+    font-size: 15px;
+    font-weight: 900;
 }

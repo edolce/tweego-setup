@@ -1,0 +1,48 @@
+:: init_database_hack_5
+<<set $database_haking["5"] to {
+            "display_name": "Gina Peralta",
+            "id_name": "gina_peralta",
+            "main_image":"https://i.ibb.co/jVBr9QF/377514469-838632254394620-4048661717868417408-n.jpg",
+            "page": "testing_page",
+            "price": 100,
+            "info":{
+                "age": 23,
+                "job": "Student",
+                "hobbies": ["Reading", "Coding", "Gaming"],
+                "location": "New York",
+                "status": "Single",
+                "description": "Brittany is a student at NYU, she is studying computer science and she is very passionate about it.",
+                "image_bucket": {
+                    "level1": {
+                        "rare":[
+                            "https://s10.gifyu.com/images/SYqNJ.gif",
+                            "https://i.ibb.co/7CFR8KQ/369634493-822941982630314-9210131579982960631-n.jpg"
+
+                        ],
+                        "uncommon": [
+                            "https://i.ibb.co/877NJNk/GG3-Pz-OFWg-AIzb-MU.jpg",
+                            "https://i.ibb.co/YR14Pnn/GMfn-ZWJXEAA67uf.jpg"
+                        ],
+                        "common":[
+                            "https://i.ibb.co/8bqbn86/GO7-DOTf-XUAALe-F.jpg",
+                            "https://i.ibb.co/GJqGvdK/GOuo-V8b-WYAA9z-VH.jpg",
+                            "https://i.ibb.co/9N5HHHr/GOk5j9f-Xw-AEoze-E.jpg",
+                            "https://i.ibb.co/gT1dp1P/GLrd-Kn-Xo-AEn-Ov7.jpg",
+                            "https://i.ibb.co/mXbrLLL/GLgy9m-Xs-AE-GNc.jpg",
+                            "https://i.ibb.co/ggWDC9R/GKu-ER1-EWUAIIl-L1.jpg",
+                            "https://i.ibb.co/wz2CPVV/GKFr-XMYWUAAWHTD.jpg",
+                        ]
+                    },
+                    "level2": {
+                        "rare":[],
+                        "uncommon": [],
+                        "common":[]
+                    },
+                    "level3": {
+                        "rare":[],
+                        "uncommon": [],
+                        "common":[]
+                    }
+                },
+            }
+        }>>

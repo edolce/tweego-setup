@@ -1,0 +1,337 @@
+:: isabella_work_handler [Isabella Isabella_Routine Routine_Handler Isabella_Routine_Handler]
+<<wrapper "Hotel Office">>\
+    <<nobr>>
+    <<photo "isabella-office-default">>
+    <<say "Isabella" "Isabella">>
+        Well, well, well, look who decided to pay me a visit. I must say. What brings you here today?
+    <</say>>
+    
+    <<decision_maker "0000">>
+        <<decision "0000" "Conversation" "isabella_work_conversation_decision">>
+        <<decision "0000" "Give a gift" "isabella_work_give_gift">>
+        <<decision "0000" "Flirt" "isabella_work_flirting">>
+        <<decision "0000" "Date" "isabella_work_dates">>
+        <<decision_hard "0000" "Back" "hotel_office_handler">>
+    <</decision_maker>>
+    <</nobr>>\
+<</wrapper>>
+
+
+/* CONVERSATION DECISION */
+
+:: isabella_work_conversation_decision [Isabella Isabella_Routine  ]
+    <<nobr>>
+    <<say "Isabella" "Isabella">>
+        So, what would you like to talk about?
+    <</say>>
+    
+    <<decision_maker "0001">>
+        <<decision "0001" "Work" "isabella_work_conversation_work">>
+        <<decision "0001" "Personal" "isabella_work_conversation_personal">>
+    <</decision_maker>>
+    <br>
+    <</nobr>>\
+
+
+:: isabella_work_conversation_work [Isabella Isabella_Routine  ]
+<<nobr>>
+    <<say "Isabella" "Isabella">>
+        Work is going well. I'm making progress on the project. I'm excited to see how it turns out.
+    <</say>>
+
+    /* STATUS CHANGE */
+    <<set $temp3 to {
+            "affection": 0.1,
+            "cooldown": {
+                "id": "isabella_work_conversation_work",
+                "days": 1
+            }
+            }>>
+    <<status_change_fake "isabella" $temp3>>
+
+    <<button "Back" "isabella_work_handler">>
+        <<set $temp3 to {
+            "affection": 0.1,
+            "cooldown": {
+                "id": "isabella_work_conversation_work",
+                "days": 1
+            }
+            }>>
+        <<status_change "isabella" $temp3>>
+    <</button>>
+<</nobr>>
+
+:: isabella_work_conversation_personal [Isabella Isabella_Routine  ]
+
+    <<nobr>>
+        <<say "Isabella" "Isabella">>
+            I'm doing well. I'm excited to see how the project turns out. I'm also excited to see how things go with you.
+        <</say>>
+
+        /* STATUS CHANGE */
+        <<set $temp3 to {
+            "affection": 0.1,
+            "cooldown": {
+                "id": "isabella_work_conversation_personal",
+                "days": 1
+            }
+            }>>
+        <<status_change_fake "isabella" $temp3>>
+
+        <<button "Back" "isabella_work_handler">>
+            <<set $temp3 to {
+            "affection": 0.1,
+            "cooldown": {
+                "id": "isabella_work_conversation_personal",
+                "days": 1
+            }
+            }>>
+            <<status_change "isabella" $temp3>>
+        <</button>>
+    <</nobr>>
+
+/* GIVE A GIFT */
+:: isabella_work_give_gift [Isabella Isabella_Routine  ]
+
+    <<nobr>>
+    <<say "Isabella" "Isabella">>
+        Oh, you got me a gift? How sweet of you. What is it?
+    <</say>>
+    <<narrator>> WORK IN PROGRESS V 0.0.2<</narrator>>
+    <<button "Back" "isabella_work_handler">>
+    <</button>>
+    <</nobr>>
+
+:: isabella_work_flirting_hug_failed
+<<nobr>>
+    <<say "Isabella" "Isabella">>
+        I'm sorry, but I'm not ready for that yet.
+    <</say>>
+    <<button "Back" "isabella_work_handler">>
+    <</button>>
+<</nobr>>
+
+:: isabella_work_flirting_kiss_failed
+<<nobr>>
+    <<say "Isabella" "Isabella">>
+        What are you doing? I'm not ready for that yet.
+    <</say>>
+    
+    <<set $temp3 to {"affection": -0.1}>>
+    <<status_change_fake "isabella" $temp3>>
+
+    <<button "Back" "isabella_work_handler">>    
+        <<set $temp3 to {"affection": -0.1}>>
+        <<status_change "isabella" $temp3>>
+    <</button>>
+<</nobr>>
+:: isabella_work_flirting_show_body_failed
+
+:: isabella_work_flirting_boobs_failed
+
+:: isabella_work_flirting_pussy_failed
+
+:: isabella_work_flirting_sex_failed
+
+:: isabella_work_flirting_blowjob_failed
+
+/* FLIRTING */
+:: isabella_work_flirting [Isabella Isabella_Routine  ]
+/* WIP */
+    <<nobr>>
+    <<set $hug_req_isabella to {
+        "character": "isabella",
+        "stats": {
+            "affection": 10,
+            "love": 0,
+            "lust": 0,
+        },
+        "failed": "isabella_work_flirting_hug_failed",
+    }>>
+
+    <<set $kiss_req_isabella to {
+        "character": "isabella",
+        "stats": {
+            "affection": 20,
+            "love": 0,
+            "lust": 0,
+        },
+        "failed": "isabella_work_flirting_kiss_failed",
+    }>>
+
+    <<set $show_body_req_isabella to {
+        "character": "isabella",
+        "stats": {
+            "affection": 50,
+            "love": 0,
+            "lust": 20,
+        },
+        "failed": "isabella_work_flirting_show_body_failed",
+    }>>
+
+    <<set $show_boobs_req_isabella to {
+        "character": "isabella",
+        "stats": {
+            "affection": 70,
+            "love": 10,
+            "lust": 30,
+        },
+        "failed": "isabella_work_flirting_boobs_failed",
+    }>>
+
+    <<set $show_pussy_req_isabella to {
+        "character": "isabella",
+        "stats": {
+            "affection": 90,
+            "love": 40,
+            "lust": 25,
+        },
+        "failed": "isabella_work_flirting_pussy_failed",
+    }>>
+
+    <<set $blowjob_req_isabella to {
+        "character": "isabella",
+        "stats": {
+            "affection": 100,
+            "love": 45,
+            "lust": 45,
+        },
+        "failed": "isabella_work_flirting_blowjob_failed",
+    }>>
+
+    <<set $sex_req_isabella to {
+        "character": "isabella",
+        "stats": {
+            "affection": 100,
+            "love": 50,
+            "lust": 50
+        },
+        "failed": "isabella_work_flirting_sex_failed",
+    }>>
+
+
+
+
+
+
+    <<decision_maker "0001">>
+        <<decision-requirments "0001" "Hug" "isabella_work_flirting_hug" $hug_req_isabella>>
+        <<decision-requirments "0001" "Kiss" "isabella_work_flirting_kiss" $kiss_req_isabella>>
+        <<decision-requirments "0001" "Show Body" "isabella_work_flirting_show_body" $show_body_req_isabella>>
+        <<decision-requirments "0001" "Show Boobs" "isabella_work_flirting_boobs" $show_boobs_req_isabella>>
+        <<decision-requirments "0001" "Show Pussy" "isabella_work_flirting_pussy" $show_pussy_req_isabella>>
+        <<decision-requirments "0001" "Blowjob" "isabella_work_flirting_blowjob" $blowjob_req_isabella>>
+        <<decision-requirments "0001" "Vaginal Sex" "isabella_work_flirting_sex" $sex_req_isabella>>
+        <<decision_hard "0001" "Back" "hotel_office_handler">>
+    <</decision_maker>>
+    <</nobr>>
+
+:: isabella_work_flirting_hug
+<<nobr>>
+    <<say "Isabella" "Isabella">>
+        Sure, come here!
+    <</say>>
+    <<fast_image "https://lifeaccordingtodundermifflin.wordpress.com/wp-content/uploads/2016/03/tumblr_lglz8wekae1qel0uho1_500.gif?w=700">>
+    <<button "Back" "isabella_work_handler">>
+    <</button>>
+<</nobr>>
+
+
+
+:: isabella_work_flirting_kiss
+<<nobr>>
+    <<say "Isabella" "Isabella">>
+        Sure, come here!
+    <</say>>
+    <<fast_image "https://lifeaccordingtodundermifflin.wordpress.com/wp-content/uploads/2016/03/tumblr_lglz8wekae1qel0uho1_500.gif?w=700">>
+    <<button "Back" "isabella_work_handler">>
+    <</button>>
+<</nobr>>
+
+
+:: isabella_work_flirting_show_body
+<<nobr>>
+    <<fast_image "https://cdni.hotnakedwomen.com/1280/7/107/48919669/48919669_026_4570.jpg">>
+    <<say "Isabella" "Isabella">>
+        I'm not sure that you are ready for it...
+    <</say>>
+
+
+    <<fast_image "https://cdni.nakedpornpics.com/1280/7/107/48919669/48919669_045_30b3.jpg">>
+
+    <<decision_maker "0002">>
+        <<decision "0002" "Squat Position" "isabella_work_flirting_show_body_squat">>
+        <<decision "0002" "Bend Over" "isabella_work_flirting_show_body_bend">>
+    <</decision_maker>>
+<</nobr>>
+
+:: isabella_work_flirting_show_body_squat
+<<nobr>>
+    <<say "Isabella" "Isabella">>
+        Oh, you like what you see? Why don't you come closer and touch me?
+    <</say>>
+    <<fast_image "https://cdni.hotnakedwomen.com/1280/5/7/61496213/61496213_015_407c.jpg">>
+    <<button "Back" "isabella_work_handler">>
+    <</button>>
+<</nobr>>
+
+:: isabella_work_flirting_show_body_bend
+<<nobr>>
+    <<say "Isabella" "Isabella">>
+        Oh, you like what you see? Why don't you come closer and touch me?
+    <</say>>
+    <<fast_image "https://cdni.pornpics.com/1280/5/238/12223658/12223658_003_2cdf.jpg">>
+    <<button "Back" "isabella_work_handler">>
+    <</button>>
+<</nobr>>
+
+
+:: isabella_work_flirting_boobs
+<<nobr>>
+    <<say "Isabella" "Isabella">>
+        Do you think you deserve to see them?
+    <</say>>
+    <<fast_image "https://s12.gifyu.com/images/SYM89.gif">>
+    <<say "Isabella" "Isabella">>
+        I'm not sure that you are ready for it...
+    <</say>>
+    <<fast_image "https://s12.gifyu.com/images/SYM8m.gif">>
+    <<say "Isabella" "Isabella">>
+        Come closer and touch them.
+    <</say>>
+    <<fast_image "https://s12.gifyu.com/images/SYM8v.gif">>
+    <<say "Isabella" "Isabella">>
+        Oh yes baby, touch them.
+    <</say>>
+
+    <<button "Back" "isabella_work_handler">>
+    <</button>>
+<</nobr>>
+
+
+
+:: isabella_work_flirting_pussy
+<<nobr>>
+    <<say "Isabella" "Isabella">>
+        Oh, you like what you see? Why don't you come closer and touch me?
+    <</say>>
+    <<fast_image "https://cdni.pornpics.com/1280/5/183/46141290/46141290_015_33ff.jpg">>
+    <<button "Back" "isabella_work_handler">>
+    <</button>>
+<</nobr>>
+
+:: isabella_work_flirting_blowjob
+
+:: isabella_work_flirting_sex
+
+/* DATES */
+:: isabella_work_dates [Isabella Isabella_Routine  ]
+
+    <<nobr>>
+    <<say "Isabella" "Isabella">>
+        Oh, you want to go on a date with me? I must say, I'm flattered. But I'm not sure if I'm ready for that yet.
+    <</say>>
+    <<narrator>> WORK IN PROGRESS V 0.0.2 <</narrator>>
+    <<button "Back" "isabella_work_handler">>
+    <</button>>
+    <</nobr>>

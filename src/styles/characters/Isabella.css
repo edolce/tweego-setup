@@ -1,0 +1,40 @@
+.isabella-chat{
+    background-image: url("https://i.ibb.co/Mgkg6sM/immagine-2024-05-26-195342851.png");
+    background-size: cover;
+    display: block;
+    margin: auto;
+    padding: 1px;
+    height: 84px;
+    width: 84px;
+    float: left;
+    margin: 0px 10px 0px 0px;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.choice-isabella{
+    background-image: url("https://i.ibb.co/Mgkg6sM/immagine-2024-05-26-195342851.png");
+}
+
+.choice-hanna{
+    background-image: url("https://i.ibb.co/hySc8zG/324855237-835429847566090-8709665201949600555-n.jpg");
+}
+
+.isabella-office-default{
+    background-image: url("https://i.ibb.co/CzwNYfz/immagine-2024-05-27-000643358.png");
+    width: 500px;
+    height: 800px;
+}
+
+.isabella-gym-default{
+    background-image: url("https://i.ibb.co/H2PhSK3/immagine-2024-05-27-134543191.png");
+    width: 500px;
+    height: 800px;
+}
+
+.choice-hack-isabella{
+    background-image: url("https://i.ibb.co/Mgkg6sM/immagine-2024-05-26-195342851.png");
+}
+
+
+

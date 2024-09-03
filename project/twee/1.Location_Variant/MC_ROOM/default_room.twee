@@ -2,13 +2,14 @@
 <<nobr>>
 <<wrapper "ROOM">>
 
+    <<time-pass 0>>
     <<photo "mc_room_photo">>
 
     <<say "Player" "$playername">>LessGO!.<</say>>
 
     <<choices "Where to GO?">>
         <<choice-item "mc_room_bathroom" "bathroom" "Bathroom">>
-        <<choice-item "handler_floor1" "floor-1" "Floor 1">>
+        <<choice-item "floor1_handler" "floor-1" "Floor 1">>
     <</choices>>
 
 
@@ -29,17 +30,139 @@
 <</nobr>>
 <</wrapper>>
 
+:: mc_room_bed
+<<wrapper "ROOM | BED">>\
+<<nobr>>
+    <<narrator>>
+        You lay down on your bed and close your eyes.
+    <</narrator>>
+
+    <<narrator>>
+        You make some weird noises and start to dream.
+    <</narrator>>
+
+    <<set _porn to [
+        "https://s12.gifyu.com/images/SYsmC.gif",
+        "https://s12.gifyu.com/images/SYsmV.gif",
+        "https://s12.gifyu.com/images/SYsmj.gif",
+        "https://s12.gifyu.com/images/SYsmU.gif",
+        "https://s12.gifyu.com/images/SYsmZ.gif",
+        "https://s10.gifyu.com/images/SYsmf.gif",
+        "https://s10.gifyu.com/images/SYsmY.gif",
+        "https://s12.gifyu.com/images/SYsmr.gif",
+        "https://s12.gifyu.com/images/SYsm5.gif",
+        "https://s12.gifyu.com/images/SYsmt.gif",
+        "https://s10.gifyu.com/images/SYsm1.gif",
+        "https://s10.gifyu.com/images/SYsmD.gif",
+        "https://s10.gifyu.com/images/SYsmo.gif",
+        "https://s12.gifyu.com/images/SYsmA.gif",
+        "https://s10.gifyu.com/images/SYsmO.gif",
+        "https://s10.gifyu.com/images/SYsmy.gif",
+        "https://s10.gifyu.com/images/SYsmP.gif",
+        "https://s10.gifyu.com/images/SYsmG.gif",
+        "https://s12.gifyu.com/images/SYsme.gif",
+        "https://s12.gifyu.com/images/SYsmX.gif",
+        "https://s10.gifyu.com/images/SYsmJ.gif",
+        "https://s12.gifyu.com/images/SYsq2.gif",
+        "https://s12.gifyu.com/images/SYsqb.gif",
+        "https://s12.gifyu.com/images/SYsqS.gif",
+        "https://s10.gifyu.com/images/SYsqM.gif",
+        "https://s10.gifyu.com/images/SYsqK.gif",
+        "https://s10.gifyu.com/images/SYsqp.gif",
+        "https://s12.gifyu.com/images/SYsqH.gif",
+        "https://s10.gifyu.com/images/SYsqz.gif",
+        "https://s12.gifyu.com/images/SYsqx.gif",
+        "https://s10.gifyu.com/images/SYsqs.gif",
+        "https://s12.gifyu.com/images/SYsqL.gif",
+        "https://s10.gifyu.com/images/SYsqT.gif",
+        "https://s10.gifyu.com/images/SYsqN.gif",
+        "https://s12.gifyu.com/images/SYsq3.gif",
+        "https://s12.gifyu.com/images/SYsq9.gif",
+        "https://s12.gifyu.com/images/SYsqE.gif",
+        "https://s10.gifyu.com/images/SYsqw.gif"
+    ]>>
+    <<random_photo_from _porn>>
+        /* Skip to the closest 7AM */
+        <<set $time to "morning">>
+        /* skip day only if minutetime is>= 7*60 */
+        <<if $minuteTime >= 7*60>>
+            <<set $day to $day + 1>>
+            <<set $day_of_week to $day_of_weeks[$day % 7]>>
+        <</if>>
+        <<set $minuteTime to 7*60>>
+        <<set $energy to 100>>
+    <<button "Wake Up" "mc_room_default">>
+    <</button>>
+<</nobr>>\
+<</wrapper>>
+
 :: mc_room_pc
 <<wrapper "ROOM | PC">>\
 <<nobr>>
     <<photo "pc_room_photo">>
     <<choices "What to DO?">>
         <<choice-item "mc_room_check_mail" "mail" "Check Mail">>
-        <<choice-item "mc_room_hacking" "hack" "Hacking">>
+        <<choice-item "mc_room_instagram" "instagram" "Check Instagram">>
+        <<choice-item "mc_room_hacking_hack_device" "hack" "Hacking">>
         <<choice-item "mc_room_porn" "porn" "Watch Porn">>
         <<choice-item "mc_room_blog" "blog" "Your Blog">>
         <<choice-item "mc_room_collection" "collection" "collection">>
     <</choices>>
     <button data-passage="mc_room_default">Go Back</button>
 <</nobr>>\
+<</wrapper>>
+
+:: mc_room_porn
+<<wrapper "ROOM | PC">>\
+<<nobr>>
+    <<set _porn to [
+        "https://s12.gifyu.com/images/SYsmC.gif",
+        "https://s12.gifyu.com/images/SYsmV.gif",
+        "https://s12.gifyu.com/images/SYsmj.gif",
+        "https://s12.gifyu.com/images/SYsmU.gif",
+        "https://s12.gifyu.com/images/SYsmZ.gif",
+        "https://s10.gifyu.com/images/SYsmf.gif",
+        "https://s10.gifyu.com/images/SYsmY.gif",
+        "https://s12.gifyu.com/images/SYsmr.gif",
+        "https://s12.gifyu.com/images/SYsm5.gif",
+        "https://s12.gifyu.com/images/SYsmt.gif",
+        "https://s10.gifyu.com/images/SYsm1.gif",
+        "https://s10.gifyu.com/images/SYsmD.gif",
+        "https://s10.gifyu.com/images/SYsmo.gif",
+        "https://s12.gifyu.com/images/SYsmA.gif",
+        "https://s10.gifyu.com/images/SYsmO.gif",
+        "https://s10.gifyu.com/images/SYsmy.gif",
+        "https://s10.gifyu.com/images/SYsmP.gif",
+        "https://s10.gifyu.com/images/SYsmG.gif",
+        "https://s12.gifyu.com/images/SYsme.gif",
+        "https://s12.gifyu.com/images/SYsmX.gif",
+        "https://s10.gifyu.com/images/SYsmJ.gif",
+        "https://s12.gifyu.com/images/SYsq2.gif",
+        "https://s12.gifyu.com/images/SYsqb.gif",
+        "https://s12.gifyu.com/images/SYsqS.gif",
+        "https://s10.gifyu.com/images/SYsqM.gif",
+        "https://s10.gifyu.com/images/SYsqK.gif",
+        "https://s10.gifyu.com/images/SYsqp.gif",
+        "https://s12.gifyu.com/images/SYsqH.gif",
+        "https://s10.gifyu.com/images/SYsqz.gif",
+        "https://s12.gifyu.com/images/SYsqx.gif",
+        "https://s10.gifyu.com/images/SYsqs.gif",
+        "https://s12.gifyu.com/images/SYsqL.gif",
+        "https://s10.gifyu.com/images/SYsqT.gif",
+        "https://s10.gifyu.com/images/SYsqN.gif",
+        "https://s12.gifyu.com/images/SYsq3.gif",
+        "https://s12.gifyu.com/images/SYsq9.gif",
+        "https://s12.gifyu.com/images/SYsqE.gif",
+        "https://s10.gifyu.com/images/SYsqw.gif"
+    ]>>
+    <<random_photo_from _porn>>
+
+    <<button "Another One" "mc_room_porn">>
+    <</button>>
+
+    <br>
+
+    <<button "Go Back" "mc_room_pc">>
+        <</button>>
+    <</nobr>>
 <</wrapper>>

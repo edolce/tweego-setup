@@ -1,0 +1,121 @@
+:: init_rotuine_claudetthe [Claudette Routine_Init]
+<<nobr>>
+    <<set $routine_claudetthe to {
+        
+        /* MONDAY */
+        "Monday": {
+            "morning":{
+                "trigger_passage": "beach_handler",
+                "display_trigger_event": "beach_claudetthe_routine_handler",
+                "is_force_trigger": true
+            },
+            "afternoon":{
+                "trigger_passage": "claudetthe_work_handler",
+                "display_trigger_event": "work_claudetthe_routine"
+            },
+            "night":{
+                "trigger_passage": "claudetthe_room_handler",
+                "display_trigger_event": "room_claudetthe_routine"
+            }
+        },
+
+        /* TUESDAY */
+        "Tuesday": {
+            "morning":{
+                "trigger_passage": "claudetthe_room_handler",
+                "display_trigger_event": "room_claudetthe_routine"
+            },
+            "afternoon":{
+                "trigger_passage": "claudetthe_work_handler",
+                "display_trigger_event": "work_claudetthe_routine"
+            },
+            "night":{
+                "trigger_passage": "claudetthe_room_handler",
+                "display_trigger_event": "room_claudetthe_routine"
+            }
+        },
+
+        /* WEDNESDAY */
+        "Wednesday": {
+            "morning":{
+                "trigger_passage": "claudetthe_room_handler",
+                "display_trigger_event": "room_claudetthe_routine"
+            },
+            "afternoon":{
+                "trigger_passage": "claudetthe_work_handler",
+                "display_trigger_event": "work_claudetthe_routine"
+            },
+            "night":{
+                "trigger_passage": "claudetthe_room_handler",
+                "display_trigger_event": "room_claudetthe_routine"
+            }
+        },
+
+        /* THURSDAY */
+        "Thursday": {
+            "morning":{
+                "trigger_passage": "claudetthe_room_handler",
+                "display_trigger_event": "room_claudetthe_routine"
+            },
+            "afternoon":{
+                "trigger_passage": "claudetthe_work_handler",
+                "display_trigger_event": "work_claudetthe_routine"
+            },
+            "night":{
+                "trigger_passage": "claudetthe_room_handler",
+                "display_trigger_event": "room_claudetthe_routine"
+            }
+        },
+
+        /* FRIDAY */
+        "Friday": {
+            "morning":{
+                "trigger_passage": "claudetthe_room_handler",
+                "display_trigger_event": "room_claudetthe_routine"
+            },
+            "afternoon":{
+                "trigger_passage": "claudetthe_work_handler",
+                "display_trigger_event": "work_claudetthe_routine"
+            },
+            "night":{
+                "trigger_passage": "claudetthe_room_handler",
+                "display_trigger_event": "room_claudetthe_routine"
+            }
+        },
+
+        /* SATURDAY */
+        "Saturday": {
+            "morning":{
+                "trigger_passage": "claudetthe_room_handler",
+                "display_trigger_event": "room_claudetthe_routine"
+            },
+            "afternoon":{
+                "trigger_passage": "claudetthe_work_handler",
+                "display_trigger_event": "park_claudetthe_routine"
+            },
+            "night":{
+                "trigger_passage": "claudetthe_room_handler",
+                "display_trigger_event": "room_claudetthe_routine"
+            }
+        },
+
+        /* SUNDAY */
+        "Sunday": {
+            "morning":{
+                "trigger_passage": "claudetthe_room_handler",
+                "display_trigger_event": "room_claudetthe_routine"
+            },
+            "afternoon":{
+                "trigger_passage": "claudetthe_work_handler",
+                "display_trigger_event": "park_claudetthe_routine"
+            },
+            "night":{
+                "trigger_passage": "claudetthe_room_handler",
+                "display_trigger_event": "room_claudetthe_routine"
+            }
+        }
+    }
+    >>
+
+    <<set $routine_events.claudetthe to $routine_claudetthe>>
+<</nobr>>

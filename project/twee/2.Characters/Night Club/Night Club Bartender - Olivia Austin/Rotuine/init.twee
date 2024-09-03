@@ -1,0 +1,216 @@
+:: init_olive [Olive Character_Init]
+<<nobr>>
+    <<include init_routine_Olive>>
+    <<include init_stats_Olive>>
+
+    <<set $firs_olive_bar to true>>
+
+    /*    <<set $characters.jennifer to {
+        name: "Jennifer",
+        desc: "Blackjack Dealer",
+        img: "https://i.ebayimg.com/images/g/048AAOSw3V1hO2~a/s-l1200.webp",
+        events: $forced_events.jennifer,
+        routine: $routine_events.jennifer,
+        stats: $statistics.jennifer
+    }>> */
+
+    <<set $characters.olive to {
+        name: "Olive",
+        desc: "Bartender",
+        category: "Nightclub",
+        img: "https://cdni.pornpics.com/1280/7/575/48621029/48621029_007_df27.jpg",
+        events: $forced_events.olive,
+        routine: $routine_events.olive,
+        stats: $statistics.olive
+    }>>
+
+<</nobr>>
+
+:: init_stats_Olive [Olive Stats_Init]
+<<nobr>>
+    <<set $stats_olive to {
+        "affection": 0,
+        "love": 0,
+        "lust": 0
+    }>>
+    <<set $statistics["olive"] to $stats_olive>>
+<</nobr>>
+
+:: init_routine_Olive [Olive Routine_Init]
+<<nobr>>
+    <<set $routine_olive to {
+        
+        /* MONDAY */
+        "Monday": {
+            "morning":{
+                "trigger_passage": "nc_bar_handler",
+                "display_trigger_event": "olive_working_bar_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "nc_bar_handler",
+                "display_trigger_event": "olive_working_bar_handler",
+                "icon": "work_icon_choice"
+            },
+            "evening":{
+                "trigger_passage": "nc_bar_handler",
+                "display_trigger_event": "olive_working_bar_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "nc_bar_handler",
+                "display_trigger_event": "olive_working_bar_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* TUESDAY */
+        "Tuesday": {
+            "morning":{
+                "trigger_passage": "nc_bar_handler",
+                "display_trigger_event": "olive_working_bar_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "nc_bar_handler",
+                "display_trigger_event": "olive_working_bar_handler",
+                "icon": "work_icon_choice"
+            },
+            "evening":{
+                "trigger_passage": "nc_bar_handler",
+                "display_trigger_event": "olive_working_bar_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "nc_bar_handler",
+                "display_trigger_event": "olive_working_bar_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* WEDNESDAY */
+        "Wednesday": {
+            "morning":{
+                "trigger_passage": "nc_bar_handler",
+                "display_trigger_event": "olive_working_bar_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "nc_bar_handler",
+                "display_trigger_event": "olive_working_bar_handler",
+                "icon": "work_icon_choice"
+            },
+            "evening":{
+                "trigger_passage": "nc_bar_handler",
+                "display_trigger_event": "olive_working_bar_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "nc_bar_handler",
+                "display_trigger_event": "olive_working_bar_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* THURSDAY */
+        "Thursday": {
+            "morning":{
+                "trigger_passage": "nc_bar_handler",
+                "display_trigger_event": "olive_working_bar_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "nc_bar_handler",
+                "display_trigger_event": "olive_working_bar_handler",
+                "icon": "work_icon_choice"
+            },
+            "evening":{
+                "trigger_passage": "nc_bar_handler",
+                "display_trigger_event": "olive_working_bar_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "nc_bar_handler",
+                "display_trigger_event": "olive_working_bar_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* FRIDAY */
+        "Friday": {
+            "morning":{
+                "trigger_passage": "nc_bar_handler",
+                "display_trigger_event": "olive_working_bar_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "nc_bar_handler",
+                "display_trigger_event": "olive_working_bar_handler",
+                "icon": "work_icon_choice"
+            },
+            "evening":{
+                "trigger_passage": "nc_bar_handler",
+                "display_trigger_event": "olive_working_bar_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "nc_bar_handler",
+                "display_trigger_event": "olive_working_bar_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* SATURDAY */
+        "Saturday": {
+            "morning":{
+                "trigger_passage": "nc_bar_handler",
+                "display_trigger_event": "olive_working_bar_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "nc_bar_handler",
+                "display_trigger_event": "olive_working_bar_handler",
+                "icon": "work_icon_choice"
+            },
+            "evening":{
+                "trigger_passage": "nc_bar_handler",
+                "display_trigger_event": "olive_working_bar_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "nc_bar_handler",
+                "display_trigger_event": "olive_working_bar_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* SUNDAY */
+        "Sunday": {
+            "morning":{
+                "trigger_passage": "nc_bar_handler",
+                "display_trigger_event": "olive_working_bar_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "nc_bar_handler",
+                "display_trigger_event": "olive_working_bar_handler",
+                "icon": "work_icon_choice"
+            },
+            "evening":{
+                "trigger_passage": "nc_bar_handler",
+                "display_trigger_event": "olive_working_bar_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "nc_bar_handler",
+                "display_trigger_event": "olive_working_bar_handler",
+                "icon": "work_icon_choice"
+            }
+        }
+    }
+    >>
+
+    <<set $routine_events.olive to $routine_olive>>
+<</nobr>>
+
+    

@@ -1,0 +1,23 @@
+:: beach_handler
+<<wrapper "BEACH">>
+    <<nobr>>
+        <<event-trigger-check "beach_handler">>
+        <<include "beach_default">>
+    <</nobr>>
+<</wrapper>>
+
+:: beach_default
+    <<nobr>>
+
+        
+    <<photo "beach_default">>
+
+    <<choices "Where to GO?">>
+        <<choice-item-chosen "beach_handler" "beach" "Beach">>
+        <<choice-item "beach_bar_handler" "beach-bar" "Bar">>
+        <<choice-item "beach_pool_handler" "pool" "Pool">>
+        <<choice-item "beach_manager_office_handler" "manager-office" "Office">>
+        <<choice-item "map_handler" "map" "Map">>
+    <</choices>>
+
+    <</nobr>>

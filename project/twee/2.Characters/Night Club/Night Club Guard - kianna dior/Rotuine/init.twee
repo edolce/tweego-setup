@@ -1,0 +1,214 @@
+:: init_ivy [Ivy Character_Init]
+<<nobr>>
+    <<include init_routine_Ivy>>
+    <<include init_stats_ivy>>
+
+    /*<<set $characters.olive to {
+        name: "Olive",
+        desc: "Bartender",
+        img: "https://cdni.pornpics.com/1280/7/575/48621029/48621029_007_df27.jpg",
+        events: $forced_events.olive,
+        routine: $routine_events.olive,
+        stats: $statistics.olive
+    }>> */
+
+    <<set $characters.ivy to {
+        name: "Ivy",
+        desc: "Guard",
+        category: "Nightclub",
+        img: "https://pbs.twimg.com/media/CnbaOa7VIAAUDty.jpg:large",
+        events: $forced_events.ivy,
+        routine: $routine_events.ivy,
+        stats: $statistics.ivy
+    }>>
+
+<</nobr>>
+
+:: init_stats_ivy [Ivy Stats_Init]
+<<nobr>>
+    <<set $stats_ivy to {
+        "affection": 0,
+        "love": 0,
+        "lust": 0
+    }>>
+    <<set $statistics["ivy"] to $stats_ivy>>
+<</nobr>>
+
+:: init_routine_Ivy [Ivy Routine_Init]
+<<nobr>>
+    <<set $routine_ivy to {
+        
+        /* MONDAY */
+        "Monday": {
+            "morning":{
+                "trigger_passage": "vip_lounge_handler",
+                "display_trigger_event": "ivy_working_guard_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "vip_lounge_handler",
+                "display_trigger_event": "ivy_working_guard_handler",
+                "icon": "work_icon_choice"
+            },
+            "evening":{
+                "trigger_passage": "vip_lounge_handler",
+                "display_trigger_event": "ivy_working_guard_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "vip_lounge_handler",
+                "display_trigger_event": "ivy_working_guard_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* TUESDAY */
+        "Tuesday": {
+            "morning":{
+                "trigger_passage": "vip_lounge_handler",
+                "display_trigger_event": "ivy_working_guard_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "vip_lounge_handler",
+                "display_trigger_event": "ivy_working_guard_handler",
+                "icon": "work_icon_choice"
+            },
+            "evening":{
+                "trigger_passage": "vip_lounge_handler",
+                "display_trigger_event": "ivy_working_guard_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "vip_lounge_handler",
+                "display_trigger_event": "ivy_working_guard_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* WEDNESDAY */
+        "Wednesday": {
+            "morning":{
+                "trigger_passage": "vip_lounge_handler",
+                "display_trigger_event": "ivy_working_guard_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "vip_lounge_handler",
+                "display_trigger_event": "ivy_working_guard_handler",
+                "icon": "work_icon_choice"
+            },
+            "evening":{
+                "trigger_passage": "vip_lounge_handler",
+                "display_trigger_event": "ivy_working_guard_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "vip_lounge_handler",
+                "display_trigger_event": "ivy_working_guard_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* THURSDAY */
+        "Thursday": {
+            "morning":{
+                "trigger_passage": "vip_lounge_handler",
+                "display_trigger_event": "ivy_working_guard_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "vip_lounge_handler",
+                "display_trigger_event": "ivy_working_guard_handler",
+                "icon": "work_icon_choice"
+            },
+            "evening":{
+                "trigger_passage": "vip_lounge_handler",
+                "display_trigger_event": "ivy_working_guard_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "vip_lounge_handler",
+                "display_trigger_event": "ivy_working_guard_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* FRIDAY */
+        "Friday": {
+            "morning":{
+                "trigger_passage": "vip_lounge_handler",
+                "display_trigger_event": "ivy_working_guard_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "vip_lounge_handler",
+                "display_trigger_event": "ivy_working_guard_handler",
+                "icon": "work_icon_choice"
+            },
+            "evening":{
+                "trigger_passage": "vip_lounge_handler",
+                "display_trigger_event": "ivy_working_guard_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "vip_lounge_handler",
+                "display_trigger_event": "ivy_working_guard_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* SATURDAY */
+        "Saturday": {
+            "morning":{
+                "trigger_passage": "vip_lounge_handler",
+                "display_trigger_event": "ivy_working_guard_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "vip_lounge_handler",
+                "display_trigger_event": "ivy_working_guard_handler",
+                "icon": "work_icon_choice"
+            },
+            "evening":{
+                "trigger_passage": "vip_lounge_handler",
+                "display_trigger_event": "ivy_working_guard_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "vip_lounge_handler",
+                "display_trigger_event": "ivy_working_guard_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* SUNDAY */
+        "Sunday": {
+            "morning":{
+                "trigger_passage": "vip_lounge_handler",
+                "display_trigger_event": "ivy_working_guard_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "vip_lounge_handler",
+                "display_trigger_event": "ivy_working_guard_handler",
+                "icon": "work_icon_choice"
+            },
+            "evening":{
+                "trigger_passage": "vip_lounge_handler",
+                "display_trigger_event": "ivy_working_guard_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "vip_lounge_handler",
+                "display_trigger_event": "ivy_working_guard_handler",
+                "icon": "work_icon_choice"
+            }
+        }
+    }
+    >>
+
+    <<set $routine_events.ivy to $routine_ivy>>
+<</nobr>>
+
+    

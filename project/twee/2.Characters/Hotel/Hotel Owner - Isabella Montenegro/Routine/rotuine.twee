@@ -1,0 +1,286 @@
+:: init_rotuine_isabella_montenegro [Isabella Routine_Init]
+<<nobr>>
+    <<set $routine_isabella to {
+        
+        /* MONDAY */
+        "Monday": {
+            "morning":{
+                "trigger_passage": "hotel_office_handler",
+                "display_trigger_event": "isabella_shower_handler",
+                "icon": "shower_icon_choice",
+                "map_icon": "choice-hotel-office",
+                "position_display_name": "Hotel Office",
+                "action_icon": "choice-shower",
+                "action_display_name": "Shower"
+            },
+            "afternoon":{
+                "trigger_passage": "hotel_office_handler",
+                "display_trigger_event": "isabella_work_handler",
+                "icon": "work_icon_choice",
+                "map_icon": "choice-hotel-office",
+                "position_display_name": "Hotel Office",
+                "action_icon": "choice-work",
+                "action_display_name": "Work"
+            },
+            "evening": {
+                "trigger_passage": "hotel_office_handler",
+                "display_trigger_event": "isabella_work_handler",
+                "icon": "work_icon_choice",
+                "map_icon": "choice-hotel-office",
+                "position_display_name": "Hotel Office",
+                "action_icon": "choice-work",
+                "action_display_name": "Work"
+            },
+            "night":{
+                "trigger_passage": "hotel_villa_handler", 
+                "display_trigger_event": "isabella_bed_handler",
+                "map_icon": "choice-isabella-villa",
+                "position_display_name": "Hotel Villa",
+                "action_icon": "choice-sleep",
+                "action_display_name": "Sleep"
+            }
+        },
+
+        /* TUESDAY */
+        "Tuesday": {
+            "morning":{
+                "trigger_passage": "hotel_gym_handler",
+                "display_trigger_event": "isabella_routine_gym_handler",
+                "icon": "gym_icon_choice",
+                "map_icon": "choice-hotel-gym",
+                "position_display_name": "Hotel Gym",
+                "action_icon": "choice-exercise",
+                "action_display_name": "Exercise"
+            },
+            "afternoon":{
+                "trigger_passage": "hotel_office_handler",
+                "display_trigger_event": "isabella_work_handler",
+                "icon": "work_icon_choice",
+                "map_icon": "choice-hotel-office",
+                "position_display_name": "Hotel Office",
+                "action_icon": "choice-work",
+                "action_display_name": "Work"
+            },
+            "evening":{
+                "trigger_passage": "hotel_office_handler",
+                "display_trigger_event": "isabella_work_handler",
+                "icon": "work_icon_choice",
+                "map_icon": "choice-hotel-office",
+                "position_display_name": "Hotel Office",
+                "action_icon": "choice-work",
+                "action_display_name": "Work"
+            },
+            "night":{
+                "trigger_passage": "hotel_office_handler",
+                "display_trigger_event": "isabella_work_handler",
+                "icon": "work_icon_choice",
+                "map_icon": "choice-hotel-office",
+                "position_display_name": "Hotel Office",
+                "action_icon": "choice-work",
+                "action_display_name": "Work"
+
+            }
+        },
+
+        /* WEDNESDAY */
+        "Wednesday": {
+            "morning":{
+                "trigger_passage": "hotel_gym_handler",
+                "display_trigger_event": "isabella_routine_gym_handler",
+                "icon": "gym_icon_choice" ,
+                "map_icon": "choice-hotel-gym",
+                "position_display_name": "Hotel Gym",
+                "action_icon": "choice-exercise",
+                "action_display_name": "Exercise"
+            },
+            "afternoon":{
+                "trigger_passage": "hotel_office_handler",
+                "display_trigger_event": "isabella_work_handler",
+                "icon": "work_icon_choice",
+                "map_icon": "choice-hotel-office",
+                "position_display_name": "Hotel Office",
+                "action_icon": "choice-work",
+                "action_display_name": "Work"
+            },
+            "evening":{
+                "trigger_passage": "hotel_office_handler",
+                "display_trigger_event": "isabella_work_handler",
+                "icon": "work_icon_choice",
+                "map_icon": "choice-hotel-office",
+                "position_display_name": "Hotel Office",
+                "action_icon": "choice-work",
+                "action_display_name": "Work"
+
+            },
+            "night":{
+                "trigger_passage": "hotel_villa_handler",
+                "display_trigger_event": "isabella_bed_hot_handler",
+                "map_icon": "choice-isabella-villa",
+                "position_display_name": "Hotel Villa",
+                "action_icon": "choice-sleep",
+                "action_display_name": "Sleep"
+            }
+        },
+
+        /* THURSDAY */
+        "Thursday": {
+            "morning":{
+                "trigger_passage": "hotel_office_handler",
+                "display_trigger_event": "isabella_shower_handler",
+                "icon": "shower_icon_choice",
+                "map_icon": "choice-hotel-office",
+                "position_display_name": "Hotel Office",
+                "action_icon": "choice-work",
+                "action_display_name": "Work"
+
+            },
+            "afternoon":{
+                "trigger_passage": "hotel_office_handler",
+                "display_trigger_event": "isabella_work_handler",
+                "icon": "work_icon_choice",
+                "map_icon": "choice-hotel-office",
+                "position_display_name": "Hotel Office",
+                "action_icon": "choice-work",
+                "action_display_name": "Work"
+            },
+            "evening":{
+                "trigger_passage": "hotel_office_handler",
+                "display_trigger_event": "isabella_work_handler",
+                "icon": "work_icon_choice",
+                "map_icon": "choice-hotel-office",
+                "position_display_name": "Hotel Office",
+                "action_icon": "choice-work",
+                "action_display_name": "Work"
+            },
+            "night":{
+                "trigger_passage": "hotel_villa_handler",
+                "display_trigger_event": "isabella_bed_handler",
+                "map_icon": "choice-isabella-villa",
+                "position_display_name": "Hotel Villa",
+                "action_icon": "choice-sleep",
+                "action_display_name": "Sleep"
+            }
+        },
+
+        /* FRIDAY */
+        "Friday": {
+            "morning":{
+                "trigger_passage": "hotel_gym_handler",
+                "display_trigger_event": "isabella_routine_gym_handler",
+                "icon": "gym_icon_choice",
+                "map_icon": "choice-hotel-gym",
+                "position_display_name": "Hotel Gym",
+                "action_icon": "choice-exercise",
+                "action_display_name": "Exercise"
+            },
+            "afternoon":{
+                "trigger_passage": "hotel_office_handler",
+                "display_trigger_event": "isabella_work_handler",
+                "icon": "work_icon_choice",
+                "map_icon": "choice-hotel-office",
+                "position_display_name": "Hotel Office",
+                "action_icon": "choice-work",
+                "action_display_name": "Work"
+            },
+            "evening":{
+                "trigger_passage": "hotel_office_handler",
+                "display_trigger_event": "isabella_work_handler",
+                "icon": "work_icon_choice",
+                "map_icon": "choice-hotel-office",
+                "position_display_name": "Hotel Office",
+                "action_icon": "choice-work",
+                "action_display_name": "Work"
+            },
+            "night":{
+                "trigger_passage": "hotel_office_handler",
+                "display_trigger_event": "isabella_work_hot_handler",
+                "icon": "hot_icon_choice",
+                "map_icon": "choice-hotel-office",
+                "position_display_name": "Hotel Office",
+                "action_icon": "choice-work-hot",
+                "action_display_name": "Hot Work"
+            }
+        },
+
+        /* SATURDAY */
+        "Saturday": {
+            "morning":{
+                "trigger_passage": "hotel_villa_handler",
+                "display_trigger_event": "isabella_villa_shower_handler",
+                "icon": "shower_icon_choice",
+                "map_icon": "choice-isabella-villa",
+                "position_display_name": "Hotel Villa",
+                "action_icon": "choice-shower",
+                "action_display_name": "Shower"
+            },
+            "afternoon":{
+                "trigger_passage": "beach_handler",
+                "display_trigger_event": "isabella_relax_handler",
+                "icon": "relax_icon_choice",
+                "map_icon": "choice-beach",
+                "position_display_name": "Beach",
+                "action_icon": "choice-relax",
+                "action_display_name": "Relax"
+            },
+            "evening":{
+                "trigger_passage": "beach_handler",
+                "display_trigger_event": "isabella_relax_handler",
+                "icon": "relax_icon_choice",
+                "map_icon": "choice-beach",
+                "position_display_name": "Beach",
+                "action_icon": "choice-relax",
+                "action_display_name": "Relax"
+            },
+            "night":{
+                "trigger_passage": "blackjack_handler",
+                "display_trigger_event": "isabella_blackjack_handler",
+                "icon": "blackjack_icon_choice",
+                "map_icon": "choice-blackjack",
+                "position_display_name": "Blackjack",
+                "action_icon": "choice-play",
+                "action_display_name": "Play"
+            }
+        },
+
+        /* SUNDAY */
+        "Sunday": {
+            "morning":{
+                "trigger_passage": "hotel_villa_handler",
+                "display_trigger_event": "isabella_villa_bed_handler",
+                "map_icon": "choice-isabella-villa",
+                "position_display_name": "Hotel Villa",
+                "action_icon": "choice-sleep",
+                "action_display_name": "Sleep"
+            },
+            "afternoon":{
+                "trigger_passage": "beach_handler",
+                "display_trigger_event": "isabella_swimming_handler",
+                "icon": "swimming_icon_choice",
+                "map_icon": "choice-beach",
+                "position_display_name": "Beach",
+                "action_icon": "choice-swim",
+                "action_display_name": "Swim"
+            },
+            "evening":{
+                "trigger_passage": "beach_handler",
+                "display_trigger_event": "isabella_swimming_handler",
+                "icon": "swimming_icon_choice",
+                "map_icon": "choice-beach",
+                "position_display_name": "Beach",
+                "action_icon": "choice-swim",
+                "action_display_name": "Swim"
+            },
+            "night":{
+                "trigger_passage": "hotel_villa_handler",
+                "display_trigger_event": "isabella_friends_night_handler",
+                "map_icon": "choice-isabella-villa",
+                "position_display_name": "Hotel Villa",
+                "action_icon": "choice-friends",
+                "action_display_name": "Friends"
+            }
+        }
+    }
+    >>
+
+    <<set $routine_events.isabella to $routine_isabella>>
+<</nobr>>

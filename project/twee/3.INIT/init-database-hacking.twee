@@ -1,0 +1,8 @@
+:: init_database-hacking
+<<set $database_haking to {}>>
+<<include init_database_hack_1>>
+<<include init_database_hack_2>>
+<<include init_database_hack_3>>
+<<include init_database_hack_4>>
+<<include init_database_hack_5>>
+<<include init_database_hack_6>>

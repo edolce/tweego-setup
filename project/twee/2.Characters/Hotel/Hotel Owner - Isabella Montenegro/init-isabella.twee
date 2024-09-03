@@ -1,0 +1,29 @@
+:: init_isabella
+<<nobr>>
+    
+    <<include init_rotuine_isabella_montenegro>>
+    <<include "isabella_forced_events_init">>
+
+    <<set $characters.isabella to {
+        name: "Isabella Montenegro",
+        desc: "Owner of City Hotel",
+        category: "Hotel",
+        img: "https://assets.mycast.io/actor_images/actor-diamond-jackson-186737_large.jpg?1615836711",
+        events: $forced_events.isabella,
+        routine: $routine_events.isabella,
+        stats: $statistics.isabella,
+        main_events_info: "isabella_main_events_info",
+        routine_info: "isabella_routine_info",
+    }>>
+
+<</nobr>>
+
+:: isabella_main_events_info
+<<nobr>>
+    <<main_events_info "isabella">>
+<</nobr>>
+
+:: isabella_routine_info
+<<nobr>>
+    <<routine_info "isabella">>
+<</nobr>>

@@ -27,18 +27,86 @@
     <</nobr>>\
 <</widget>>
 
+:: random_photo_from [widget]
+<<widget "random_photo_from">>\
+    <<nobr>>
+        <<set _img = _args[0].random()>>
+        <<fast_image _img>>
+        <br>
+    <</nobr>>\
+<</widget>>
 
 :: wrapper [widget]
 <<widget "wrapper" container>>\
     <<nobr>>
+        <<set $characters_in_scene to []>>
+        <<set $is_forced_event_going to false>>
+
         <div class="wrapper">
             <div class="title">Hacker's Delight | <<print _args[0]>></div>
             <br>
             _contents
         </div>
-        <br>
     <</nobr>>\
 <</widget>>
+
+:: map-place-handler [widget]
+<<widget "map-place-handler">>\
+    <<nobr>>
+        <<time-pass 10>>
+        <<set $characters_in_scene to []>>
+        <<set $is_forced_event_going to false>>
+
+        <div class="titel-wrapper">
+            <div class="title">Hacker's Delight | <<print _args[0]>></div>
+        </div>
+        <br>
+        
+        <<if _args[2]>>
+            <<event-trigger-check _args[3]>>
+        <</if>>
+
+        <<include _args[1]>>
+    <</nobr>>\
+<</widget>>
+
+:: time-pass [widget]
+<<widget "time-pass">>\
+    <<nobr>>
+        <<set $minuteTime = $minuteTime + _args[0]>>
+
+        /* Set $time to night evening afternoon morning */
+        <<if $minuteTime >= 0 && $minuteTime < 6*60>>
+            <<set $time = "night">>
+        <</if>>
+        <<if $minuteTime >= 6*60 && $minuteTime < 12*60>>
+            <<set $time = "morning">>
+        <</if>>
+        <<if $minuteTime >= 12*60 && $minuteTime < 18*60>>
+            <<set $time = "afternoon">>
+        <</if>>
+        <<if $minuteTime >= 18*60 && $minuteTime < 24*60>>
+            <<set $time = "evening">>
+        <</if>>
+
+        /* Set $watch */
+        <<set $watch = Math.floor($minuteTime/60) + ":" + ($minuteTime%60).toString().padStart(2, '0')>>
+
+        /* Set $day_of_week */
+        <<if $minuteTime >= 24*60>>
+            <<set $minuteTime = 0>>
+            <<set $day = $day + 1>>
+            <<set $day_of_week = $day_of_weeks[$day % 7]>>
+        <</if>>
+    <</nobr>>\
+<</widget>>
+
+:: PassageFooter
+<<script>>
+$(document).on(':passageend', function () {
+    $('#watch').text(State.variables["watch"]);
+});
+<</script>>
 
 
 :: choices-container [widget]
@@ -60,11 +128,595 @@
 :: choice-item [widget]
 <<widget "choice-item">>\
     <<nobr>>
-        <div class="choice-item-container" @data-passage="'_args[0]'">
+            <<if _args[0].constructor !== Object>>
+                <div class="choice-item-container" @data-passage="'_args[0]'">
+                    <div class="choice-item-ghost"></div>
+                    <div @class="'choice-item choice-' + _args[1]">
+                        <div class="choice-item-did"><<print _args[2]>></div>
+                    </div>
+                </div>
+            <<else>>
+                <<set _not_here_class = "">>
+                <<if _args[0]['not_here']>>
+                    <<set _not_here_class = "not_here">>
+                    <<set _args[0]['passage'] to "">>
+                <</if>>
+                <style>
+                    .choice-item-container.not_here {
+                        /* black and white gradient */
+                        filter: grayscale(100%);
+                    }
+                    
+
+                    .not_here_text {
+                        position: absolute;
+                        top: 111%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        color: white;
+                        font-weight: bold;
+                        display: none;
+                        padding: 0;
+                        font-size: 10px;
+                    }
+
+                    /* if hover */
+                    .choice-item-container.not_here:hover .not_here_text {
+                        display: block;
+                    }
+
+
+
+                </style>
+
+
+                <div @class='"choice-item-container "+_not_here_class' @data-passage="_args[0]['passage']">
+                    <<if _args[0]['icon'] !== undefined>>
+                        <<include _args[0]['icon']>>
+                    <</if>>
+
+                    /* INSERT AFFECTION/LOVE/LUST ICONS */
+                    <<if $statistics[_args[2]] !== undefined>>
+                        <<affection_icon $statistics[_args[2]]["affection"]>>
+                        <<love_icon $statistics[_args[2]]["love"]>>
+                        <<lust_icon $statistics[_args[2]]["lust"]>>
+                    <</if>>
+
+
+                    <div class="choice-item-ghost"></div>
+                    <div @class="'choice-item choice-' + _args[1]">
+                        <div class="choice-item-did"><<print _args[2]>></div>
+                    </div>
+
+                    /* hoverable object NOT HERE TRY LATER */
+                    <<if _args[0]['not_here']>>
+                        <div class="not_here_text title">She should be here...</div>
+                    <</if>>
+                </div>
+                
+            <</if>>
+    <</nobr>>\
+<</widget>>
+
+
+:: choice-item-chosen [widget]
+<<widget "choice-item-chosen">>\
+    <<nobr>>
+        <div class="choice-item-container chosen">
             <div class="choice-item-ghost"></div>
             <div @class="'choice-item choice-' + _args[1]">
                 <div class="choice-item-did"><<print _args[2]>></div>
             </div>
         </div>
+    <</nobr>>\
+<</widget>>
+
+:: force-event-trigger-check [widget]
+<<widget "force-event-trigger-check">>\
+    <<nobr>>
+
+        /* Check if ther is any event to trigger */
+        <<for _i to 0; _i lt $forced_events.length; _i++>>
+            <<if $forced_events[_i]["trigger_passage"] is _args[0]>>
+                <<if $forced_events[_i]["triggered"] == false>>
+                    <<set $forced_events[_i]["triggered"] = true>>
+                    <<include $forced_events[_i]["passage"]>>
+                <</if>>
+            <</if>>
+        <</for>>
+
+
+    <</nobr>>\
+<</widget>>
+
+
+:: routine_event_trigger_check [widget]
+<<widget "routine_event_trigger_check">>\
+    <<nobr>>
+
+        /* Check if ther is any event to trigger */
+        <<for _i to 0; _i lt $routine_events.length; _i++>>
+            <<if $routine_events[_i].trigger_passage is _args[0]>>
+                <<if $routine_events[_i].triggered == false>>
+                    <<set $routine_events[_i].triggered = true>>
+                    <<include $routine_events[_i].passage>>
+                <</if>>
+            <</if>>
+        <</for>>
+
+
+    <</nobr>>\
+    
+<</widget>>
+
+
+:: flag-forced-event [widget]
+<<widget "flag-forced-event">>\
+    <<nobr>>
+        
+        <<for _i, _key range Object.keys($forced_events)>>
+            <<for _i to 0; _i lt $forced_events[_key].length; _i++>>
+                <<if $forced_events[_key][_i]["display_trigger_event"] is _args[0]>>
+                    <<if $forced_events[_key][_i]["triggered"] == false>>
+                        <<set $forced_events[_key][_i]["triggered"] = true>>
+                        /* set coolodown for next event */
+                        <<if $forced_events[_key][_i]["cooldown"] !== undefined>>
+                            <<set $cooldowns[_key+"_main_event"] = $day + $forced_events[_key][_i]["cooldown"]>>
+                        <</if>>
+                    <</if>>
+                <</if>>
+            <</for>>
+        <</for>>
+
+
+        <<set $completed_events.push(_args[0])>>
+
+
+    <</nobr>>\
+<</widget>>
+
+:: event-trigger-check [widget]
+<<widget "event-trigger-check">>\
+    <<nobr>>
+        <<set _forced_event = false>>
+        /* Check if ther is any scene event to trigger */
+        <<script>>
+        console.log(State.variables);
+        <</script>>
+        <<for _i, _key range Object.keys($forced_events)>>
+            /* check character cooldowns */
+            <<if $cooldowns[_key+"_main_event"] !== undefined>>
+                <<if $cooldowns[_key+"_main_event"] > $day>>
+                    <<continue>>
+                <</if>>
+            <</if>>
+            <<for _i to 0; _i lt $forced_events[_key].length; _i++>>
+                /* check location */
+                <<if $forced_events[_key][_i]["trigger_passage"] is _args[0]>>
+                    /* check time req */
+                    <<if $forced_events[_key][_i]["trigger_time"] is $time or $forced_events[_key][_i]["trigger_time"] === undefined>>
+                        <<if $forced_events[_key][_i]["triggered"] == false>>
+                            /* Check if requirments are met */
+                            <<if $forced_events[_key][_i]['passage_required'] !== undefined>>
+                                <<if $completed_events.includes($forced_events[_key][_i]['passage_required'])>>
+                                    <<if $forced_events[_key][_i]["is_force_trigger"]>>
+                                        <<set _forced_event = true>>
+                                        <<set $forced_events[_key][_i]["triggered"] = true>>
+                                        <<set $is_forced_event_going = true>>
+                                        <<goto $forced_events[_key][_i]["display_trigger_event"]>>
+                                        
+                                    <<else>>
+                                        <<set _forced_event = true>>
+                                        <<set $characters_in_scene[_key] to {
+                                            "passage": $forced_events[_key][_i]["display_trigger_event"],
+                                            "icon": $forced_events[_key][_i]["icon"]
+                                        }>>
+                                    <</if>>
+
+                                <</if>>
+                            <<else>>
+                                <<if $forced_events[_key][_i]["is_force_trigger"]>>
+                                        <<set _forced_event = true>>
+                                        <<set $forced_events[_key][_i]["triggered"] = true>>
+                                        <<set $is_forced_event_going = true>>
+                                        <<goto $forced_events[_key][_i]["display_trigger_event"]>>
+                                        
+                                    <<else>>
+                                        <<set _forced_event = true>>
+                                        <<set $characters_in_scene[_key] to {
+                                            "passage": $forced_events[_key][_i]["display_trigger_event"],
+                                            "icon": $forced_events[_key][_i]["icon"]
+                                        }
+
+                                            >>
+                                    <</if>>
+                            <</if>>
+                        <</if>>
+                    <</if>>
+                <</if>>
+            <</for>>
+        <</for>>
+
+
+        /* If there is no forced event, check if there is any routine event to trigger */
+        <<if _forced_event is false>>
+            <<for _i, _key range Object.keys($routine_events)>>
+                <<if $routine_events[_key][$day_of_week] !== undefined>>
+                <<if $routine_events[_key][$day_of_week][$time] !== undefined>>
+                <<if $routine_events[_key][$day_of_week][$time]["trigger_passage"] is _args[0]>>
+                    /* Check if requirments are met */
+                    <<if $routine_events[_key][$day_of_week][$time]["is_force_trigger"]>>
+                        <<include $routine_events[_key][$day_of_week][$time]["display_trigger_event"]>>
+                        <<set $is_forced_event_going = true>>
+                    <<else>>
+                        <<script>>
+                            setup.getFirstMainEvent = function (_key, _day_of_week, _time) {
+                                var _main_events = State.variables["forced_events"];
+                                var _char_main_ev = _main_events[_key];
+
+                                if (_char_main_ev === undefined) {
+                                    return null;
+                                }
+
+                                for (var i = 0; i < _char_main_ev.length; i++) {
+                                    if (_char_main_ev[i]["triggered"] == false) {
+                                        console.log(_char_main_ev[i]);
+                                        
+                                        /* check cooldown */
+                                        if (_char_main_ev[i]["cooldown"] !== undefined) {
+                                            if (State.variables.cooldowns[_key+"_main_event"] !== undefined) {
+                                                if (State.variables.cooldowns[_key+"_main_event"] > State.variables.day) {
+                                                    return null;
+                                                }
+                                            }
+                                        }
+
+                                        /* check time */
+                                        if (_char_main_ev[i]["trigger_time"] == _time) {
+                                            return _char_main_ev[i]["display_trigger_event"];
+                                        }
+                                        
+                                        if(!_char_main_ev[i]["trigger_time"]){
+                                            return _char_main_ev[i]["display_trigger_event"];
+                                        }
+
+                                        
+
+
+
+                                        return null;
+                                    }
+
+                                }
+
+                                return null;
+                            }
+                        <</script>>
+                        /* Check if character should be in another location (main events) */
+                        <<set _first_main_event to setup.getFirstMainEvent(_key, $day_of_week, $time)>>
+
+                        <<if _first_main_event !== null>>
+                            <<set $characters_in_scene[_key] to {
+                                "passage": $routine_events[_key][$day_of_week][$time]["display_trigger_event"],
+                                "icon": $routine_events[_key][$day_of_week][$time]["icon"],
+                                "not_here": true
+                            }>>
+                        <<else>>
+                            <<set $characters_in_scene[_key] to {
+                                "passage": $routine_events[_key][$day_of_week][$time]["display_trigger_event"],
+                                "icon": $routine_events[_key][$day_of_week][$time]["icon"]
+                            }>>
+                        <</if>>
+                    <</if>>
+                <</if>>
+                <</if>>
+                <</if>>
+            <</for>>
+        <</if>>
+
+        
+    <</nobr>>\
+<</widget>>
+
+
+
+
+:: pick-random-img [widget]
+<<widget "pick-random-img">>\
+    <<nobr>>
+        <<set _img = _args.random()>>
+        <div @class="'photo_default ' + _img"></div>
+        <br>
+    <</nobr>>\
+<</widget>>
+
+
+:: decision_maker [widget]
+<<widget "decision_maker" container>>\
+    <<nobr>>
+        <div>
+            <div @id="_args[0]" class="decision-maker-content">
+                _contents
+            </div>
+        </div>
+        
+    <</nobr>>\
+<</widget>>
+
+:: decision [widget]
+<<widget "decision">>\
+    <<nobr>>
+        /* save statistic */
+        <<script>>
+
+            var temp = State.variables["args"][2];
+            var temp2 = State.variables["args"][0];
+            setup.closeThis = function () {
+                $('.decision-item'+temp2).addClass('invisible');
+
+                console.log(temp2+temp);
+                $('#'+temp2+temp).show();
+                $('#'+temp2+temp).css('font-weight', 'bold');
+                $('#'+temp2+temp).removeClass('hoverable');
+                
+                $(document).off('click', '#'+temp2+temp, setup.closeThis);
+
+                $('#test'+temp2+temp).show();
+                $('#'+temp2).css('flex-direction', 'column');
+            };
+            $(document).on('click', '#'+temp2+temp, setup.closeThis);
+
+        <</script>>
+        
+        /*<div class="decision-item" @data-passage="'_args[1]'"> */
+        <div @id="_args[0] + _args[2]" @class="'decision-item ' + 'decision-item'+_args[0] + ' hoverable'">
+            <<print _args[1]>>
+        </div>
+
+
+        <div @id="'test' + _args[0] + _args[2]" class="SUCABLIE" style="display:none">
+            <br>
+            <<include _args[2]>>
+        </div>
+    <</nobr>>\
+<</widget>>
+
+
+:: decision-requirments [widget]
+<<widget "decision-requirments">>\
+    <<nobr>>
+        <<script>>
+        console.log(State.variables["args"]);
+        <</script>>
+        <<set _defaultPassage to _args[2]>>
+        <<set _reqs to _args[3]>>
+        /* check if req are met */
+        <<for _stat, _value range _reqs["stats"]>>
+            <<if $statistics[_reqs['character']][_stat] < _value>>
+                <<set _defaultPassage to _args[3]["failed"]>>
+            <</if>>
+        <</for>>
+
+        <<script>>
+
+            var temp = State.variables["args"][2];
+            var temp2 = State.variables["args"][0];
+            setup.closeThis = function () {
+                $('.decision-item'+temp2).addClass('invisible');
+
+                console.log(temp2+temp);
+                $('#'+temp2+temp).show();
+                $('#'+temp2+temp).css('font-weight', 'bold');
+                $('#'+temp2+temp).removeClass('hoverable');
+                
+                $(document).off('click', '#'+temp2+temp, setup.closeThis);
+
+                $('#test'+temp2+temp).show();
+                $('#'+temp2).css('flex-direction', 'column');
+            };
+            $(document).on('click', '#'+temp2+temp, setup.closeThis);
+
+        <</script>>
+        
+        /*<div class="decision-item" @data-passage="'_args[1]'"> */
+        <div @id="_args[0] + _args[2]" @class="'decision-item ' + 'decision-item'+_args[0] + ' hoverable'">
+            <<print _args[1]>><br>
+            <div style="position:relative;">
+                <div style="position:absolute; left:50%; transform:translateX(-50%);width: 100%;color:white;">
+                    <<for _stat, _value range _reqs["stats"]>>
+                        <<if _stat == "affection">>
+                            <<affection_icon_raw _value "red-filter">>
+                        <</if>>
+                        <<if _stat == "love">>
+                            <<love_icon_raw _value "red-filter">>
+                        <</if>>
+                        <<if _stat == "lust">>
+                            <<lust_icon_raw _value "red-filter">>
+                        <</if>>
+                    <</for>>
+                </div>
+            </div>
+        </div>
+
+
+        <div @id="'test' + _args[0] + _args[2]" class="SUCABLIE" style="display:none">
+            <br>
+            <<include _defaultPassage>>
+        </div>
+    <</nobr>>\
+<</widget>>
+
+
+:: decision_hard [widget]
+<<widget "decision_hard">>\
+    <<nobr>>
+        /*<div class="decision-item" @data-passage="'_args[1]'"> */
+        <div @id="_args[0] + _args[2]" @class="'decision-item ' + 'decision-item'+_args[0] + ' hoverable'" @data-passage="'_args[2]'">
+            <<print _args[1]>>
+        </div>
+    <</nobr>>\
+<</widget>>
+
+:: fast_image [widget]
+<<widget "fast_image">>\
+    <<nobr>>
+        <<if _args[1] === undefined>>
+            <<set _args[1] to "">>
+        <</if>>
+        <div @class="'photo_default_fast'">
+            <img @class='_args[1]' @src='_args[0]'>
+        </div>
+    <</nobr>>\
+<</widget>>
+
+:: sized_image [widget]
+<<widget "sized_image">>\
+    <<nobr>>
+        <div @id='_args[1]' @class="'photo_default_fast'">
+            <img @src='_args[0]'>
+        </div>
+        <<script>>
+            console.log('#'+State.variables["args"][1]+" img");
+            $('#'+State.variables["args"][1]+" img").css('width', State.variables["args"][2]+ ' px');
+        <</script>>
+    <</nobr>>\
+<</widget>>
+
+
+
+:: status_change [widget]
+<<widget "status_change">>\
+    <<nobr>>
+        <<if _args[1]["cooldown"] !== undefined>>
+            <<set _cooldown_temp to $cooldowns[_args[1]["cooldown"]["id"]]>>
+        <</if>>
+
+        <<set _give_stats to true>>
+
+        /* check coolodwn from _args[2] id */
+        <<if _cooldown_temp !== undefined>>
+            /* get current day (cooldown is always based on days in game) */
+            <<if $day < _cooldown_temp>>
+                <<set _give_stats to false>>
+            <</if>>
+
+        <</if>>
+
+        <<for _statusType, _statusIncrement range _args[1]>>
+            
+            <<if _give_stats>>
+                <<print _statusIncrement>>
+                <<print $statistics[_args[0]][_statusType]>>
+                <<set $statistics[_args[0]][_statusType] += _statusIncrement>>
+                <<print $statistics[_args[0]][_statusType]>>
+
+                /* always round to xx.x */
+                <<set $statistics[_args[0]][_statusType] = Math.round($statistics[_args[0]][_statusType]*10)/10>>
+                <<if $statistics[_args[0]][_statusType] < 0>>
+                    <<set $statistics[_args[0]][_statusType] = 0>>
+                <</if>>
+            <</if>>
+
+
+            
+        <</for>>
+        
+        <<if _args[1]["cooldown"] !== undefined and _give_stats>>
+            <<set $cooldowns[_args[1]["cooldown"]["id"]] = $day + _args[1]["cooldown"]["days"]>>
+        <</if>>
+
+        <<set _status = _args[1]>>
+
+        /* add text */
+        <<narrator>>
+            <<if _give_stats>>
+                <<if _status["affection"] !== undefined>>
+                    <<if _status["affection"] > 0>>
+                        You gained <<affection_icon_raw _status["affection"]>> affection points.<br>
+                    <<else>>
+                        You lost <<affection_icon_raw _status["affection"]>> affection points.<br>
+                    <</if>>
+                <</if>>
+
+                <<if _status["love"] !== undefined>>
+                    <<if _status["love"] > 0>>
+                        You gained <<love_icon_raw _status["affection"]>> love points.<br>
+                    <<else>>
+                        You lost <<love_icon_raw _status["affection"]>> love points.<br>
+                    <</if>>
+                <</if>>
+
+                <<if _status["lust"] !== undefined>>
+                    <<if _status["lust"] > 0>>
+                        You gained <<lust_icon_raw _status["affection"]>> lust points.<br>
+                    <<else>>
+                        You lost <<lust_icon_raw _status["affection"]>> lust points.<br>
+                    <</if>>
+                <</if>>
+
+            <<else>>
+                You can't gain any more points today.
+            <</if>>
+
+        <</narrator>>
+        <<set $characters[_args[0]]["stats"] = $statistics[_args[0]]>>
+
+    <</nobr>>\
+<</widget>>
+
+
+:: status_change_fake [widget]
+<<widget "status_change_fake">>\
+    <<nobr>>
+        <<set _cooldown_temp to undefined>>
+        <<if _args[1]["cooldown"] !== undefined>>
+            <<set _cooldown_temp to $cooldowns[_args[1]["cooldown"]["id"]]>>
+        <</if>>
+
+        <<set _give_stats to true>>
+
+        /* check coolodwn from _args[2] id */
+        <<if _cooldown_temp !== undefined>>
+            /* get current day (cooldown is always based on days in game) */
+            <<if $day < _cooldown_temp>>
+                <<set _give_stats to false>>
+            <</if>>
+        <</if>>
+
+        <<set _status = _args[1]>>
+
+        /* add text */
+        <<narrator>>
+            <<if _give_stats>>
+                <<if _status["affection"] !== undefined>>
+                    <<if _status["affection"] > 0>>
+                        You gained <<affection_icon_raw _status["affection"]>> affection points.<br>
+                    <<else>>
+                        You lost <<affection_icon_raw _status["affection"]>> affection points.<br>
+                    <</if>>
+                <</if>>
+
+                <<if _status["love"] !== undefined>>
+                    <<if _status["love"] > 0>>
+                        You gained <<love_icon_raw _status["affection"]>> love points.<br>
+                    <<else>>
+                        You lost <<love_icon_raw _status["affection"]>> love points.<br>
+                    <</if>>
+                <</if>>
+
+                <<if _status["lust"] !== undefined>>
+                    <<if _status["lust"] > 0>>
+                        You gained <<lust_icon_raw _status["affection"]>> lust points.<br>
+                    <<else>>
+                        You lost <<lust_icon_raw _status["affection"]>> lust points.<br>
+                    <</if>>
+                <</if>>
+                
+            <<else>>
+                You can't gain any more points today.
+            <</if>>
+
+        <</narrator>>
+
     <</nobr>>\
 <</widget>>

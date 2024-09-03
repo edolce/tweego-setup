@@ -1,0 +1,150 @@
+:: kim_working_model_handler [Kim Kim_Routine_Handler]
+<<wrapper "Lap Dance">>\
+    <<nobr>>
+        
+        <<photo "kim-model-default">>
+        
+        <<decision_maker "0000">>
+            <<decision "0000" "Conversation" "kim_work_conversation_decision">>
+            <<decision "0000" "Flirt" "kim_work_flirting">>
+            <<decision_hard "0000" "Back" "lap_dance_handler">>
+        <</decision_maker>>
+
+    <</nobr>>\
+<</wrapper>>
+
+:: kim_work_conversation_decision
+<<nobr>>
+    <<say "kim" "kim">>
+        So, what's on your mind?
+    <</say>>
+    <<decision_maker "0001">>
+        <<decision "0001" "Work" "kim_work_conversation_work">>
+        <<decision "0001" "Life" "kim_work_conversation_life">>
+        <<decision "0001" "You" "kim_work_conversation_you">>
+    <</decision_maker>>
+<</nobr>>
+
+:: kim_work_conversation_work
+<<nobr>>
+    <<say "kim" "kim">>
+        I love my job, I get to meet so many interesting people.
+    <</say>>
+    
+    <<say "Player" "$player_name">>
+        What's the most interesting thing you've seen?
+    <</say>>
+
+    <<say "kim" "kim">>
+        Oh, I couldn't possibly say. I've seen a lot of things.
+    <</say>>
+
+    <<say "Player" "$player_name">>
+        Come on, I won't tell anyone.
+    <</say>>
+
+    <<say "kim" "kim">>
+        Well, there was this one time a guy came in with a monkey.
+    <</say>>
+
+    <<say "Player" "$player_name">>
+        A monkey?
+    <</say>>
+
+    <<say "kim" "kim">>
+        Yeah, a monkey. He was a regular for a while, but then he stopped coming in.
+    <</say>>
+
+    <<say "Player" "$player_name">>
+        What happened to the monkey?
+    <</say>>
+
+    <<say "kim" "kim">>
+        I don't know. I never saw him again.
+    <</say>>
+
+    <<say "Player" "$player_name">>
+        That's a shame.
+    <</say>>
+
+    <<say "kim" "kim">>
+        Yeah, it is. I miss that little guy...
+    <</say>>
+
+    <<button "Back" "kim_working_model_handler">>
+    <</button>>
+<</nobr>>
+
+:: kim_work_conversation_life
+<<nobr>>
+    <<say "kim" "kim">>
+        Life is good. I'm happy.
+    <</say>>
+    
+    <<say "Player" "$player_name">>
+        That's great to hear.
+    <</say>>
+
+    <<say "kim" "kim">>
+        Yeah, it is. I'm lucky to have a job I love.
+    <</say>>
+
+    <<say "kim" "kim">>
+        Sometimes I also work as a stripper at the club, but I prefer bartending.
+    <</say>>
+
+    <<say "Player" "$player_name">>
+        Really?
+    <</say>>
+
+    <<say "kim" "kim">>
+        Yeah, really. I like the attention, but I don't like the touching.
+    <</say>>
+
+    <<say "Player" "$player_name">>
+        I can understand that.
+    <</say>>
+
+    <<narrator>>
+        I need to be careful with what she just said.
+    <</narrator>>
+
+    <<button "Back" "kim_working_model_handler">>
+    <</button>>
+<</nobr>>
+
+:: kim_work_conversation_you
+<<nobr>>
+    <<say "kim" "kim">>
+        Me? I'm just a simple bartender.
+    <</say>>
+    
+    <<say "Player" "$player_name">>
+        You're more than that.
+    <</say>>
+
+    <<say "kim" "kim">>
+        Oh, you're sweet. But really, I'm just kim.
+    <</say>>
+
+    <<button "Back" "kim_working_model_handler">>
+    <</button>>
+<</nobr>>
+
+:: kim_work_flirting
+<<nobr>>
+    <<say "kim" "kim">>
+        Oh, you're sweet. But I'm not interested.
+    <</say>>
+    
+    <<say "Player" "$player_name">>
+        Oh, I'm sorry. I didn't mean to offend you.
+    <</say>>
+
+    <<say "kim" "kim">>
+        You didn't offend me. I'm just not interested.
+    <</say>>
+
+    <<button "Back" "kim_working_model_handler">>
+    <</button>>
+<</nobr>>

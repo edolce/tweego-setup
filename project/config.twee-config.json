@@ -11,14 +11,50 @@
             "wrapper":{
                 "container": true
             },
+            "map-place-handler":{
+                "container": false
+            },
             "choices":{
                 "container": true
+            },
+            "flag-forced-event":{
+                "container": false
             },
             "choice-item":{
                 "container": false
             },
             "narrator":{
                 "container": true
+            },
+            "event-trigger-check":{
+                "container": false
+            },
+            "choice-item-chosen": {
+                "container": false
+            },
+            "decision_maker": {
+                "container": true
+            },
+            "decision": {
+                "container": false
+            },
+            "fast_image": {
+                "container": false
+            },
+            "status_change": {
+                "container": false
+            },
+            "affection_icon": {
+                "container": false
+            },
+            "love_icon": {
+                "container": false
+            },
+            "lust_icon": {
+                "container": false
+            },
+            "main_events_info": {
+                "container": false
             }
         }
     }

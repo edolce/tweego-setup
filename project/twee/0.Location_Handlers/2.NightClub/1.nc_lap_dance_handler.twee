@@ -1,0 +1,23 @@
+:: lap_dance_handler
+<<map-place-handler "Lap Dance" "lap_dance_default" true "lap_dance_handler">>
+
+:: lap_dance_default
+<<nobr>>
+
+    <<photo "lap_dance_default">>
+
+    <<choices "People in the room">>
+        <<for _i, _key range Object.keys($characters_in_scene)>>
+            <<choice-item $characters_in_scene[_key] _key _key>>
+        <</for>>
+    <</choices>>
+    <<choices "Where to GO?">>
+        <<choice-item "dance_floor_handler" "dance-floor" "Dance Floor">>
+        <<choice-item-chosen "lap_dance_handler" "lap-dance" "Lap Dance">>
+        <<choice-item "vip_lounge_handler" "vip-lounge" "VIP Lounge">>
+        <<choice-item "nc_bar_handler" "nc-bar" "Bar">>
+        <<choice-item "nc_boss_room" "nc-boss-room" "Boss Room">>
+        <<choice-item "map_handler" "map" "Map">>
+    <</choices>>
+
+<</nobr>>

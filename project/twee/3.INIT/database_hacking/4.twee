@@ -1,0 +1,52 @@
+:: init_database_hack_4
+<<set $database_haking["4"] to {
+            "display_name": "Charlotte Green",
+            "id_name": "charlotte_green",
+            "main_image":"https://i.ibb.co/YbR20Bb/3930890602fc87d32bcb.jpg",
+            "page": "testing_page",
+            "price": 100,
+            "info":{
+                "age": 23,
+                "job": "Student",
+                "hobbies": ["Reading", "Coding", "Gaming"],
+                "location": "New York",
+                "status": "Single",
+                "description": "Brittany is a student at NYU, she is studying computer science and she is very passionate about it.",
+                "image_bucket": {
+                    "level1": {
+                        "rare":[
+                            "https://i.ibb.co/db09c1X/282417673-3325710411005092-4529014943702553849-n.jpg",
+                            "https://i.ibb.co/3knRdbF/hailey-3935090024ef02b24.jpg"
+
+                        ],
+                        "uncommon": [
+                            "https://i.ibb.co/PxNQs0F/3930890602fc867abf99.jpg",
+                            "https://i.ibb.co/G08mkm6/3930890602fc7eccb1b3.jpg",
+                            "https://i.ibb.co/gDkWCrj/241426863-107707798315319-4822526563544733684-n.jpg"
+                        ],
+                        "common":[
+                            "https://i.ibb.co/B6LwRfG/la-m-s-perra-de-reddit-y-del-mundo-virtual-v0-lpc7kn1alvrc1.webp",
+                            "https://i.ibb.co/YpY8fwj/3930890602fc86e9ca67.jpg",
+                            "https://i.ibb.co/SX6F16F/3930890602fc82ccb5e8.jpg",
+                            "https://i.ibb.co/SP6pdhs/3930890602fc7fea749e.jpg",
+                            "https://i.ibb.co/Lp70fGs/FE5nm-M-Xw-AIkz-BN.jpg",
+                            "https://i.ibb.co/q1Pj8Mr/7f14f5f16d8852429a2045724fc46fbd.jpg",
+                            "https://i.ibb.co/pzdD3b4/Et-Tjqh-PWYAEHK3-R.jpg",
+                            "https://i.ibb.co/tJzFMpk/5a44f470c3cf3-m.jpg"
+
+
+                        ]
+                    },
+                    "level2": {
+                        "rare":[],
+                        "uncommon": [],
+                        "common":[]
+                    },
+                    "level3": {
+                        "rare":[],
+                        "uncommon": [],
+                        "common":[]
+                    }
+                },
+            }
+        }>>

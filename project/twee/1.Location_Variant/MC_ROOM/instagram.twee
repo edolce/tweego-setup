@@ -1,0 +1,706 @@
+:: mc_room_instagram
+<<nobr>>
+    <<wrapper "ROOM | PC | INSTAGRAM">>
+        <<nobr>>
+            <<choices "Select Profile?">>
+                
+                <<for _key, _value range $instagram_info>>
+                    <<choice-item _key+"-instagram-page" _key _key>>
+                <</for>>
+            <</choices>>
+        <</nobr>>
+        <<button "Go Back" "mc_room_pc">>
+            <<set $hack_mode = false>>
+            <<set $chat_opened = false>>
+        <</button>>
+    <</wrapper>>
+<</nobr>>
+
+
+:: isabella-instagram-page
+<<nobr>>
+    <<wrapper "ISABELLA | INSTAGRAM">>
+        <<nobr>>
+            <<button "Back" "mc_room_instagram">>
+            <</button>>
+            <br>
+            <<if $hack_mode>>
+                <<else>>
+            <</if>>
+            <br>
+            <<set $temp_photos to [
+                "https://i1.wp.com/mykaleidoscope.ru/x/uploads/posts/2022-10/thumbs/1666326938_45-mykaleidoscope-ru-p-diamond-dzhekson-krasivo-46.jpg?;ssl=1",
+                "https://i.pinimg.com/736x/42/5c/1d/425c1d44ea3ce406c9ade43fba5682ac.jpg",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8gsuBVR63E_LNCH0kIUTcS4n4Ch4deUgUAg&s",
+                "https://i.pinimg.com/originals/4a/65/dd/4a65dd594f6c38729fb257ac803a1c3e.jpg",
+                "https://i.ibb.co/D8GtKmj/408407442-312408048291854-8952640090677892363-n.jpg"
+                ]>>
+            <<instagram_page 
+            "Isabella Montenegro" 
+            "https://mykaleidoscope.ru/x/uploads/posts/2022-10/1666326945_9-mykaleidoscope-ru-p-diamond-dzhekson-krasivo-9.jpg"
+            "Hotel Manager | 44 | Single | Loves to travel and explore new places.📷✈️🏕️"
+            $temp_photos
+            $instagram_info.isabella
+            "isabella-instagram-page"
+            >>
+        <</nobr>>
+    <</wrapper>>
+<</nobr>>
+
+:: hanna-instagram-page
+<<nobr>>
+    <<wrapper "HANNA | INSTAGRAM">>
+        <<nobr>>
+            <<button "Back" "mc_room_instagram">>
+            <</button>>
+            <br>
+            <<if $hack_mode>>
+                <<else>>
+            <</if>>
+            <br>
+            <<set $instagram_info.hanna to {
+                "username": "hanna_kovalsko",
+                "followers": 12000,
+                "following": 200,
+                "posts": 50
+            }>>
+            <<set $temp_photos to [
+                "https://cdn.erocurves.com/wp-content/uploads/2017/11/0015-1.jpg",
+                "https://pbs.twimg.com/media/FzKF4SYWYAABZRH.jpg:large",
+                "https://i.pinimg.com/736x/83/39/c4/8339c471552c2eec119abfd3714dfaf4.jpg",
+                "https://c4.wallpaperflare.com/wallpaper/63/539/611/ariella-ferrera-brazzers-brazzers-com-kitchen-jeans-hd-wallpaper-preview.jpg",
+                "https://pics-storage-1.pornhat.com/contents/albums/main/1920x1080/50000/50573/2703254.jpg"
+                ]>>
+            <<instagram_page 
+            "Hanna Kovalsko" 
+            "https://i.ibb.co/hySc8zG/324855237-835429847566090-8709665201949600555-n.jpg"
+            "Fashion Designer | 32 | Single | Loves to travel and explore new places.📷✈️🏕️"
+            $temp_photos
+            $instagram_info.hanna
+            "hanna-instagram-page"
+            >>
+        <</nobr>>
+    <</wrapper>>
+<</nobr>>
+
+
+:: instagram_page [widget]
+<<widget "instagram_page">>\
+        <<nobr>>
+    <header>
+
+      <div class="container">
+        <<set $temp2 = [
+            {
+                "id": "0003",
+                "name": "Hanna Kovalsko",
+                "photo": "https://i.ibb.co/hySc8zG/324855237-835429847566090-8709665201949600555-n.jpg",
+                "email": "hanna_Kovalsko@gmail.com",
+                "passage": "hanna-instagram-page",
+                "messages":[
+                    {
+                        "date": "11/12/2020",
+                        "message": "I will miss you so much, babe!",
+                        "time": "Years ago",
+                        "photo": "https://i.ibb.co/hySc8zG/324855237-835429847566090-8709665201949600555-n.jpg",
+                        "sender": ""
+                    },
+                    {
+                        "date": "",
+                        "message": "",
+                        "time": "Photos is too old",
+                        "photo": "https://i.ibb.co/hySc8zG/324855237-835429847566090-8709665201949600555-n.jpg",
+                        "sender": "",
+                        "attachment": "https://i.ibb.co/VQsMxgd/download.png"
+                    },
+                    {
+                        "date": "",
+                        "message": "I will miss you too, babe!",
+                        "time": "Years ago",
+                        "photo": "https://mykaleidoscope.ru/x/uploads/posts/2022-10/1666326945_9-mykaleidoscope-ru-p-diamond-dzhekson-krasivo-9.jpg",
+                        "sender": "right"
+                    },
+                    {
+                        "date": "06/03/2022",
+                        "message": "Guess who's back, bitch!",
+                        "time": "Yesterday",
+                        "photo": "https://i.ibb.co/hySc8zG/324855237-835429847566090-8709665201949600555-n.jpg",
+                        "sender": ""
+                    },
+                    {
+                        "date": "",
+                        "message": "",
+                        "time": "Yesterday",
+                        "photo": "https://i.ibb.co/hySc8zG/324855237-835429847566090-8709665201949600555-n.jpg",
+                        "sender": "",
+                        "attachment": "https://i.ibb.co/Qn5t5B8/pic1.jpg"
+                    },
+                    {
+                        "date": "",
+                        "message": "How?!",
+                        "time": "days ago",
+                        "photo": "https://mykaleidoscope.ru/x/uploads/posts/2022-10/1666326945_9-mykaleidoscope-ru-p-diamond-dzhekson-krasivo-9.jpg",
+                        "sender": "right"
+                    },
+                    {
+                        "date": "",
+                        "message": "Are you ready for the old duo to be back in action?",
+                        "time": "days ago",
+                        "photo": "https://i.ibb.co/hySc8zG/324855237-835429847566090-8709665201949600555-n.jpg",
+                        "sender": ""
+                    },
+                    {
+                        "date": "",
+                        "message": "I'm always ready for you, babe!",
+                        "time": "days ago",
+                        "photo": "https://mykaleidoscope.ru/x/uploads/posts/2022-10/1666326945_9-mykaleidoscope-ru-p-diamond-dzhekson-krasivo-9.jpg",
+                        "sender": "right"
+                    }
+                ]},
+            
+            {
+                "id": "0002",
+                "name": "Nino Joseph",
+                "photo": "https://media.licdn.com/dms/image/C5603AQG5__HpxUQmOg/profile-displayphoto-shrink_200_200/0/1588507121385?e=2147483647&v=beta&t=4dvT_e58XyvgExxL9ZgC7lsP3kurlhWHYVVyPQb7gNU",
+                "email": "Nino_seph@gmail.com",
+                "messages":[
+                    {
+                        "date": "14/01/2024",
+                        "message": "Hey I really liked the night we spent together, wanna do it again?",
+                        "time": "some days ago",
+                        "photo": "https://media.licdn.com/dms/image/C5603AQG5__HpxUQmOg/profile-displayphoto-shrink_200_200/0/1588507121385?e=2147483647&v=beta&t=4dvT_e58XyvgExxL9ZgC7lsP3kurlhWHYVVyPQb7gNU",
+                        "sender": ""
+                    },
+                    {
+                        "date": "",
+                        "message": "No thanks, I'm sorry but I'm not interested in something like that.",
+                        "time": "some days ago",
+                        "photo": "https://mykaleidoscope.ru/x/uploads/posts/2022-10/1666326945_9-mykaleidoscope-ru-p-diamond-dzhekson-krasivo-9.jpg",
+                        "sender": "right"
+                    },{
+                        "date": "15/01/2024",
+                        "message": "I'm sorry, I didn't mean to offend you, I just thought we had a connection.",
+                        "time": "some days ago",
+                        "photo": "https://media.licdn.com/dms/image/C5603AQG5__HpxUQmOg/profile-displayphoto-shrink_200_200/0/1588507121385?e=2147483647&v=beta&t=4dvT_e58XyvgExxL9ZgC7lsP3kurlhWHYVVyPQb7gNU",
+                        "sender": ""
+                    },
+                    {
+                        "date": "",
+                        "message": "I'm sorry too, I just don't feel the same way.",
+                        "time": "some days ago",
+                        "photo": "https://mykaleidoscope.ru/x/uploads/posts/2022-10/1666326945_9-mykaleidoscope-ru-p-diamond-dzhekson-krasivo-9.jpg",
+                        "sender": "right"
+                    },
+                    {
+                        "date": "16/01/2024",
+                        "message": "I understand... You know I really love your feet, I swear that if you give me a last photo of them I will never bother you again.",
+                        "time": "some days ago",
+                        "photo": "https://media.licdn.com/dms/image/C5603AQG5__HpxUQmOg/profile-displayphoto-shrink_200_200/0/1588507121385?e=2147483647&v=beta&t=4dvT_e58XyvgExxL9ZgC7lsP3kurlhWHYVVyPQb7gNU",
+                        "sender": ""
+                    },
+                    {
+                        "date": "",
+                        "message": "...Really?",
+                        "time": "some days ago",
+                        "photo": "https://mykaleidoscope.ru/x/uploads/posts/2022-10/1666326945_9-mykaleidoscope-ru-p-diamond-dzhekson-krasivo-9.jpg",
+                        "sender": "right"
+                    },
+                    {
+                        "date": "17/01/2024",
+                        "message": "Yes, I swear, I just want to remember you in a good way.",
+                        "time": "some days ago",
+                        "photo": "https://media.licdn.com/dms/image/C5603AQG5__HpxUQmOg/profile-displayphoto-shrink_200_200/0/1588507121385?e=2147483647&v=beta&t=4dvT_e58XyvgExxL9ZgC7lsP3kurlhWHYVVyPQb7gNU",
+                        "sender": ""
+                    },
+                    {
+                        "date": "",
+                        "message": "Ok... I'll send you a photo of my feet, but after that, I don't want to hear from you again.",
+                        "time": "some days ago",
+                        "photo": "https://mykaleidoscope.ru/x/uploads/posts/2022-10/1666326945_9-mykaleidoscope-ru-p-diamond-dzhekson-krasivo-9.jpg",
+                        "sender": "right"
+                    },
+                    {
+                        "date": "",
+                        "message": "",
+                        "time": "some days ago",
+                        "photo": "https://mykaleidoscope.ru/x/uploads/posts/2022-10/1666326945_9-mykaleidoscope-ru-p-diamond-dzhekson-krasivo-9.jpg",
+                        "sender": "right",
+                        "attachment": "https://pics.wikifeet.com/Diamond-Jackson(2)-Feet-3540145.jpg"
+                    },
+                    {
+                        "date": "",
+                        "message": "Here is the photo, It's from a few years ago, while one of my workers was exercising his massage techniques on me.",
+                        "time": "some days ago",
+                        "photo": "https://mykaleidoscope.ru/x/uploads/posts/2022-10/1666326945_9-mykaleidoscope-ru-p-diamond-dzhekson-krasivo-9.jpg",
+                        "sender": "right"
+                    },
+                    {
+                        "date": "18/01/2024",
+                        "message": "Oh Fuck, take this in exchange.",
+                        "time": "some days ago",
+                        "photo": "https://media.licdn.com/dms/image/C5603AQG5__HpxUQmOg/profile-displayphoto-shrink_200_200/0/1588507121385?e=2147483647&v=beta&t=4dvT_e58XyvgExxL9ZgC7lsP3kurlhWHYVVyPQb7gNU",
+                        "sender": ""
+                    },
+                    {
+                        "date": "",
+                        "message": "",
+                        "time": "some days ago",
+                        "photo": "",
+                        "sender": "https://media.licdn.com/dms/image/C5603AQG5__HpxUQmOg/profile-displayphoto-shrink_200_200/0/1588507121385?e=2147483647&v=beta&t=4dvT_e58XyvgExxL9ZgC7lsP3kurlhWHYVVyPQb7gNU",
+                        "attachment": "https://www.mydick.pictures/cocks/albums/userpics/22630/13/20220530_105159.jpg"
+                    },
+                    {
+                        "date": "",
+                        "message": "Are you serious?! That's so gross... I'm done you're blocked!",
+                        "time": "some days ago",
+                        "photo": "https://mykaleidoscope.ru/x/uploads/posts/2022-10/1666326945_9-mykaleidoscope-ru-p-diamond-dzhekson-krasivo-9.jpg",
+                        "sender": "right"  
+                    }
+
+
+                ]},
+                {
+                    "id": "0004",
+                    "name": "Deleted Chat",
+                    "photo": "https://cdn0.iconfinder.com/data/icons/users-2/512/e27-512.png",
+                    "email": "",
+                    "messages":[
+                    ]},
+                {
+                    "id": "0005",
+                    "name": "Deleted Chat",
+                    "photo": "https://cdn0.iconfinder.com/data/icons/users-2/512/e27-512.png",
+                    "email": "",
+                    "messages":[
+                    ]},{
+                "id": "0001",
+                "name": "Miro Badev",
+                "photo": "https://d.newsweek.com/en/full/932688/moe-2.jpg",
+                "email": "mirobadev@gmail.com",
+                "messages":[
+                    {
+                        "date": "02/02/2024",
+                        "message": "Hey Babe wanna see my dick?",
+                        "time": "some days ago",
+                        "photo": "https://d.newsweek.com/en/full/932688/moe-2.jpg",
+                        "sender": ""
+                    },
+                    {
+                        "date": "03/02/2024",
+                        "message": "FUCK OFF!",
+                        "time": "some days ago",
+                        "photo": "https://mykaleidoscope.ru/x/uploads/posts/2022-10/1666326945_9-mykaleidoscope-ru-p-diamond-dzhekson-krasivo-9.jpg",
+                        "sender": "right"
+                    }
+
+                ]
+                }
+        ]>>
+        <<instagram_chat $temp2 >>
+        <div class="profile">
+
+          <div class="profile-image">
+
+            <img @src='_args[1]' alt="">
+            <<button "Hacked Mode (click)" _args[5]>> 
+                <<set $hack_mode = !($hack_mode)>>
+            <</button>>
+            <<if $hack_mode>>
+                <<button "Chats">>
+                    <<set $chat_opened = !($chat_opened)>>
+                    <<script>>
+                        if(State.variables.chat_opened){
+                            const chatPopup = document.querySelector('.chat-popup');
+                            chatPopup.style.display = 'block';
+
+                            const profileUserSettings = document.querySelector('.profile-user-settings');
+                            profileUserSettings.style.display = 'none';
+
+                            const profileStats = document.querySelector('.profile-stats');
+                            profileStats.style.display = 'none';
+
+                            const profileBio = document.querySelector('.profile-bio');
+                            profileBio.style.display = 'none';
+
+                            const profile = document.querySelector('.profile');
+                            profile.style.display = 'block';
+
+                        }else{
+                            const chatPopup = document.querySelector('.chat-popup');
+                            chatPopup.style.display = 'none';
+
+
+                            const profileUserSettings = document.querySelector('.profile-user-settings');
+                            profileUserSettings.style.display = 'block';
+
+                            const profileStats = document.querySelector('.profile-stats');
+                            profileStats.style.display = 'block';
+
+                            const profileBio = document.querySelector('.profile-bio');
+                            profileBio.style.display = 'block';
+
+                            const profile = document.querySelector('.profile');
+                            profile.style.display = 'grid';
+
+
+
+
+                        }
+
+
+                    <</script>>
+                <</button>>
+            <</if>>
+          </div>
+
+          <div class="profile-user-settings">
+
+            <h1 class="profile-user-name">_args[0]</h1>
+
+            /* <button class="btn profile-edit-btn">Edit Profile</button>
+
+            <button class="btn profile-settings-btn" aria-label="profile settings"><i class="fas fa-cog" aria-hidden="true"></i></button> */
+
+          </div>
+
+          <div class="profile-stats">
+
+            <ul>
+              <li><span class="profile-stat-count">_args[3].length</span> posts</li>
+              <li><span class="profile-stat-count">_args[4].followers</span> followers</li>
+              <li><span class="profile-stat-count">_args[4].following</span> following</li>
+            </ul>
+
+          </div>
+
+          <div class="profile-bio">
+
+            <p><span class="profile-real-name">_args[0]</span> _args[2]</p>
+
+          </div>
+
+        </div>
+        <!-- End of profile section -->
+
+      </div>
+      <!-- End of container -->
+
+    </header>
+    <main>
+
+      <div class="container">
+
+        <div class="gallery">
+            <<for _photo range _args[3]>>
+            <div class="gallery-item" tabindex="0">
+                
+                    <img @src='_photo' class="gallery-image" alt="">
+    
+                    <div class="gallery-item-info">
+    
+                    <ul>
+                        <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 56</li>
+                        <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>
+                    </ul>
+    
+                    </div>
+            <</for>>
+
+        </div>
+        <!-- End of gallery -->
+
+      </div>
+      <!-- End of container -->
+
+    </main>
+
+
+    /*
+    add event listener to gallery items
+    if clicked, open popup bigger image
+     */
+     
+     <<script>>
+        setTimeout(() => {
+            const gallery = document.querySelectorAll('.gallery-item');
+            gallery.forEach(item => {
+                item.addEventListener('click', event => {
+                    const img = event.target.closest('.gallery-item').querySelector('.gallery-image');
+                    console.log(img);
+                    const src = img.getAttribute('src');
+                    const alt = img.alt;
+                    const popup = document.createElement('div');
+                    popup.style.position = 'fixed';
+                    popup.style.top = 0;
+                    popup.style.left = 0;
+                    popup.style.width = '100%';
+                    popup.style.height = '100vh';
+                    popup.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+                    popup.style.display = 'flex';
+                    popup.style.justifyContent = 'center';
+                    popup.style.alignItems = 'center';
+
+                    popup.classList.add('popup');
+                    const popupImage = document.createElement('img');
+                    popupImage.src = src;
+                    popupImage.alt = alt;
+                    popupImage.style.maxHeight = "90%";
+                    popup.appendChild(popupImage);
+                    popup.addEventListener('click', () => {
+                        popup.remove();
+                    });
+                    const story = document.querySelector('#story');
+                    story.appendChild(popup);
+                });
+            });
+        }, 200);
+
+     <</script>>
+
+    <</nobr>>\
+<</widget>>
+
+:: test000
+DIO CANE
+
+:: instagram_chat [widget]
+<<widget "instagram_chat">>\
+
+    <<script>>
+    $(document).ready(function(){
+	
+  var preloadbg = document.createElement("img");
+  preloadbg.src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/timeline1.png";
+  
+	$("#searchfield").focus(function(){
+		if($(this).val() == "Search contacts..."){
+			$(this).val("");
+		}
+	});
+	$("#searchfield").focusout(function(){
+		if($(this).val() == ""){
+			$(this).val("Search contacts...");
+			
+		}
+	});
+	
+	$("#sendmessage input").focus(function(){
+		if($(this).val() == "Send message..."){
+			$(this).val("");
+		}
+	});
+	$("#sendmessage input").focusout(function(){
+		if($(this).val() == ""){
+			$(this).val("Send message...");
+			
+		}
+	});
+		
+	
+	$(".friend").each(function(){		
+		$(this).click(function(){
+			var childOffset = $(this).offset();
+			var parentOffset = $(this).parent().parent().offset();
+			var childTop = childOffset.top - parentOffset.top;
+			var clone = $(this).find('img').eq(0).clone();
+			var top = childTop+12+"px";
+			
+			$(clone).css({'top': top}).addClass("floatingImg").appendTo("#chatbox");									
+			
+			setTimeout(function(){$("#profile p").addClass("animate");$("#profile").addClass("animate");}, 100);
+			setTimeout(function(){
+				$("#chat-messages").addClass("animate");
+				$('.cx, .cy').addClass('s1');
+				setTimeout(function(){$('.cx, .cy').addClass('s2');}, 100);
+				setTimeout(function(){$('.cx, .cy').addClass('s3');}, 200);			
+			}, 150);														
+			
+			$('.floatingImg').animate({
+				'width': "68px",
+				'left':'108px',
+				'top':'20px'
+			}, 200);
+			
+            var friend_id = $(this).attr("id");
+            var right_friend = State.variables.temp2.find(friend => friend.id === friend_id);
+
+
+			var name = $(this).find("p strong").html();
+			var email = $(this).find("p span").html();														
+			$("#profile p").html(name);
+
+            $("#profile p").click(function(){
+                if(right_friend.passage !== undefined) Engine.play(right_friend.passage);
+            });
+
+            $("#chatbox .floatingImg").click(function(){
+                if(right_friend.passage !== undefined) Engine.play(right_friend.passage);
+            });
+
+            $("#chatbox .floatingImg").hover(function(){
+                $(this).css("cursor", "pointer");
+            });
+
+            $("#profile p").hover(function(){
+                $(this).css("cursor", "pointer");
+            });
+
+
+
+			$("#profile span").html(email);			
+			
+			$(".message").not(".right").find("img").attr("src", $(clone).attr("src"));									
+			$('#friendslist').fadeOut();
+			$('#chatview').fadeIn();
+
+
+
+
+            
+            
+            console.log(right_friend);
+
+
+            var messages = right_friend.messages;
+
+            var html_messages = "";
+            for (var i = 0; i < messages.length; i++) {
+                var message = messages[i];
+                var message_html = "";
+
+                if (message.attachment !== undefined){
+                    message_html = `
+                    <div class="message ${message.sender}">
+                        <img src="${message.photo}" />
+                        <div class="bubble">
+                            <img class="attach_img" src="${message.attachment}" />
+                            <div class="corner"></div>
+                            <span>${message.time}</span>
+                        </div>
+                    </div>
+                    `;
+
+                    
+
+                }else{
+                        if (message.date !== ""){
+                            html_messages += `<label>${message.date}</label>`;
+                        }
+                        message_html = `
+                        <div class="message ${message.sender}">
+                            <img src="${message.photo}" />
+                            <div class="bubble">
+                                ${message.message}
+                                <div class="corner"></div>
+                                <span>${message.time}</span>
+                            </div>
+                        </div>
+                        `;
+                }
+                html_messages += message_html;
+            }
+
+
+            $("#chat-messages").empty();
+            $("#chat-messages").append(
+                html_messages
+            );                            
+		
+            var img = document.querySelector('.attach_img');
+            if (img !== null)
+                    img.addEventListener('click', function(){
+                        var popup = document.createElement('div');
+                        popup.style.position = 'fixed';
+                        popup.style.top = 0;
+                        popup.style.left = 0;
+                        popup.style.width = '100%';
+                        popup.style.height = '100vh';
+                        popup.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+                        popup.style.display = 'flex';
+                        popup.style.justifyContent = 'center';
+                        popup.style.alignItems = 'center';
+
+                        popup.classList.add('popup');
+                        var popupImage = document.createElement('img');
+                        popupImage.src = img.src;
+                        popupImage.style.maxHeight = "90%";
+                        popup.appendChild(popupImage);
+                        popup.addEventListener('click', () => {
+                            popup.remove();
+                        });
+                        document.body.appendChild(popup);
+                    });
+			
+			$('#close').unbind("click").click(function(){				
+				$("#chat-messages, #profile, #profile p").removeClass("animate");
+				$('.cx, .cy').removeClass("s1 s2 s3");
+				$('.floatingImg').animate({
+					'width': "40px",
+					'top':top,
+					'left': '12px'
+				}, 200, function(){$('.floatingImg').remove()});				
+				
+				setTimeout(function(){
+					$('#chatview').fadeOut();
+					$('#friendslist').fadeIn();				
+				}, 50);
+			});
+			
+		});
+	});			
+});
+    <</script>>
+    <<nobr>>
+    <div class="chat-popup">
+    <div id="chatbox">
+	<div id="friendslist">
+    	<div id="topmenu">
+        	<span class="friends"></span>
+            <span class="chats"></span>
+            <span class="history"></span>
+        </div>
+        
+        <div id="friends">
+            <<for _friend range _args[0]>>
+                <div class="friend" @id='_friend["id"]'>
+                    <img @src='_friend["photo"]' />
+                    <p>
+                        <strong>_friend["name"]</strong>
+                        <br>
+                        <span>_friend["email"]</span>
+                    </p>
+                    /* set a random status */
+                    <<set _status = ["available", "away", "inactive"].random()>>
+                    <div @class='"status " + _status'></div>
+                </div>
+            <</for>>      
+        </div>
+    </div>	
+    
+    <div id="chatview" class="chatview p1">    	
+        <div id="profile">
+            <div id="close">
+                <div class="cy"></div>
+                <div class="cx"></div>
+            </div>
+            <p>Miro Badev</p>
+            <span>miro@badev@gmail.com</span>
+        </div>
+
+        <div id="chat-messages">
+        	<label>Thursday 02</label>
+            <div class="message">
+            	<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/1_copy.jpg" />
+                <div class="bubble">
+                	Really cool stuff!
+                    <div class="corner"></div>
+                    <span>3 min</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    </div>        	
+</div>   
+    <</nobr>>\
+<</widget>>

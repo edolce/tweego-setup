@@ -1,0 +1,24 @@
+:: hotel_gym_handler [Map Map_Handler Map_Hotel]
+<<map-place-handler "Hotel Gym" "hotel_gym_default" true "hotel_gym_handler">>
+
+:: hotel_gym_default [Map Map_Default Map_Hotel]
+<<nobr>>
+    <<photo "hotel_gym_default">>
+    
+    <<choices "People in the room">>
+        <<for _i, _key range Object.keys($characters_in_scene)>>
+            <<choice-item $characters_in_scene[_key] _key _key>>
+        <</for>>
+    <</choices>>
+
+    <<choices "Where to GO?">>
+        <<choice-item "hall_handler" "hall" "Hall">>
+        <<choice-item "floor1_handler" "floor1" "Floor 1">>
+        <<choice-item "floor2_handler" "floor2" "Floor 2">>
+        <<choice-item "hotel_office_handler" "hotel-office" "Office">>
+        <<choice-item-chosen "hotel_gym_handler" "hotel-gym" "Gym">>
+        <<choice-item "bathroom_handler" "hotel-bathroom" "Public WC">>
+        <<choice-item "isabella_villa_handler" "isabella-villa" "Isabella's Villa">>
+        <<choice-item "map_handler" "map" "Map">>
+    <</choices>>
+<</nobr>>

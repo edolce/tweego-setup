@@ -1,0 +1,48 @@
+:: isabella_forced_events_init [Isabella Events_Init]
+<<nobr>>
+    <<set $isabella_scenes to []>>
+    /* Isabella introduce al protagonista */
+    <<set $isabella_scenes.push(
+        {   
+            "event_name": "First meeting with Isabella",
+            "description": "Isabella introduce herself to the protagonist and she shows him the hotel.",
+            "display_trigger_event": "isabella_scene_1",
+            "trigger_passage": "hall_handler",
+            "trigger_time": "afternoon",
+            "triggered": false,
+            "is_force_trigger": false,
+            "icon": "main_mission_icon",
+            "passage_required": undefined,
+            "cooldown": 1
+        }
+        )>>
+    /* Isabella e il rptagonista si incontrano in palestra */
+    <<set $isabella_scenes.push(
+        {-+
+            "event_name": "Meeting with Isabella in the gym",
+            "description": "Isabella and the protagonist meet in the gym.",
+            "display_trigger_event": "isabella_scene_2_gym_scene",
+            "trigger_passage": "hotel_gym_handler",
+            "triggered": false,
+            "is_force_trigger": false,
+            "icon": "main_mission_icon",
+            "passage_required": "isabella_scene_1",
+            "cooldown": 1
+        }
+        )>>
+    <<set $isabella_scenes.push(
+        {
+            "event_name": "You meet Isabella's dog",
+            "description": "Isabella introduces you to her dog.",
+            "display_trigger_event": "isabella_scene_3_dog_name",
+            "trigger_passage": "hall_handler",
+            "triggered": false,
+            "is_force_trigger": false,
+            "icon": "main_mission_icon",
+            "passage_required": "isabella_scene_2_gym_scene",
+            "cooldown": 1
+        }
+        )>>
+    <<set $forced_events.isabella to $isabella_scenes>>
+<</nobr>>
+

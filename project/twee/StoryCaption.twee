@@ -1,27 +1,87 @@
-:: StoryCaption
+:: StoryCaption [utility]
+<<nobr>>
 <div id="story-caption">
+   <p class="ui-title">Hacker's Delight</p>
    <p class="desc center noMarginTop">v. 0.0.1</p>
-   <span class="desc">
-      <a class="link-internal macro-link" role="button" tabindex="0">
-         <div class="med purple btn"><span class="btnText">Get Early Access content</span></div>
-      </a>
+   <a class="link-internal macro-link" role="button" tabindex="0">
+      <div class="med btn"><span class="btnText">$playername</span></div>
+   </a>
+   <a class="link-internal macro-link" role="button" tabindex="0">
+      <div class="image noMarginBottom smlMarginTop avatarBig" style="display: flex; justify-content: center; align-items: center;">         
+      <img src="https://i.ibb.co/7CM8DyL/Nuovo-progetto.png" class="">       
+      </div>
+   </a>
+   <hr>
+   /* DIPLAY MONEY IN A COOL WAY */
+   <span class="money" style="color: #12751f; font-size: 1.5em; font-weight: bold; display: block; text-align: center; margin-top: 10px;">
+   <span id="money-value"><<print $money>></span> 💰
    </span>
+   /* DISPLAY STATS IN A COOL WAY */
+   <div class="stats" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
+      <style>
+         .stat {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 10px;
+         }
+      </style>
+      <div class="stat statEnergy">
+         <span class="statName">
+         <span id="energy-icon"><<if $energy > 50>>🔋<<elseif $energy > 25 and $energy <= 50>>🔌<<else>>💤<</if>></span>
+         <br>Energy<br></span>
+         <span id="energy-value" class="statValue">''<<print $energy>>''</span>
+      </div>
+      <div class="stat">
+         <span class="statName">🏋️<br>Strength<br></span>
+         <span class="statValue">''<<print $character_stats["strength"]>>''</span>
+      </div>
+      <div class="stat">
+         <span class="statName">🏃<br>Stealth<br></span>
+         <span class="statValue">''<<print $character_stats["stealth"]>>''</span>
+      </div>
+   </div>
+   <hr>
+   <div id="characters">
+   <<set _permitted to [
+            "hall_handler",
+            "floor1_handler",
+            "floor2_handler",
+            "hotel_office_handler",
+            "bathroom_handler",
+            "hotel_gym_handler",
+            "isabella_villa_handler"
+            ]>>
+      <<button "Characters" >>
+         /* check if passage cointains "default" if not say error */
+         <<if _permitted.includes(passage())>>
+            <<set $resume_game to passage()>>
+            <<goto "character-list">>
+         <<else>>
+            <<script>>
+               document.querySelector("#characters button").innerHTML = "Not available in Events";
+               
+               document.querySelector("#characters button").style.color = "red";
+               document.querySelector("#characters button").style.backgroundColor = "white";
+               document.querySelector("#characters button").style.fontSize = "15px";
+               document.querySelector("#characters button").style.transition = "color 1s, background-color 2s";
+
+               
+               
+               setTimeout(() => {
+                  console.log("timeout");
+                  document.querySelector("#characters button").innerHTML = "Characters";
+                  document.querySelector("#characters button").style.backgroundColor = "";
+                  document.querySelector("#characters button").style.color = "";
+                  document.querySelector("#characters button").style.fontSize = "";
+               }, 3000);
+            <</script>>
+         <</if>>
+      <</button>>
+   </div>
    <a class="link-internal macro-link" role="button" tabindex="0">
-      <div class="btn"><span class="btnText">Harry Panuchkin</span></div>
-   </a>
-   <a class="link-internal macro-link" role="button" tabindex="0">
-      <div class="image noMarginBottom smlMarginTop avatarBig">         <img src="media/characters/player/beta0/portrait_sex.jpg" class="">       </div>
-   </a>
-   <a class="link-internal macro-link" role="button" tabindex="0">
-      <div class="btn"><span class="btnText">Characters</span></div>
-   </a>
-   <a class="link-internal macro-link" role="button" tabindex="0">
-      <div class="btn"><span class="btnText">Quests</span></div>
-   </a>
-   <h3 class="white">Tits of Fortune</h3>
-   <p class="info center">Daphne told you to unpack, so what are you waiting for, bozo!? While in your room click the "Unpack" button.</p>
-   <a class="link-internal macro-link" role="button" tabindex="0">
-      <div class="btn"><span class="btnText">Hints</span></div>
+      <div class="med btn"><span class="btnText">Quests</span></div>
    </a>
    <hr>
    <a class="link-internal macro-link" role="button" tabindex="0">
@@ -40,5 +100,48 @@
    <a class="link-internal macro-link" role="button" tabindex="0">
       <div class="med btn"><span class="btnText">About the game</span></div>
    </a>
+   <<button "Change time">>
+      <<if $time === 'morning'>>
+         <<set $time = 'afternoon'>>
+      <<elseif $time === 'afternoon'>>
+         <<set $time = 'night'>>
+      <<else>>
+         <<set $time = 'morning'>>
+      <</if>>
+   <</button>>
+   <<button "change day">>
+      <<set $day += 1>>
+      <<set $day_of_week = $day_of_weeks[$day % 7]>>
+   <</button>>
+   <<button "init">>
+      <<include start_init>>
+   <</button>>
    <a href="https://www.youtube.com/watch?v=DIsMWG3UuyY&amp;list=PLyHolgprbu8LUT77_2qL-UDoLHKhdNJop" target="_blank" class="btn med">♫ Playlist ♬</a> 
 </div>
+<</nobr>>
+
+
+:: PassageHeader [utility]
+<<nobr>>
+<div id="passage-header">
+<div class="container">
+   <div class="day">
+   Day $day, $day_of_week
+   </div>
+   <div class="time">
+   <span id='watch'>$watch</span>
+   <<switch $time>>
+      <<case "morning">>
+         🌞 Morning
+      <<case "afternoon">>
+         ☀️ Afternoon
+      <<case "evening">>
+         🌓 Evening
+      <<case "night">>
+         🌙 Night
+   <</switch>>
+   
+   </div>
+   </div>
+</div>
+<</nobr>>

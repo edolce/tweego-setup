@@ -1,0 +1,87 @@
+:: isabella_scene_3_dog_name [Isabella Isabella_Scene]
+/*Un evento importante dove scopri il nome dell’animale domestico avviene nella hall nel pomeriggio dove isabella sta tornando da una passeggiata con il cane, e scopri il suo nome. */
+<<nobr>>
+    <<flag-forced-event "isabella_scene_3_dog_name">>
+
+    <<fast_image "https://i.ibb.co/fSgtFs7/download.jpg">>
+
+    <<say "Player" "$playername">>
+        *Hey look who's here!*
+    <</say>>
+
+    <<say "Isabella" "Isabella">>
+        Hey! How are you doing?
+    <</say>>
+
+    <<say "Player" "$playername">>
+        I'm good. How about you?
+    <</say>>
+
+    <<narrator>>
+        You notice that she has a dog with her. You've never seen her with a dog before. You wonder what the dog's name is.
+    <</narrator>>
+
+    <<fast_image "https://www.thesprucepets.com/thmb/y4YEErOurgco9QQO-zJ6Ld1yVkQ=/3000x0/filters:no_upscale():strip_icc()/english-dog-breeds-4788340-hero-14a64cf053ca40f78e5bd078b052d97f.jpg">>
+
+    <<say "Player" "$playername">>
+        I see you're back from your walk with your dog. What's his name?
+    <</say>>
+
+    <<say "Isabella" "Isabella">>
+        His name is Maxim. I've had him for a few years now. He's a great companion.
+    <</say>>
+
+    <<say "Player" "$playername">>
+        *Maxim... I think I will need to remember that.*
+    <</say>>
+
+    <<say "Player" "$playername">>
+        That's a nice name. Is he a good dog to have around?
+    <</say>>
+
+    <<say "Isabella" "Isabella">>
+        Yes, he's very friendly and well-behaved. He's great with people and other dogs. I take him for walks every day. It's good exercise for both of us.
+    <</say>>
+
+    <<say "Player" "$playername">>
+        *I should ask her about her training is going.*
+    <</say>>
+
+    <<say "Player" "$playername">>
+        How's your training going?
+    <</say>>
+
+    <<say "Isabella" "Isabella">>
+        It's going well. I've been working hard. I'm confident that I'll do well in the competition. I'm excited about it.
+    <</say>>
+
+    <<say "Player" "$playername">>
+        That's great! I'm sure you'll do well. I'm looking forward to seeing you compete.
+    <</say>>
+
+    <<say "Isabella" "Isabella">>
+        Thank you. See you later, maybe we can work out together sometime.
+    <</say>>
+
+    <<say "Player" "$playername">>
+        Sure, that would be great. I'll see you later.
+    <</say>>
+
+    <<narrator>>
+        You watch as Isabella walks away with Maxim.
+    <</narrator>>
+
+    <<narrator>>
+        UNLOCKED ONE SPECIAL INSTAGRAM INFO: Isabella's dog's name is Maxim.
+    <</narrator>>
+
+    <<set $instagram_info.isabella.dog_name to "Maxim">>
+
+    <<set $temp3 to {"affection": 0.5}>>
+    <<status_change "isabella" $temp3>>
+
+    <<button "Continue" hall_handler>>
+    <</button>>
+
+
+<</nobr>>

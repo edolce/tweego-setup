@@ -1,0 +1,19 @@
+:: massage_boss_room_handler
+<<wrapper "Lobby">>
+    <<nobr>>
+        <<include "massage_boss_room_default">>
+    <</nobr>>
+<</wrapper>>
+
+:: massage_boss_room_default
+<<nobr>>
+
+    <<photo "massage_boss_room_default">>
+
+    <<choices "Where to GO?">>
+        <<choice-item "massage_lobby_handler" "massage-lobby" "Lobby">>
+        <<choice-item-chosen "massage_boss_room_handler" "massage-boss-room" "Boss Room">>
+        <<choice-item "map_handler" "map" "Map">>
+    <</choices>>
+
+<</nobr>>

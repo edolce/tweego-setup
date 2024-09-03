@@ -1,0 +1,244 @@
+:: isabella_scene_2_gym_scene [Isabella Isabella_Scene]
+<<nobr>>
+    <<flag-forced-event "isabella_scene_2_gym_scene">>
+
+    <<fast_image "https://i.ibb.co/W5G6f6T/256795458c79f218e538.jpg">>
+
+    <<say "Player" "$playername">>
+        *It looks like Isabella is working out. I should go talk to her to know more about her.*
+    <</say>>
+
+    <<say "Isabella" "Isabella">>
+        Hey, $playername! I'm glad you're here. I was just working out. I'm trying to get in shape for the upcoming competition.
+    <</say>>
+
+    <<say "Player" "$playername">>
+        *I should ask her about the competition.*
+    <</say>>
+
+    <<say "Player" "$playername">>
+        So, what competition are you talking about?
+    <</say>>
+
+    <<say "Isabella" "Isabella">>
+        Oh, I'm sorry. I forgot to mention it. I'm participating in the upcoming bodybuilding competition. I've been training for it for a while now.
+    <</say>>
+
+    <<say "Player" "$playername">>
+        *I should ask her about her training.*
+    <</say>>
+
+    <<say "Player" "$playername">>
+        That's great! How's your training going?
+    <</say>>
+
+    <<say "Isabella" "Isabella">>
+        It's going well. I've been working hard to get in shape. I'm confident that I'll do well in the competition. I'm excited about it. I used to be a cheerleader in high school, so I'm used to performing in front of a crowd.
+    <</say>>
+
+    
+    <<decision_maker "0000">>
+        <<decision "0000" "Cheer Her Up" "fake_decision_1">>
+        <<decision "0000" "Be Negative" "fake_decision_2">>
+    <</decision_maker>>
+    
+<</nobr>>
+
+:: fake_decision_1 [Isabella Isabella_Scene]
+<<nobr>>
+    <<say "Player" "$playername">>
+        That's great to hear! I'm sure you'll do well in the competition. You've been working hard, and it's going to pay off. I'll be there to cheer you on.
+    <</say>>
+
+    <<say "Isabella" "Isabella">>
+        Thank you, $playername! I appreciate the support.
+    <</say>>
+
+    /* GAIN SOME AFFECTION POINT */
+    <<button "Ask About Her Training Routine" "isabella_scene_2_gym_scene_resume">>
+    <</button>>
+
+<</nobr>>
+
+:: fake_decision_2 [Isabella Isabella_Scene]
+<<nobr>>
+    <<say "Player" "$playername">>
+        I heared that those competitions are tough. Are you sure you're ready for it?
+    <</say>>
+
+    <<say "Isabella" "Isabella">>
+        *Isabella looks disappointed.* I'm sorry to hear that. I've been working hard to get in shape, and I'm confident that I'll do well in the competition.
+    <</say>>
+
+    /* LOSE SOME AFFECTION POINT */
+    <<button "Ask About Her Training Routine" "isabella_scene_2_gym_scene_resume">>
+    <</button>>
+
+<</nobr>>
+
+
+
+:: isabella_scene_2_gym_scene_resume [Isabella Isabella_Scene]
+<<nobr>>
+    <<say "Player" "$playername">>
+        So, what's your training routine like?
+    <</say>>
+
+    <<say "Isabella" "Isabella">>
+        I train on Tuesday/Wednesday/Fruday morning. I'm actually focusing on some yoga and pilates exercises to improve my flexibility and strength.
+    <</say>>
+
+    <<button "Ask To Train Together" "isabella_scene_2_gym_scene_resume_2">>
+    <</button>>
+<</nobr>>
+
+:: isabella_scene_2_gym_scene_resume_2 [Isabella Isabella_Scene]
+<<nobr>>
+    <<say "Player" "$playername">>
+        That's great! I'd love to train with you sometime. Maybe we can motivate each other.
+    <</say>>
+
+    <<say "Isabella" "Isabella">>
+        That sounds like a great idea! Why don't we train together now and see how it goes?
+    <</say>>
+
+    <<button "Train Together" "isabella_scene_2_gym_scene_resume_3">>
+    <</button>>
+
+<</nobr>>
+
+:: isabella_scene_2_gym_scene_resume_3 [Isabella Isabella_Scene]
+<<nobr>>
+    <<say "Player" "$playername">>
+        Sure! Let's do it.
+    <</say>>
+
+    <<say "Isabella" "Isabella">>
+        Great! Let's start with some warm-up exercises.
+    <</say>>
+    
+    <<fast_image "https://i.ibb.co/TPfTHK2/diamond-jackson-does-yoga-and-gets-drilled-on-the-bed-2.jpg">>
+
+    <<say "Player" "$playername">>
+        *Wow, Isabella is really flexible. I'm impressed.*
+    <</say>>
+
+    <<say "Isabella" "Isabella">>
+        *Isabella looks at you and smiles.* You're doing great!
+    <</say>>
+
+    <<say "Isabella" "Isabella">>
+        Ok now change your position and do this.
+    <</say>>
+
+    <<fast_image "https://i.ibb.co/B4mHxtF/256795458c79f22da709.jpg">>
+
+    <<say "Player" "$playername">>
+        *She's so hot and sexy. I can't stop looking at her.*
+    <</say>>
+
+    <<decision_maker "0001">>
+        <<decision "0001" "Lose Focus (Naughty Thoughts)" "isabella_scene_2_gym_scene_resume_3_DEC_1">>
+        <<decision "0001" "Keep Focus" "isabella_scene_2_gym_scene_resume_3_DEC_2">>
+    <</decision_maker>>
+
+
+<</nobr>>
+
+:: isabella_scene_2_gym_scene_resume_3_DEC_1 [Isabella Isabella_Scene]
+<<nobr>>
+    <<say "Player" "$playername">>
+        *I can't stop thinking about those big boobs. I need to control myself.*
+    <</say>>
+
+    <<decision_maker "0002">>
+        <<decision "0002" "Surrender To Temptation" "isabella_scene_2_gym_scene_resume_3_DEC_1_1">>
+        <<decision "0002" "Keep Focus" "isabella_scene_2_gym_scene_resume_3_DEC_2">>
+    <</decision_maker>>
+<</nobr>>
+
+:: isabella_scene_2_gym_scene_resume_3_DEC_1_1 [Isabella Isabella_Scene]
+<<nobr>>
+    <<narrator>>
+        The mix of tiredness and the sight of Isabella's body makes you lose focus and start imageining her naked...
+    <</narrator>>
+
+    <<blur_image_game "https://i.ibb.co/D7x7ydp/256795458c79f2349153.jpg" "isabella_scene_2_gym_scene_resume_3_DEC_1_1_callback">>
+<</nobr>>
+
+:: isabella_scene_2_gym_scene_resume_3_DEC_1_1_callback [Isabella Isabella_Scene]
+<<nobr>>
+
+    <<fast_image "https://s1.pictoa.com/media/galleries/131/887/13188758c79f21599b1/256795458c79f22082fc.jpg">>
+
+    <<say "Isabella" "Isabella">>
+        Are you okay, $playername? You seems to be lost in thoughts. I'm taking this seriously, and I need focus!
+    <</say>>
+
+    /* Lose some points */
+
+    <<say "Player" "$playername">>
+        *You quickly snap out of it.* Oh, sorry. I think I'm not used to this kind of exercise.
+    <</say>>
+
+    <<say "Isabella" "Isabella">>
+        It's okay. I think we should stop here for today. You need to rest.
+    <</say>>
+
+    <<button "Leave" "isabella_scene_2_gym_scene_end">>
+    <</button>>
+<</nobr>>
+
+
+:: isabella_scene_2_gym_scene_resume_3_DEC_2 [Isabella Isabella_Scene]
+<<nobr>>
+    <<say "Isabella" "Isabella">>
+        Wow! You're doing great! I'm impressed. I think you're a natural at this.
+    <</say>>
+
+    /* GAIN SOME POINTS */
+
+
+    <<narrator>>
+        You and Isabella continue to train together. You're impressed by her flexibility and strength. You feel a sense of accomplishment as you complete the training session.
+    <</narrator>>
+
+    <<say "Isabella" "Isabella">>
+        That was a great workout! I'm glad we trained together. I think we make a great team.
+    <</say>>
+
+    <<button "Leave" "isabella_scene_2_gym_scene_end">>
+    <</button>>
+<</nobr>>
+
+:: isabella_scene_2_gym_scene_end [Isabella Isabella_Scene]
+
+<<nobr>>
+    <<narrator>>
+        As soon as you finish the training session, you see Isabella's phone on the bench opened in her instagram home. A moment before she comes back, you manage to see her username, @isabella_HDND.
+    <</narrator>>
+
+    <<narrator>>
+        Isabella's instagram is now available in your phone. You can check it anytime.
+        INSTAGRAM USERNAME: @isabella_HDND
+    <</narrator>>
+
+    <<set $instagram_info.isabella to {}>>
+    <<set $instagram_info.isabella.username to "isabella_HDND">>
+    <<set $instagram_info.isabella.followers to 34000>>
+    <<set $instagram_info.isabella.following to 100>>
+    <<set $instagram_info.isabella.posts to 100>>
+
+    <<set $hack_list.isabella to {
+         'passage':"hack_isabella",
+         "icon":"hack-isabella",
+         "text":"Hack Isabella"
+    }>>
+
+    <<set $temp3 to {"affection": 0.5}>>
+    <<status_change "isabella" $temp3>>
+
+    <<button "Finish" "hotel_gym_handler">>
+    <</button>>
+<</nobr>>
+

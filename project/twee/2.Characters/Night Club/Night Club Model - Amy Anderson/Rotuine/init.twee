@@ -1,0 +1,215 @@
+:: init_amy [Amy Character_Init]
+<<nobr>>
+    <<include init_routine_Amy>>
+    <<include init_stats_amy>>
+
+    /*
+
+    <<set $characters.ivy to {
+        name: "Ivy",
+        desc: "Guard",
+        img: "https://pbs.twimg.com/media/CnbaOa7VIAAUDty.jpg:large",
+        events: $forced_events.ivy,
+        routine: $routine_events.ivy,
+        stats: $statistics.ivy
+    }>> */
+
+    <<set $characters.amy to {
+        name: "Amy",
+        desc: "Model",
+        category: "Nightclub",
+        img: "https://scontent.fgoa1-1.fna.fbcdn.net/v/t39.30808-6/408952808_325456327017166_1317762667979702624_n.jpg?stp=cp6_dst-jpg&_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_ohc=FZQtrN0RwToQ7kNvgEs6IBE&_nc_ht=scontent.fgoa1-1.fna&oh=00_AYAXOVTaiVopfl5FXRn1eLjMZL8czW_l-B8gi_HnZ3lifQ&oe=6664E477",
+        events: $forced_events.amy,
+        routine: $routine_events.amy,
+        stats: $statistics.amy
+    }>>
+<</nobr>>
+
+:: init_stats_amy [Amy Stats_Init]
+<<nobr>>
+    <<set $stats_amy to {
+        "affection": 0,
+        "love": 0,
+        "lust": 0
+    }>>
+    <<set $statistics["amy"] to $stats_amy>>
+<</nobr>>
+
+:: init_routine_Amy [Amy Routine_Init]
+<<nobr>>
+    <<set $routine_amy to {
+        
+        /* MONDAY */
+        "Monday": {
+            "morning":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "amy_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "amy_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "evening":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "amy_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "amy_working_model_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* TUESDAY */
+        "Tuesday": {
+            "morning":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "amy_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "amy_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "evening":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "amy_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "amy_working_model_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* WEDNESDAY */
+        "Wednesday": {
+            "morning":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "amy_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "amy_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "evening":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "amy_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "amy_working_model_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* THURSDAY */
+        "Thursday": {
+            "morning":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "amy_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "amy_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "evening":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "amy_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "amy_working_model_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* FRIDAY */
+        "Friday": {
+            "morning":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "amy_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "amy_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "evening":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "amy_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "amy_working_model_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* SATURDAY */
+        "Saturday": {
+            "morning":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "amy_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "amy_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "evening":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "amy_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "amy_working_model_handler",
+                "icon": "work_icon_choice"
+            }
+        },
+
+        /* SUNDAY */
+        "Sunday": {
+            "morning":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "amy_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "afternoon":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "amy_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "evening":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "amy_working_model_handler",
+                "icon": "work_icon_choice"
+            },
+            "night":{
+                "trigger_passage": "lap_dance_handler",
+                "display_trigger_event": "amy_working_model_handler",
+                "icon": "work_icon_choice"
+            }
+        }
+    }
+    >>
+
+    <<set $routine_events.amy to $routine_amy>>
+<</nobr>>
+
+    

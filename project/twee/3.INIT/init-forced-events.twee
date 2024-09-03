@@ -1,0 +1,4 @@
+:: init_forced_events
+<<nobr>>
+    <<set $forced_events to {}>>
+<</nobr>>

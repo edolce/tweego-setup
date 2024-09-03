@@ -1,0 +1,150 @@
+:: ivy_working_guard_handler [Ivy Ivy_Routine_Handler]
+<<wrapper "Vip Lounge">>\
+    <<nobr>>
+        
+        <<photo "ivy-guard-default">>
+        
+        <<decision_maker "0000">>
+            <<decision "0000" "Conversation" "ivy_work_conversation_decision">>
+            <<decision "0000" "Flirt" "ivy_work_flirting">>
+            <<decision_hard "0000" "Back" "dance_floor_handler">>
+        <</decision_maker>>
+
+    <</nobr>>\
+<</wrapper>>
+
+:: ivy_work_conversation_decision
+<<nobr>>
+    <<say "ivy" "ivy">>
+        So, what's on your mind?
+    <</say>>
+    <<decision_maker "0001">>
+        <<decision "0001" "Work" "ivy_work_conversation_work">>
+        <<decision "0001" "Life" "ivy_work_conversation_life">>
+        <<decision "0001" "You" "ivy_work_conversation_you">>
+    <</decision_maker>>
+<</nobr>>
+
+:: ivy_work_conversation_work
+<<nobr>>
+    <<say "ivy" "ivy">>
+        I love my job, I get to meet so many interesting people.
+    <</say>>
+    
+    <<say "Player" "$player_name">>
+        What's the most interesting thing you've seen?
+    <</say>>
+
+    <<say "ivy" "ivy">>
+        Oh, I couldn't possibly say. I've seen a lot of things.
+    <</say>>
+
+    <<say "Player" "$player_name">>
+        Come on, I won't tell anyone.
+    <</say>>
+
+    <<say "ivy" "ivy">>
+        Well, there was this one time a guy came in with a monkey.
+    <</say>>
+
+    <<say "Player" "$player_name">>
+        A monkey?
+    <</say>>
+
+    <<say "ivy" "ivy">>
+        Yeah, a monkey. He was a regular for a while, but then he stopped coming in.
+    <</say>>
+
+    <<say "Player" "$player_name">>
+        What happened to the monkey?
+    <</say>>
+
+    <<say "ivy" "ivy">>
+        I don't know. I never saw him again.
+    <</say>>
+
+    <<say "Player" "$player_name">>
+        That's a shame.
+    <</say>>
+
+    <<say "ivy" "ivy">>
+        Yeah, it is. I miss that little guy...
+    <</say>>
+
+    <<button "Back" "ivy_working_guard_handler">>
+    <</button>>
+<</nobr>>
+
+:: ivy_work_conversation_life
+<<nobr>>
+    <<say "ivy" "ivy">>
+        Life is good. I'm happy.
+    <</say>>
+    
+    <<say "Player" "$player_name">>
+        That's great to hear.
+    <</say>>
+
+    <<say "ivy" "ivy">>
+        Yeah, it is. I'm lucky to have a job I love.
+    <</say>>
+
+    <<say "ivy" "ivy">>
+        Sometimes I also work as a stripper at the club, but I prefer bartending.
+    <</say>>
+
+    <<say "Player" "$player_name">>
+        Really?
+    <</say>>
+
+    <<say "ivy" "ivy">>
+        Yeah, really. I like the attention, but I don't like the touching.
+    <</say>>
+
+    <<say "Player" "$player_name">>
+        I can understand that.
+    <</say>>
+
+    <<narrator>>
+        I need to be careful with what she just said.
+    <</narrator>>
+
+    <<button "Back" "ivy_working_guard_handler">>
+    <</button>>
+<</nobr>>
+
+:: ivy_work_conversation_you
+<<nobr>>
+    <<say "ivy" "ivy">>
+        Me? I'm just a simple bartender.
+    <</say>>
+    
+    <<say "Player" "$player_name">>
+        You're more than that.
+    <</say>>
+
+    <<say "ivy" "ivy">>
+        Oh, you're sweet. But really, I'm just ivy.
+    <</say>>
+
+    <<button "Back" "ivy_working_guard_handler">>
+    <</button>>
+<</nobr>>
+
+:: ivy_work_flirting
+<<nobr>>
+    <<say "ivy" "ivy">>
+        Oh, you're sweet. But I'm not interested.
+    <</say>>
+    
+    <<say "Player" "$player_name">>
+        Oh, I'm sorry. I didn't mean to offend you.
+    <</say>>
+
+    <<say "ivy" "ivy">>
+        You didn't offend me. I'm just not interested.
+    <</say>>
+
+    <<button "Back" "ivy_working_guard_handler">>
+    <</button>>
+<</nobr>>

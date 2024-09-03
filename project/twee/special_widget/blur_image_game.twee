@@ -1,0 +1,35 @@
+:: blur_image_game [widget]
+<<widget "blur_image_game">>
+    <<set $blur = 100>>
+        <div @class="'photo_default_fast'">
+            <img  id="blur_image_game_image" @src="_args[0]" style="filter: blur(100px); transition: filter 0.5s;"/>
+        </div>
+
+    <div id="blur_image_game_button">
+        <<button "More (Click Fast)">>
+            <<script>>
+                State.variables.blur -= 2;
+                if (State.variables.blur == 80) {
+                    document.querySelector('#blur_image_game_button button').innerHTML = "I need more!";
+                }
+                if (State.variables.blur == 50) {
+                    document.querySelector("#blur_image_game_button button").innerHTML  = "I can see something!";
+                }
+                if (State.variables.blur == 20) {
+                    document.querySelector("#blur_image_game_button button").innerHTML  = "Almost there!";
+                }
+                if (State.variables.blur < 10) {
+                    State.variables.blur = 10;
+                    document.querySelector("#callback").style.display = "block";
+                }
+                console.log(State.variables);
+                document.getElementById("blur_image_game_image").style.filter = "blur(" + State.variables.blur + "px)";
+            <</script>>
+        <</button>>
+    </div>
+
+    <div id="callback" style="display: none;">
+        <<include _args[1]>>
+    </div>
+    
+<</widget>>

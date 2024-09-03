@@ -1,0 +1,67 @@
+:: isabella_shower_handler [Isabella Isabella_Routine Routine_Handler Isabella_Routine_Handler]
+<<wrapper "Hotel Office">>\
+    <<nobr>>
+    <<fast_image "https://media.istockphoto.com/id/1392568164/photo/white-bathroom-door-slightly-open-or-left-ajar.jpg?s=612x612&w=0&k=20&c=W9athAs6PRJGWfMdMxROxEW41di_U6I9nEwKdpiXGl8=">>
+    <<narrator>>
+        I hear the sound of water flowing from Isabella's shower in her office. My curiosity and desire grow stronger…
+    <</narrator>>
+    
+    /* 2 choices: Peek or No Peek */
+    <<decision_maker "0000">>
+        <<decision "0000" "Peek" "peek_decision">>
+        <<decision "0000" "Don't peek" "no_peek_decision">>
+    <</decision_maker>>
+
+    <</nobr>>\
+<</wrapper>>
+
+
+
+
+:: peek_decision
+<<nobr>>
+<<narrator>>
+With stealthy steps, you approach Isabella's office door, feeling the tension and adrenaline building up. You press your eye against the small crack, trying to catch an intimate moment.
+<</narrator>>
+<<say "Player" "$playername">>
+As I look through the crack, I see Isabella in the shower. The water cascades gently over her naked body, creating rivulets that embrace her curves. Her skin is smooth and wet, inviting to the touch.
+<</say>>
+<<fast_image "https://s10.gifyu.com/images/SfaCF.gif">>
+<<decision_maker "0001">>
+    <<decision "0001" "Keep watching" "keep_watching_decision">>
+    <<decision "0001" "Leave" "no_peek_decision">>
+<</decision_maker>>
+<</nobr>>\
+
+
+
+:: keep_watching_decision
+<<nobr>>
+<<narrator>>\
+You can't resist the temptation and keep watching Isabella in the shower. You feel a mix of excitement and guilt, but the sight of her naked body is too alluring to look away.
+<</narrator>>
+<<say "Player" "$playername">>\
+I can't help but watch Isabella in the shower. Her body is so beautiful, and the water glistens on her skin. I feel a rush of desire and longing, wanting to be closer to her.
+<</say>>\
+<<fast_image "https://s10.gifyu.com/images/SfaCF.gif">>
+<<decision_maker "0002">>
+    <<decision "0002" "Watch her feet" "keep_watching_feet_decision">>
+    <<decision "0002" "Leave" "no_peek_decision">>
+<</decision_maker>>
+<</nobr>>\
+
+:: keep_watching_feet_decision
+<<nobr>>
+<<narrator>>
+    You focus on Isabella's feet, watching the water cascade over them and the way she moves them. It's a sensual and intimate moment, and you feel captivated by her every movement.
+<</narrator>>
+<<fast_image "https://s12.gifyu.com/images/SfaVs.gif">>
+<<button "It's enough for now" "hotel_office_handler">><</button>>
+<</nobr>>\
+
+
+:: no_peek_decision
+<<nobr>>
+<<narrator>>You decide it’s not worth the risk, maybe next time…<</narrator>>
+<<button "Back" "hotel_office_handler">><</button>>
+<</nobr>>\

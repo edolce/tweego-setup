@@ -1,0 +1,111 @@
+:: isabella_work_hot_handler [Isabella Isabella_Routine Routine_Handler Isabella_Routine_Handler]
+<<wrapper "Hotel Office">>\
+    <<nobr>>
+    <<say "Player" "$playername">>
+        What are those strage sounds…
+    <</say>>
+    <<fast_image "https://media.istockphoto.com/id/1392568164/photo/white-bathroom-door-slightly-open-or-left-ajar.jpg?s=612x612&w=0&k=20&c=W9athAs6PRJGWfMdMxROxEW41di_U6I9nEwKdpiXGl8=">>
+    <<narrator>>
+        You slightly open the door, and see Isabella…
+    <</narrator>>
+    <<fast_image "https://s10.gifyu.com/images/SfaYQ.gif">>
+    <<say "Isabella" "Isabella">>
+        Oh, yes~! Right there~! Keep going~!
+    <</say>>
+    <<say "Player" "$playername">>
+        What the hell is she doing...
+    <</say>>
+    
+    <<decision_maker "0000">>
+        <<decision "0000" "Leave" "isabella_work_hot_handler_leave_decision">>
+        <<decision "0000" "Stay" "isabella_work_hot_handler_stay_decision">>
+    <</decision_maker>>
+    <</nobr>>\
+<</wrapper>>
+
+:: isabella_work_hot_handler_leave_decision [Isabella Isabella_Routine]
+<<nobr>>
+    <<say "Player" "$playername">>
+        I should leave…
+    <</say>>
+    <<narrator>>
+        You leave the room.
+    <</narrator>>
+    <<button "Continue" "hotel_office_handler">>
+    <</button>>
+<</nobr>>
+
+:: isabella_work_hot_handler_stay_decision [Isabella Isabella_Routine]
+<<nobr>>
+    <<say "Player" "$playername">>
+        I should stay and see what she's doing…
+    <</say>>
+    <<fast_image "https://s12.gifyu.com/images/SfaYj.gif">>
+    <<say "Isabella" "Isabella">>
+        That feels so good~! I would love to have a real one~!
+    <</say>>
+
+    <<decision_maker "0001">>
+        <<decision "0001" "Leave" "isabella_work_hot_handler_leave_decision">>
+        <<decision "0001" "Watch under the desk" "isabella_work_hot_handler_stay_decision2">>
+    <</decision_maker>>
+<</nobr>>
+
+:: isabella_work_hot_handler_stay_decision2 [Isabella Isabella_Routine]
+<<nobr>>
+    <<say "Player" "$playername">>
+        I can't leave now…
+    <</say>>
+
+    <<fast_image "https://s12.gifyu.com/images/SffaN.gif">>
+
+    <<say "Isabella" "Isabella">>
+        Can't resist~! I'm close~! I'm close~!
+    <</say>>
+
+    <<narrator>>
+        You see Isabella's hand moving faster and faster.
+    <</narrator>>
+
+    <<decision_maker "0002">>
+        <<decision "0002" "Leave" "isabella_work_hot_handler_leave_decision">>
+        <<decision "0002" "Stay" "isabella_work_hot_handler_stay_decision3">>
+    <</decision_maker>>
+<</nobr>>
+
+
+:: isabella_work_hot_handler_stay_decision3 [Isabella Isabella_Routine]
+<<nobr>>
+    <<say "Player" "$playername">>
+        I need to see more!
+    <</say>>
+
+    <<narrator>>
+        Adjusting your position, you make some noise.
+    <</narrator>>
+
+    <<fast_image "https://s12.gifyu.com/images/SfffE.gif">>
+
+    <<say "Isabella" "Isabella">>
+        What are you doing here!?
+    <</say>>
+
+    <<say "Player" "$playername">>
+        I'm sorry, I was just…
+    <</say>>
+
+    <<fast_image "https://i.ibb.co/HdKnJmh/immagine-2024-05-27-092116157.png">>
+
+    <<say "Isabella" "Isabella">>
+        Get out!
+    <</say>>
+
+    <<narrator>>
+        You leave the room.
+    <</narrator>>
+
+    <<button "Continue" "hotel_office_handler">>
+    <</button>>
+<</nobr>>
+
+    

@@ -1,0 +1,187 @@
+.choice-casino{
+    background-image: url("https://power-wedelia-e8e.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Fa5eec5db-5132-48da-801a-9822f74d38c9%2F079c8e51-3d1b-4afa-94cd-39ce96f04ad6%2FNuovo_progetto_(11).png?table=block&id=22703b79-3049-43b6-8292-6d66acb11aed&spaceId=a5eec5db-5132-48da-801a-9822f74d38c9&width=1920&userId=&cache=v2");
+}
+
+.choice-nightclub{
+    background-image: url("https://i.ibb.co/k44Y6Dn/immagine-2024-05-27-135911993.png");
+}
+
+.choice-asiatic-massage{
+    background-image: url("https://file.notion.so/f/f/a5eec5db-5132-48da-801a-9822f74d38c9/d1a5df0d-cd32-4d7b-996a-8642b18e40ee/Nuovo_progetto_(3).png?id=680fb100-94b6-4ebf-aeae-2e3d3584119e&table=block&spaceId=a5eec5db-5132-48da-801a-9822f74d38c9&expirationTimestamp=1696068000000&signature=BfBIOUvSic_iGwZE7ZZdHEo9jLGrbXJ3sSwDO2GaobM&downloadName=Nuovo+progetto+%283%29.png");
+}
+
+.choice-beach-resort{
+    background-image: url("https://file.notion.so/f/f/a5eec5db-5132-48da-801a-9822f74d38c9/5f954dde-8713-491c-ac2b-031af35b50f2/Nuovo_progetto_(13).png?id=302adbd8-b2da-4548-a70a-8598a41526a0&table=block&spaceId=a5eec5db-5132-48da-801a-9822f74d38c9&expirationTimestamp=1696068000000&signature=HRrh2AFGVAboIdUkr7CSYyQr9AflLPw3Cm9fnVwpofM&downloadName=Nuovo+progetto+%2813%29.png");
+}
+
+.choice-hotel{
+    background-image: url("https://i.ibb.co/QDWMc6C/immagine-2024-05-26-194922864.png")
+}
+
+/*HOTEL OFFICE*/
+
+.choice-hotel-office{
+    background-image: url("https://coworkinginsights.com/wp-content/uploads/2020/09/Radisson-Collection-Hotel-Grand-Place-Brussels-Meeting-Room-min.jpg");
+}
+
+.hotel_office_default{
+    background-image: url("https://coworkinginsights.com/wp-content/uploads/2020/09/Radisson-Collection-Hotel-Grand-Place-Brussels-Meeting-Room-min.jpg");
+    height: 400px;
+}
+
+/*HOTEL BATHROOM*/
+
+.choice-hotel-bathroom{
+    background-image: url("https://i.ibb.co/fDQP94p/immagine-2024-05-26-195215098.png");
+}
+
+.public_bathroom_default{
+    background-image: url("https://i.ibb.co/fDQP94p/immagine-2024-05-26-195215098.png");
+    height: 400px;
+}
+
+/*BEACH RESORT - BEACH*/
+
+.choice-beach{
+    background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D");
+}
+
+.beach_default{
+    background-image: url("https://file.notion.so/f/f/a5eec5db-5132-48da-801a-9822f74d38c9/8cfb6f3f-721a-4b2b-95cd-a6dee65323d2/Nuovo_progetto_(6).png?id=5e98aec6-2ba2-4679-9e0c-d79750e9dbbf&table=block&spaceId=a5eec5db-5132-48da-801a-9822f74d38c9&expirationTimestamp=1696075200000&signature=VkhbekaoB3f5LefR5cxRccDW0ZXapSPZXtJNw8oLd1Q&downloadName=Nuovo+progetto+%286%29.png");
+    height: 400px;
+}
+
+/*BEACH RESORT - BAR*/
+
+.choice-beach-bar{
+    background-image: url("https://file.notion.so/f/f/a5eec5db-5132-48da-801a-9822f74d38c9/d7bccde8-f7e4-4fcd-a9bf-5409344a118b/Nuovo_progetto_(8).png?id=fe20ac1a-169e-4754-a127-7dc679b6ee05&table=block&spaceId=a5eec5db-5132-48da-801a-9822f74d38c9&expirationTimestamp=1696075200000&signature=RCQ0KUSrBbfpPeQ892bI1M4jCaBuEpfNFt7bisMcgwE&downloadName=Nuovo+progetto+%288%29.png");
+}
+
+.beach_bar_default{
+    background-image: url("https://file.notion.so/f/f/a5eec5db-5132-48da-801a-9822f74d38c9/d7bccde8-f7e4-4fcd-a9bf-5409344a118b/Nuovo_progetto_(8).png?id=fe20ac1a-169e-4754-a127-7dc679b6ee05&table=block&spaceId=a5eec5db-5132-48da-801a-9822f74d38c9&expirationTimestamp=1696075200000&signature=RCQ0KUSrBbfpPeQ892bI1M4jCaBuEpfNFt7bisMcgwE&downloadName=Nuovo+progetto+%288%29.png");
+    height: 400px;
+}
+
+/*BEACH RESORT - POOL*/
+
+.choice-pool{
+    background-image: url("https://file.notion.so/f/f/a5eec5db-5132-48da-801a-9822f74d38c9/901e0775-a085-4253-aaa2-229aa0eb9db8/Nuovo_progetto_(9).png?id=10ee548e-40b5-4791-8bad-3cccce9d897b&table=block&spaceId=a5eec5db-5132-48da-801a-9822f74d38c9&expirationTimestamp=1696075200000&signature=anid5flvqgQMiiQxZysUgEPErm5kM1RzDL9zunXlIYg&downloadName=Nuovo+progetto+%289%29.png");
+}
+
+.beach_pool_default{
+    background-image: url("https://file.notion.so/f/f/a5eec5db-5132-48da-801a-9822f74d38c9/901e0775-a085-4253-aaa2-229aa0eb9db8/Nuovo_progetto_(9).png?id=10ee548e-40b5-4791-8bad-3cccce9d897b&table=block&spaceId=a5eec5db-5132-48da-801a-9822f74d38c9&expirationTimestamp=1696075200000&signature=anid5flvqgQMiiQxZysUgEPErm5kM1RzDL9zunXlIYg&downloadName=Nuovo+progetto+%289%29.png");
+    height: 400px;
+}
+
+/*BEACH RESORT - MANAGER-OFFICE*/
+
+.choice-manager-office{
+    background-image: url("https://file.notion.so/f/f/a5eec5db-5132-48da-801a-9822f74d38c9/3f4da6dc-90a9-4658-9812-837151400fa5/Nuovo_progetto_(10).png?id=5dcdc465-9093-4f97-961b-b41e7f0b7b1d&table=block&spaceId=a5eec5db-5132-48da-801a-9822f74d38c9&expirationTimestamp=1696075200000&signature=iP7WRtBzMXRvXLMxo4Ez0omZdxuuzlX-zwqBqznUqAY&downloadName=Nuovo+progetto+%2810%29.png");
+}
+
+.beach_manager_office_default{
+    background-image: url("https://file.notion.so/f/f/a5eec5db-5132-48da-801a-9822f74d38c9/3f4da6dc-90a9-4658-9812-837151400fa5/Nuovo_progetto_(10).png?id=5dcdc465-9093-4f97-961b-b41e7f0b7b1d&table=block&spaceId=a5eec5db-5132-48da-801a-9822f74d38c9&expirationTimestamp=1696075200000&signature=iP7WRtBzMXRvXLMxo4Ez0omZdxuuzlX-zwqBqznUqAY&downloadName=Nuovo+progetto+%2810%29.png");
+    height: 400px;
+}
+
+/*CASINO - Hall*/
+.choice-casino-hall{
+    background-image: url("https://i.ibb.co/YtZRPgd/Nuovo-progetto-12.png");
+}
+
+.casino_hall_default{
+    background-image: url("https://i.ibb.co/YtZRPgd/Nuovo-progetto-12.png");
+    height: 400px;
+}
+
+/*CASINO - BlackJack*/
+.choice-blackjack{
+    background-image: url("https://i.ibb.co/94kFnPY/Nuovo-progetto.png");
+}
+
+.blackjack_default{
+    background-image: url("https://i.ibb.co/94kFnPY/Nuovo-progetto.png");
+    height: 400px;
+}
+
+/*CASINO - Boss Room*/
+.choice-casino-boss-room{
+    background-image: url("https://i.ibb.co/HqXR91B/Nuovo-progetto-1.png");
+}
+
+.casino_boss_room_default{
+    background-image: url("https://i.ibb.co/HqXR91B/Nuovo-progetto-1.png");
+    height: 400px;
+}
+
+/*NIGHT CLUB - Dance Floor*/
+.choice-dance-floor{
+    background-image: url("https://i.ibb.co/6Bf2X5Q/Nuovo-progetto-6.png");
+}
+
+.dance_floor_default{
+    background-image: url("https://i.ibb.co/6Bf2X5Q/Nuovo-progetto-6.png");
+    height: 400px;
+}
+
+/*NIGHT CLUB - Lap Dance*/
+.choice-lap-dance{
+    background-image: url("https://i.ibb.co/GTC7KFh/Nuovo-progetto-7.png");
+}
+
+.lap_dance_default{
+    background-image: url("https://i.ibb.co/GTC7KFh/Nuovo-progetto-7.png");
+    height: 400px;
+}
+
+/*NIGHT CLUB - VIP Room*/
+.choice-vip-lounge{
+    background-image: url("https://i.ibb.co/NYRhdSX/Nuovo-progetto-8.png");
+}
+
+.vip_lounge_default{
+    background-image: url("https://i.ibb.co/NYRhdSX/Nuovo-progetto-8.png");
+    height: 400px;
+}
+
+/*NIGHT CLUB - Bar*/
+.choice-nc-bar{
+    background-image: url("https://i.ibb.co/1G28gMk/Nuovo-progetto-9.png");
+}
+
+.nc_bar_default{
+    background-image: url("https://i.ibb.co/1G28gMk/Nuovo-progetto-9.png");
+    height: 400px;
+}
+
+/*NIGHT CLUB - Boss Room*/
+.choice-nc-boss-room{
+    background-image: url("https://en.idei.club/uploads/posts/2023-06/thumbs/1687588695_en-idei-club-p-boss-room-dizain-1.jpg");
+}
+
+.nc_boss_room_default{
+    background-image: url("https://en.idei.club/uploads/posts/2023-06/thumbs/1687588695_en-idei-club-p-boss-room-dizain-1.jpg");
+    height: 400px;
+}
+
+
+/*MASSAGE - Lobby*/
+.choice-massage-lobby{
+    background-image: url("https://file.notion.so/f/f/a5eec5db-5132-48da-801a-9822f74d38c9/22ae6516-9deb-4055-8f2d-69d7e357d31c/Nuovo_progetto_(4).png?id=14e376c8-0192-4b2e-8efa-288f23d34921&table=block&spaceId=a5eec5db-5132-48da-801a-9822f74d38c9&expirationTimestamp=1696082400000&signature=P-oxlZtnHam9nZ-SI4p4SiJ5_Hpxha8vbQGUK-0Lkjw&downloadName=Nuovo+progetto+%284%29.png");
+}
+
+.massage_lobby_default{
+    background-image: url("https://file.notion.so/f/f/a5eec5db-5132-48da-801a-9822f74d38c9/22ae6516-9deb-4055-8f2d-69d7e357d31c/Nuovo_progetto_(4).png?id=14e376c8-0192-4b2e-8efa-288f23d34921&table=block&spaceId=a5eec5db-5132-48da-801a-9822f74d38c9&expirationTimestamp=1696082400000&signature=P-oxlZtnHam9nZ-SI4p4SiJ5_Hpxha8vbQGUK-0Lkjw&downloadName=Nuovo+progetto+%284%29.png");
+    height: 400px;
+}
+
+
+/*MASSAGE - Boss Room*/
+.choice-massage-boss-room{
+    background-image: url("https://file.notion.so/f/f/a5eec5db-5132-48da-801a-9822f74d38c9/a227156d-fe0b-4dc5-9f22-32adf3ae20ab/Nuovo_progetto_(5).png?id=78838e34-bc0f-4a13-9474-ba22fd789fd3&table=block&spaceId=a5eec5db-5132-48da-801a-9822f74d38c9&expirationTimestamp=1696082400000&signature=Qpvgzr3Qm0SeSVTbfRXzNkrh4e8dLSXsWVhYOPM6ZaE&downloadName=Nuovo+progetto+%285%29.png");
+}
+
+.massage_boss_room_default{
+    background-image: url("https://file.notion.so/f/f/a5eec5db-5132-48da-801a-9822f74d38c9/a227156d-fe0b-4dc5-9f22-32adf3ae20ab/Nuovo_progetto_(5).png?id=78838e34-bc0f-4a13-9474-ba22fd789fd3&table=block&spaceId=a5eec5db-5132-48da-801a-9822f74d38c9&expirationTimestamp=1696082400000&signature=Qpvgzr3Qm0SeSVTbfRXzNkrh4e8dLSXsWVhYOPM6ZaE&downloadName=Nuovo+progetto+%285%29.png");
+    height: 400px;
+}

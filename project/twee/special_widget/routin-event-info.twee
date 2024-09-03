@@ -1,0 +1,329 @@
+
+
+:: routine_info [widget]
+<<widget "routine_info">>\
+<<nobr>>
+    <style>
+        .container-events{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        .title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .icon-routine {
+            font-size: 1.5em;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .rotuine-events-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .go-back-cl{
+            position: relative;
+        }
+        .go-back-button-{
+            cursor: pointer;
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+
+        }
+
+        .select-day-header {
+            display: flex;
+            gap: 10px;
+        }
+
+        .day-selection {
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            /*shadow */
+            text-shadow: 2px 2px 2px #000;
+        }
+
+        .selected {
+            background-color: #550a35;
+            color: #fff;
+        }
+
+        /* transition */
+        .day-selection {
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        .routine-day-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .morning-routine {
+            background-color: #550a35;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .location {
+            font-size: 1em;
+            font-weight: bold;
+        }
+
+
+        .vertical-divisor {
+            width: 2px;
+            height: 120px;
+            background-color: #ccc;
+            margin: 0 10px;
+        }
+
+        .not-visible {
+            display: none;
+        }
+
+        .visible {
+            display: flex;
+        }
+
+    </style>
+
+    <div class = "container-events">
+        <div class="title go-back-cl">
+            /* go back arrow */
+            <span class="icon go-back-button-" data-passage="character-list">🔙</span>
+            <span class="icon">📅</span> Routine Events
+        </div>
+
+
+        <div class="rotuine-events-container">
+            <div class= "select-day-header">
+                <div class="day-selection selected">Monday</div>
+                <div class="day-selection">Tuesday</div>
+                <div class="day-selection">Wednesday</div>
+                <div class="day-selection">Thursday</div>
+                <div class="day-selection">Friday</div>
+                <div class="day-selection">Saturday</div>
+                <div class="day-selection">Sunday</div>
+            </div>
+
+            <<set _icons = {
+                "morning": "🌞",
+                "afternoon": "☀️",
+                "evening": "🌓",
+                "night": "🌙"
+            }>>
+
+            <<for _day_week,_routine range $routine_events[$character_name_hook]>>
+
+
+
+                <<set _visibility = "not-visible">>
+                <<if _day_week === "Monday">>
+                    <<set _visibility = "visible">>
+                <</if>>
+                <div @id='"week-day-"+_day_week' @class='"routine-day-container "+_visibility' >
+
+                    /* for each day time */
+                    <<for _day_time,_routine_day range _routine>>
+
+                        /* check if is already visited */
+                        
+                        <<if visited(_routine_day.display_trigger_event)>>
+
+                            <div class="morning-routine">
+                                <span class="icon-routine"><<print _icons[_day_time]>></span>
+                                <div @class='"choice-item "+ _routine_day.map_icon'>
+                                    <div class="choice-item-did"><<print _routine_day.position_display_name>></div>
+                                </div>
+                                <div class="vertical-divisor">
+                                </div>
+                                <div @class='"choice-item "+ _routine_day.action_icon'>
+                                    <div class="choice-item-did"><<print _routine_day.action_display_name>></div>
+                                </div>
+                            </div>
+                        <<else>>
+
+                            <div class="morning-routine">
+                                <span class="icon-routine"><<print _icons[_day_time]>></span>
+                                <div @class='"choice-item choice-unknown"'>
+                                    <div class="choice-item-did">TO DISCOVER</div>
+                                </div>
+                                <div class="vertical-divisor">
+                                </div>
+                                <div @class='"choice-item choice-unknown"'>
+                                    <div class="choice-item-did">TO DISCOVER</div>
+                                </div>
+                            </div>
+
+                        <</if>>
+                    <</for>>
+
+
+
+                </div>
+            <</for>>
+
+
+        </div>
+    </div>
+
+    <<script>>
+
+        /* select day */
+        $(document).on("click", ".day-selection", function(){
+            $(".day-selection").removeClass("selected");
+            $(this).addClass("selected");
+
+            let day = $(this).text();
+            console.log(day);
+
+            $(".routine-day-container").removeClass("visible").addClass("not-visible");
+
+            $("#week-day-"+day).removeClass("not-visible").addClass("visible");
+
+        });
+    <</script>>
+
+<</nobr>>
+<</widget>>
+
+
+
+:: main_events_info [widget]
+<<widget "main_events_info">>\
+    <<nobr>>
+    <style>
+        .container-events{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        .title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .icon {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+
+        .main-events-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .main-event {
+            position: relative;
+            background-color: #550a35;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .event-title {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .event-description {
+            font-size: 1em;
+        }
+
+        .event-blur {
+            filter: blur(4px);
+        }
+        .to-unlock {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #fff;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* deblur */
+            filter: blur(0px);
+            /*shadow */
+            text-shadow: 2px 2px 2px #000;
+        }
+        .go-back-cl{
+            position: relative;
+        }
+        .go-back-button-{
+            cursor: pointer;
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+
+        }
+    </style>
+    
+    
+    
+    <div class = "container-events">
+        <div class="title go-back-cl">
+            /* go back arrow */
+            <span class="icon go-back-button-" data-passage="character-list">🔙</span>
+            <span class="icon">📅</span> Main Events
+        </div>
+
+
+        <div class="main-events-container">
+            <<if $forced_events[$character_name_hook] !== undefined>>
+                <<for _event range $forced_events[$character_name_hook]>>
+                    /* if  _event[triggered] is false blur it*/
+                    <<set _is_first_not_triggered = false>>
+                    
+                    <<if !_event["triggered"]>>
+                        <<set _blur = "event-blur">>
+                    <<else>>
+                        <<set _blur = "">>
+                    <</if>>
+
+                    <div @class='"main-event "'>
+                        <div @class='"event-title "+_blur'><<print _event["event_name"]>></div>
+                        <div @class='"event-description "+_blur'><<print _event["description"]>></div>
+                        /* if event not triggered display over the blurred image TO UNLOCK */
+                        <<if !_event["triggered"]>>
+                            <div class="to-unlock">TO UNLOCK</div>
+                        <</if>>
+                    </div>
+                <</for>>
+            <<else>>
+                <div class="main-event">
+                    <div class="event-title">No events available</div>
+                </div>
+            <</if>>
+        </div>
+    </div>
+<</nobr>>\
+<</widget>>

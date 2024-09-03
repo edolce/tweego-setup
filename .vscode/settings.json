@@ -4,5 +4,10 @@
     "scm.diffDecorationsGutterPattern": {
         "modified": false
     },
-    "scm.showActionButton": true
+    "scm.showActionButton": true,
+    "twee3LanguageTools.passageCounter.openStoryMapWithoutConfirmation": true,
+    "git.decorations.enabled": false,
+    "twee3LanguageTools.sugarcube-2.definedMacroDecorations": true,
+    "twee3LanguageTools.passage.list": true,
+    "twee3LanguageTools.passage.group": "Tag"
 }

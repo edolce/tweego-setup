@@ -1,4 +1,4 @@
-:: handler_claudetthe_room
+:: claudetthe_room_handler
 <<wrapper "Claudhette Room">>
 <<nobr>>
     <<set $routine = {
@@ -26,10 +26,12 @@
             <<include "CANT_ENTER_claudetthe_room">>
         <</if>>
     <</if>>
-   <<for _key, _value range $events.floor1>>
-        <<include _value.event_name>>
-        <<set $_ = delete $events.floor1[_key]>>
-   <</for>>
+    <<if $events.floor1 !== undefined>>
+        <<for _key, _value range $events.floor1>>
+                <<include _value.event_name>>
+                <<set $_ = delete $events.floor1[_key]>>
+        <</for>>
+    <</if>>
 <</nobr>>
 <</wrapper>>
 
@@ -43,6 +45,8 @@
     <<choices "What To DO?">>
         <<choice-item "search_claudetthe_room" "search-claudetthe-room" "Search">>
     <</choices>>
+
+    <<button "Back" "floor1_handler">><</button>>
 
 <</nobr>>
 
@@ -58,7 +62,7 @@
         <</narrator>>
     <</if>>
 
-    <<button "Back" "handler_floor1">><</button>>
+    <<button "Back" "claudetthe_room_handler">><</button>>
     
     
 <</nobr>>
